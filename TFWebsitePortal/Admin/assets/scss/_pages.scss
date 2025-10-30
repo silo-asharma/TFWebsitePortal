@@ -1,0 +1,706 @@
+/*
+* ----------------------------------------------------------------------------------------
+* 9. Pages
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 9.1 Special pages 
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 9.1.1 Profile
+* ----------------------------------------------------------------------------------------
+*/
+
+.profile-box {
+  box-shadow: 2px 2px 15px 0px #EEE;
+
+  .header {
+    background: url(../images/profile-bg.jpg);
+    background-attachment: fixed;
+    background-size: 100%;
+    position: relative;
+    height: 250px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+
+    .overlay {
+      background: $dark;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0px;
+      bottom: 0px;
+      right: 0px;
+      top: 0px;
+      opacity: 0.5;
+    }
+
+    .edit-btn {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+
+      a {
+        color: $white;
+
+        &:hover {
+          color: #F79E1B;
+        }
+      }
+    }
+
+    .follower-box {
+      text-align: center;
+      color: $white;
+      position: absolute;
+      font-size: 30px;
+      font-weight: 900;
+      right: 30px;
+      bottom: 20px;
+
+      div {
+        display: inline-block;
+        margin-left: 15px;
+
+        span {
+          font-size: 14px;
+          color: $white;
+          opacity: 0.7;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .body {
+    background: $white;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .left-panel, .right-panel {
+    padding: 30px;
+  }
+
+  .left-panel .widget:last-child, .right-panel .widget:last-child {
+    margin-bottom: 0px;
+    border-bottom: 0px solid #CCC;
+    padding-bottom: 0px;
+  }
+
+  .body .profile-info-box {
+    text-align: center;
+
+    .profile-pic {
+      width: 115px;
+      height: 115px;
+      border-radius: 100%;
+      overflow: hidden;
+      border: 5px solid #CCC;
+      margin: auto;
+      margin-top: -90px;
+    }
+
+    .name {
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .position {
+      font-size: 14px;
+      opacity: 0.7;
+      margin-top: 2px;
+    }
+
+    ul {
+      margin-top: 30px;
+      margin-bottom: 20px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #EEE;
+      padding-bottom: 20px;
+      overflow: hidden;
+
+      li {
+        float: left;
+        width: 33.33%;
+        text-align: center;
+
+        .count {
+          font-size: 18px;
+          font-weight: 600;
+        }
+
+        .name {
+          font-size: 14px;
+          font-weight: 500;
+          margin-top: 0px;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  .timeline-part {
+    background: #e6e6e6;
+    padding: 30px;
+
+    #statustype-box {
+      height: 100px;
+      padding: 20px;
+    }
+
+    .card {
+      margin-bottom: 30px;
+      padding: 30px;
+
+      &:first-child {
+        .card-body {
+          padding-top: 0px;
+          padding-bottom: 0px;
+        }
+
+        button {
+          margin-top: 10px;
+          float: left;
+          margin-right: 15px;
+        }
+
+        ul {
+          margin-top: 10px;
+          position: relative;
+          top: 12px;
+          float: left;
+
+          li {
+            margin-left: 5px;
+            margin-right: 5px;
+            display: inline-block;
+
+            a {
+              opacity: 0.7;
+
+              &:hover {
+                opacity: 1;
+                color: $primary;
+              }
+            }
+          }
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+
+      .card-header {
+        margin: 0px;
+        padding: 0px;
+        background: $white;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #EEE;
+
+        .more-btn {
+          margin-top: 10px;
+          display: block;
+        }
+
+        .profile-thumbnail {
+          width: 45px;
+          height: 45px;
+          border-radius: 100%;
+          overflow: hidden;
+          float: left;
+          margin-right: 15px;
+        }
+
+        .name {
+          font-size: 16px;
+          font-weight: 600;
+        }
+
+        .time {
+          font-size: 13px;
+          opacity: 0.7;
+        }
+      }
+
+      .card-body {
+        margin: 0px;
+        padding: 0px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+
+      .card-footer {
+        margin: 0px;
+        padding: 0px;
+        background: $white;
+        padding-top: 15px;
+
+        ul li {
+          display: inline-block;
+          margin-right: 10px;
+
+          a {
+            i {
+              margin-right: 2px;
+            }
+
+            opacity: 0.7;
+            font-size: 13px;
+
+            &:hover {
+              opacity: 1;
+              color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.video .video-box .video-preview {
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 10px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: $dark;
+    opacity: 0.7;
+    z-index: 1;
+  }
+
+  i {
+    position: absolute;
+    z-index: 2;
+    color: $white;
+    text-align: center;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 16px;
+    margin: auto;
+    height: 16px;
+  }
+}
+
+.widget {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #EEE;
+
+  p {
+    font-size: 14px;
+    opacity: 0.7;
+  }
+
+  ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    opacity: 0.7;
+  }
+
+  &.gallery .image {
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .head {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+}
+
+.skill-box {
+  margin-bottom: 15px;
+
+  .name {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 5px;
+  }
+
+  .progress {
+    height: 3px;
+    width: 90%;
+  }
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 9.1.2 Invoice
+* ----------------------------------------------------------------------------------------
+*/
+
+.invoice-box {
+  .logo {
+    width: 60px;
+    margin-bottom: 30px;
+  }
+
+  .label {
+    margin-bottom: 5px;
+    opacity: 0.7;
+  }
+
+  .big-value {
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .card-body {
+    padding: 50px;
+  }
+
+  .badge {
+    padding: 7px 15px;
+    font-weight: 600;
+  }
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 9.1.3 Faq
+* ----------------------------------------------------------------------------------------
+*/
+
+.faq-container {
+  padding: 30px;
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 9.1.4 Pricing
+* ----------------------------------------------------------------------------------------
+*/
+
+.price-container {
+  padding: 30px 100px;
+}
+
+.price-box {
+  .head {
+    background: #F79E1B;
+    padding: 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    text-align: center;
+
+    .plan-name {
+      text-align: center;
+      font-size: 16px;
+      color: $white;
+      margin-bottom: -5px;
+      font-weight: 500;
+    }
+
+    .price {
+      font-size: 50px;
+      color: $white;
+      margin-top: 5px;
+      font-weight: 700;
+    }
+
+    .per {
+      color: $white;
+      opacity: 0.7;
+      font-size: 12px;
+      margin-top: -10px;
+    }
+  }
+
+  .body {
+    padding: 30px;
+    border: 1px solid $darkborder;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  ul li {
+    font-size: 14px;
+    margin-bottom: 15px;
+
+    .fa-check {
+      color: #28a745;
+    }
+
+    i {
+      margin-right: 10px;
+    }
+
+    .fa-times {
+      color: #dc3545;
+    }
+
+    .mute {
+      opacity: 0.7;
+    }
+  }
+
+  .body .buy-btn {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+
+    a {
+      background: $primary;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-size: 16px;
+      color: $white;
+
+      &:hover {
+        background: #F79E1B;
+      }
+    }
+  }
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 9.2 Authentication 
+* ----------------------------------------------------------------------------------------
+*/
+
+.form-bg-slider {
+  .container {
+    height: 100vh;
+
+    .icon {
+      width: 300px;
+      float: right;
+      margin-right: 26%;
+    }
+
+    .slider-title {
+      font-size: 30px;
+      font-weight: 700;
+      color: $whiteFFF;
+      margin-bottom: 30px;
+      margin-top: 7%;
+    }
+
+    .slider-description {
+      font-size: 16px;
+      line-height: 24px;
+      opacity: 0.5;
+      color: $whiteFFF;
+    }
+  }
+
+  .owl-dots {
+    position: fixed;
+    z-index: 99;
+    bottom: 38%;
+    transform: translate(-50%);
+    left: 50%;
+    margin-left: -528px;
+  }
+}
+
+.form-box {
+  position: fixed;
+  width: 350px;
+  height: 100vh;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 9;
+  background: $white;
+  padding: 40px;
+
+  form {
+    text-align: center;
+  }
+
+  .display-table {
+    height: 100vh;
+    margin-top: -20%;
+    display: table;
+  }
+
+  .display-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .logo {
+    width: 70px;
+    margin: auto;
+    margin-bottom: 10%;
+  }
+
+  .title {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 600;
+    color: $primary;
+  }
+
+  .or {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: $primary;
+  }
+
+  ul.social {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    li {
+      a {
+        display: block;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        border: 1px solid #CCC;
+        line-height: 40px;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      display: inline-block;
+      margin-right: 10px;
+
+      &:first-child a {
+        background: #4267B2;
+        border: 0px;
+        color: $white;
+      }
+
+      &:nth-child(2) a {
+        background: #00ACAA;
+        border: 0px;
+        color: $white;
+      }
+
+      &:last-child a {
+        background: #0E76A8;
+        border: 0px;
+        color: $white;
+      }
+
+      a:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  input {
+    border: 1px solid #CCC;
+    height: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 25px;
+    font-size: 14px;
+  }
+
+  .forgot a {
+    text-align: center;
+    font-size: 14px;
+    color: $primary;
+    opacity: 0.8;
+    margin-top: 10px;
+    display: block;
+
+    &:hover {
+      color: #EB001B;
+    }
+  }
+}
+
+.footer-link {
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+  width: 100%;
+  left: 0px;
+  right: 0px;
+  font-size: 14px;
+  color: $primary;
+
+  a {
+    color: #EB001B;
+    text-decoration: none;
+
+    &:hover {
+      color: #F79E1B;
+    }
+  }
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 9.3 Error
+* ----------------------------------------------------------------------------------------
+*/
+
+.error-bg {
+  background: $primary;
+
+  .error-box {
+    width: 800px;
+    height: 500px;
+    background: $white;
+    border-radius: 5px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    overflow: hidden;
+    padding: 65px;
+
+    .left-panel, .right-panel {
+      width: 50%;
+      float: left;
+      text-align: center;
+    }
+
+    .error-name {
+      font-size: 120px;
+      font-weight: bold;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 14px;
+      opacity: 0.7;
+    }
+  }
+}

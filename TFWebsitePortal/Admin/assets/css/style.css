@@ -1,0 +1,3587 @@
+/*  
+-------------------------------------------------------------------
+*  Theme Name: Kird - HTML5 responsive bootstrap4 admin template  *
+*  Author: Logicwald                                              *
+*  Website: www.logicwald.com                                     *
+*  Version: 1.0                                                   *
+*  Created: April 2020                                            *
+*  File Description:Main css file of the template                 *
+-------------------------------------------------------------------
+*/
+/* CSS Index
+-----------------------------------
+1. Theme default css
+2. Preloader
+3. Header
+   3.1 Mobile search
+4. Sidebar
+5. Right sidebar
+6. Dashboard
+   6.1 Projects
+   6.2 E-commerce
+7. Web apps
+   7.1 Email
+       7.1.1 Inbox
+	   7.1.2 Read
+	   7.1.3 Compose
+	7.2 Chat
+	7.3 Calendar 
+	    7.3.1 Basic
+		7.3.2 Event
+8. Components
+   8.1 UI kit
+       8.1.1 Badge
+	   8.1.2 Card
+   8.2 Advance UI 
+       8.2.1 Sweet alert
+   8.3 Forms  	   
+       8.3.1 Advance
+	   8.3.2 Wizard
+   8.4 Charts	
+       8.4.1 Flot 
+   8.5 Tables
+       8.5.1 Data tables
+   8.6 Icon
+       8.6.1 Font awosome 
+	   8.6.2 Flag icon       	   	        	   
+9. Pages
+   9.1 Special Pages 
+       9.1.1 Profile 
+	   9.1.2 Invoice
+	   9.1.3 Faq 
+	   9.1.4 Pricing
+   9.2 Authentication
+   9.3 Error 	      
+10.Footer   
+*/
+
+/*
+* ----------------------------------------------------------------------------------------
+* 1. Theme default css
+* ----------------------------------------------------------------------------------------
+*/
+body {
+     font-size: 14px;
+     font-family: 'Poppins', sans-serif;
+     font-weight:400;
+	 font-style: normal;
+	 color: #231F20;
+}
+a {
+	color: #231F20;
+	transition: all 0.3s ease-out 0s;
+}
+
+a:hover,
+a:active,
+a:focus {
+	outline: none;
+	text-decoration: none;
+	transition: all 0.3s ease-out 0s;
+	color: #F79E1B;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Poppins", sans-serif;
+}
+.btn:focus, .btn.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.25);
+}
+.theme.btn
+{
+border: 0px;
+font-size: 14px;
+border-radius: 25px;
+padding-left: 35px;
+padding-right: 35px;
+padding-top:10px;
+padding-bottom:10px;
+margin-top:15px;
+outline:none;
+text-decoration:none;
+color:#FFF !important;	
+}
+.theme.btn-primary
+{
+background:#F79E1B;
+}
+.theme.btn-primary:hover, 
+.theme.btn-primary:focus, 
+.theme.btn-primary:active
+{
+	outline:none;
+	color:#fff;
+	background-color: #231F20 !important;
+    box-shadow:none  !important;
+}
+
+.theme.btn-secondary:hover, 
+.theme.btn-secondary:focus, 
+.theme.btn-secondary:active
+{
+	outline:none;
+	color:#fff;
+	background-color: #231F20 !important;
+    box-shadow:none  !important;
+}
+input:hover, input:focus, input:active
+{
+		outline:none;
+    box-shadow:none  !important;
+}
+.list
+{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+.font-size-20
+{
+	font-size:20px !important;
+}
+.margin-top-30
+{
+	margin-top:30px;
+}
+.background1
+{
+	background:#231F20;
+}
+.status
+{
+	width:10px;
+	height:10px;
+	border-radius:100%;
+	border:1px solid #FFF;
+	background:#000;
+	position:absolute;
+	right:0px;
+	top:0px;
+}
+.modal-backdrop {
+	z-index:9999;
+}
+.modal {
+	z-index:99999;
+}
+
+.custom-dropdown a.head {
+    font-size: 12px;
+    font-weight: 400;
+    color: #231F20;
+    padding: 5px 15px;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.custom-dropdown .dropdown-menu a {
+    font-size: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.custom-dropdown .dropdown-menu {
+    -webkit-animation-name: dropdownAnimation;
+    animation-name: dropdownAnimation;
+    -webkit-animation-duration: .2s;
+    animation-duration: .2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    margin: 0px;
+        margin-top: 0px;
+    padding: 0px;
+    margin-top: 5px;
+}
+.custom-dropdown a.head:hover {
+    background: #F79E1B;
+    color: #FFF;
+    border-color: #F79E1B;
+}
+.accordion.custom .card .card-header {
+    border: 1px solid #DDD;
+    padding: 15px;
+    background: none;
+    margin-bottom: 0px;
+}
+.accordion.custom .card .card-header a {
+    font-size: 14px;
+}
+.accordion.custom .card {
+    box-shadow: none;
+    border-radius: 0px;
+    margin-bottom: 15px;
+}
+.accordion.custom .card .card-header a i {
+    position: relative;
+    top: 5px;
+    -moz-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+.accordion.custom .card-body {
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    opacity: 0.7;
+}
+.theme-checkbox
+{
+	position:relative;
+}
+.theme-checkbox  input[type="checkbox"] {
+    opacity: 0;
+	margin-right:10px;
+}
+.theme-checkbox::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+    border: 2px solid #e6e6e6;
+    top: 2px;
+    left: 0;
+    border-radius: 5px;
+    position: absolute;
+}
+.theme-checkbox.tick::after {
+    top: 1px;
+    left: -1px;
+    width: 20px;
+    height: 20px;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: "\f00c";
+    font-size: 10px;
+    text-align: center;
+    color: #28a745;
+    background-color: transparent;
+    line-height: 20px;
+    display: none;
+    border-radius: 5px;
+    position: absolute;
+}
+.theme-checkbox.tick::after {
+    display: block;
+}
+.border-bottom-with-margin {
+    border-bottom: 1px solid #DDD;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+.owl-theme .owl-dots .owl-dot span {
+    width: 15px;
+    height: 5px;
+    margin: 5px;
+    background: #fff;
+    display: block;
+    -webkit-backface-visibility: visible;
+    transition: opacity 200ms ease;
+    border-radius: 30px;
+    opacity: 0.2;
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #F79E1B;
+    opacity: 1;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 2. Preloader
+* ----------------------------------------------------------------------------------------
+*/
+.preloader
+{
+text-align: center;
+position: fixed;
+width: 100%;
+background:rgba(255,255,255,0.9);
+top: 0px;
+bottom: 0px;
+right: 0px;
+left: 0px;
+z-index: 999;
+height:100%;
+}
+.preloader .spinner-grow
+{
+	position:absolute;
+	top:0px;
+	bottom:0px;
+	margin:auto;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 3. Header
+* ----------------------------------------------------------------------------------------
+*/
+header
+{
+	background:#FFF;
+	height:55px;
+	border-bottom:1px solid #DDD;
+	position:fixed;
+	width:100%;
+	z-index:999;
+	left:0px;
+	right:0px;
+}
+header .logo
+{
+width: 55px;
+border-right: 1px solid #DDD;
+height: 55px;
+display:inline-block;
+}
+header .logo a
+{
+display: block;
+padding: 12px;
+}
+header .search
+{
+	display:inline-block;
+	margin-left:27px;
+}
+header .search i
+{
+	opacity: 0.6;
+    position: relative;
+    top: 1px;
+}
+header .search input
+{
+	border:0px;
+	padding-left: 5px;
+}
+header .dropdown-menu
+{	border: 0px;
+	border-radius: 0px;
+	margin: 0px;
+padding: 0px;
+    width:280px;
+	border-left: 1px solid #DDD;
+	border-bottom: 1px solid #DDD;
+	border-right: 1px solid #DDD;
+
+}
+header .icon-group .icon
+{
+	display:inline-block;
+}
+header .right-panel
+{
+	float:right;
+	padding-right:30px;
+	position:relative;
+	height:55px;
+}
+header .right-panel a.head
+{
+line-height: 55px;
+min-height: 55px;
+display: inline-block;
+}
+header .right-panel ul
+{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+header .right-panel ul li
+{
+	display:inline-block;
+	margin-left: 20px;
+	position:relative;
+}
+header .right-panel ul li:after
+{
+content: "";
+width: 1px;
+height: 20px;
+position: absolute;
+top: 17px;
+background:
+#CCC;
+right: -7px;
+}
+header .right-panel ul li:last-child:after
+{
+	display:none;
+}
+header .icon-group a.head
+{
+	font-size:16px;
+	margin-right:15px;
+	cursor:pointer;
+	position: relative;
+}
+header .icon-group a.head:hover {
+	color:#F79E1B;
+
+}
+.pulse-animation.message:before
+{
+	content:"";
+	right: -2px;
+}
+header #chat span
+{
+	width: 12px;
+position: absolute;
+height: 12px;
+background:
+#CCC;
+display: block;
+font-size: 8px;
+line-height: 12px;
+text-align: center;
+top: 15px;
+right: -5px;
+border-radius: 25px;
+color:
+#FFF;
+}
+header #chat span:before
+{
+	top:3.5px;
+	right:3.5px;
+	z-index:-9;
+}
+header .language-dropdown .dropdown-item:hover, header .language-dropdown .dropdown-item:focus {
+    color: 
+#FFF;
+text-decoration: none;
+background-color:
+    #231F20;
+}
+header .dropdown-header 
+{
+	background: #231F20;
+	overflow:hidden;
+	padding-top:15px;
+	padding-bottom:15px;
+	padding-left: 20px;
+    padding-right: 20px;
+}
+
+header .dropdown-body a
+{
+	padding-left:20px;
+	padding-right:20px;
+}
+header .webapps .dropdown-body
+{
+	padding:20px;
+}
+header .webapps a
+{
+	padding-left:0px;
+	padding-right:0px;
+}
+header .webapps .icon-box
+{
+width: 42px;
+height: 42px;
+line-height: 42px;
+background:
+rgba(100,100,100,0.1);
+border-radius: 100%;
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+font-size: 14px;
+}
+.webapps .icon
+{
+	width: 35px;
+
+height: 35px;
+
+border-radius: 100%;
+
+background: rgba(100,100,100,0.1);
+
+line-height: 35px;
+
+font-size: 14px;
+}
+.webapps .name
+{
+	font-size:12px;
+	opacity:0.7;
+	margin-top:5px;
+}
+header .dropdown-header .count
+{
+	color:#EEE;
+	float:left;
+	font-size:12px;
+}
+header .dropdown-header .action-btn
+{
+float: right;
+font-size: 11px;
+position: relative;
+top: 2px;
+}
+header .language-dropdown  a.head
+{
+	font-size:14px;
+	cursor: pointer;
+	position:relative;
+	top:-2px;
+}
+header .language-dropdown .dropdown-menu
+{
+	margin-top:-1px;
+	width:150px;
+}
+header .language-dropdown .dropdown-menu a
+{
+	padding-top:10px;
+	padding-bottom:10px;
+}
+header .dropdown-divider {
+    margin: 0rem 0;
+}
+header .dropdown-menu .dropdown-item {
+    font-size: 13px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+header .left-side-image .icon-box {
+	width: 35px;
+	height: 35px;
+	border-radius: 100%;
+	text-align: center;
+	line-height: 35px;
+	font-size: 14px;
+	font-weight: 600;
+	display: inline-block;
+	margin-right: 10px;
+	vertical-align: top;
+	background: rgba(100,100,100,0.1);
+}
+header .left-side-image .content .description {
+    font-size: 12px;
+    opacity: 0.7;
+}
+header .left-side-image .icon-box {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 35px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+    background: rgba(100,100,100,0.1);
+}
+header .left-side-image .content {
+    display: inline-block;
+}
+header .left-side-image .profile-pic {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 35px;
+    color: #FFF;
+    font-size: 14px;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+}
+header .dropdown-menu {
+	
+    -webkit-animation-name: dropdownAnimation;
+    animation-name: dropdownAnimation;
+    -webkit-animation-duration: .2s;
+    animation-duration: .2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.language-dropdown .icon
+{
+	width:15px;
+	display:inline-block;
+	margin-right:5px;
+	position: relative;
+	top: -2px;
+}
+.language-dropdown 
+{
+	font-size:14px;
+	color:#231F20;
+}
+.doc-show
+{
+		display:inline-block;
+}
+.doc-hide
+{
+	display:none;
+}
+.active .doc-hide
+{
+	display:block;
+}
+.active .doc-show
+{
+		display:none;
+}
+@-webkit-keyframes dropdownAnimation {
+ 0% {
+  opacity:0;
+  -webkit-transform:translate3d(0,20px,0);
+  transform:translate3d(0,20px,0)
+ }
+ to {
+  opacity:1;
+  -webkit-transform:none;
+  transform:none;
+  -webkit-transform:translateZ(0);
+  transform:translateZ(0)
+ }
+}
+@keyframes dropdownAnimation {
+ 0% {
+  opacity:0;
+  -webkit-transform:translate3d(0,20px,0);
+  transform:translate3d(0,20px,0)
+ }
+ to {
+  opacity:1;
+  -webkit-transform:none;
+  transform:none;
+  -webkit-transform:translateZ(0);
+  transform:translateZ(0)
+ }
+}
+
+.pulse-animation
+{
+	position:relative;
+}
+.pulse-animation:before
+{
+	content: "";
+position: absolute;
+width: 5px;
+height: 5px;
+right: 2px;
+border-radius: 50%;
+top: 19px;
+background:#28a745;
+-webkit-animation: notify-pulse 1s infinite;
+}
+@-webkit-keyframes notify-pulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba(40, 167, 69, 0.7);
+  }
+
+  100% {
+    box-shadow: 0 0 0 8px rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes notify-pulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba(40, 167, 69, 0.7);
+  }
+
+  100% {
+    box-shadow: 0 0 0 8px rgba(0, 0, 0, 0);
+  }
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 3.1 Mobile search
+* ----------------------------------------------------------------------------------------
+*/
+.search-box {
+    background: #FFF;
+    position: relative;
+    top: 55px;
+    left: 0px;
+	padding-left:55px;
+    width: 100%;
+    display: none;
+	border-bottom: 1px solid #DDD;
+	position:fixed;
+	z-index:99;
+}
+.search-box input {
+    border: 0px;
+        border-bottom-color: currentcolor;
+        border-bottom-style: none;
+        border-bottom-width: 0px;
+    padding: 13px;
+   
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 4. Sidebar
+* ----------------------------------------------------------------------------------------
+*/
+.main-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 55px;
+    min-height: 100%;
+    width: 55px;
+    background: #fff;
+	border-right:1px solid #DDD;
+	z-index:9999;
+}
+.list-box
+{
+	overflow-y:scroll;
+}
+.main-menu ul
+{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+.main-menu ul li 
+{
+	text-align:center;
+}
+.main-menu .profile-pic
+{
+
+	position: absolute;
+	width: 38px;
+	height: 38px;
+	margin: auto;
+	left: 0px;
+	right: 0px;
+	bottom: 63px;
+	cursor: pointer;
+
+}
+.main-menu ul li  a
+{
+font-size: 16px;
+color: #231F20;
+padding-top: 15px;
+display: block;
+border-left: 2px solid transparent;
+padding-bottom: 15px;
+}
+.main-menu ul li  a.active
+{
+background:#F2F2F2;
+border-left: 2px solid #F79E1B;
+}
+.main-menu ul li  a:hover
+{
+	background:#EEE;
+	border-left:2px solid #F79E1B;
+}
+.main-menu .profile-pic img
+{
+	border-radius:100%;
+}
+.sub-menu
+{
+width: 240px;
+background: rgba(242,242,242,0.95);
+position: fixed;
+height: 100%;
+left: 55px;
+top: 55px;
+z-index:1;
+margin-left:-255px;
+border-right: 1px solid #DDD;
+transition: all 0.7s ease-in-out;
+z-index:999;
+}
+
+.sub-menu .submenu
+{
+	display:none;
+}
+.sub-menu .submenu.active
+{
+	display:block;
+}
+.sub-menu.open
+{
+	margin-left:0px;
+}
+.sub-menu .title
+{
+	font-size:12px;
+	color: #231F20;
+	text-transform:uppercase;
+	padding:15px;
+}
+.sub-menu .close
+{
+	font-size: 14px;
+	cursor: pointer;
+	margin-top: 15px;
+	margin-right:15px;
+
+}
+.sub-menu ul
+{
+	padding-left:15px;
+
+	padding-right:15px;
+}
+.sub-menu ul li a
+{ 
+    padding:0px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	color: #4d4d4d;
+	font-size: 14px;
+	display: block;
+	font-weight:500;
+}
+.sub-menu ul li ul
+{
+	padding: 0 0 5px 33px;
+	list-style:none;
+
+}
+.sub-menu ul li ul li
+{
+	position:relative;
+}
+.sub-menu ul li ul li a
+{
+	font-size: 13px;
+padding-top: 5px;
+padding-bottom: 5px;
+color:#4d4d4d;
+}
+.sub-menu ul li ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid #231F20;
+    position: absolute;
+    left: -15px;
+    top: 11px;
+    -webkit-transition: all .7s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+.sub-menu ul li ul li a:hover::before
+{
+	border: 1px solid #F79E1B;
+	background:#F79E1B;
+}
+.sub-menu ul li a i
+{
+	margin-right:5px;
+}
+.sub-menu ul li a.active
+{
+	color:#F79E1B;
+}
+.sub-menu ul li a:hover
+{
+	color:#F79E1B;
+}
+.sub-menu ul li ul li a.active::before {
+
+    border: 1px solid 
+
+#F79E1B;
+
+background:
+
+    #F79E1B;
+
+}
+.right-arrow
+{
+	margin-top:4px;
+	margin-right:0px !important;
+	 -moz-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.3s linear;
+	
+}
+.right-line:after
+{
+
+	content: "";
+	width: 1px;
+	height: 20px;
+	position: absolute;
+	top: 17px;
+	background: #CCC;
+	right: -7px;
+
+}
+
+.rotate .right-arrow{
+    -moz-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    transform:rotate(90deg);
+	 -moz-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+.profile-info
+{
+position: absolute;
+bottom: 60px;
+width: 100%;
+padding-left: 15px;
+padding-right:15px;
+
+}
+.profile-info .name
+{
+	font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+.profile-info .position
+{
+	line-height: 1.5;
+
+font-size: 12px;
+
+opacity: 0.8;
+}
+.profile-info .logout
+{
+	position: absolute;
+right: 15px;
+top: 8px;
+}
+.profile-info .logout a
+{
+	color:#000;
+	opacity:0.5;
+}
+.profile-info .logout a:hover
+{
+	opacity:1;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 5. Right sidebar
+* ----------------------------------------------------------------------------------------
+*/
+aside .right-panel
+{
+width: 265px;
+background:
+#FFF;
+position: fixed;
+margin-top: 55px;
+top: 0px;
+bottom: 0px;
+right: 0px;
+z-index: 999;
+border-left: 1px solid
+#DDD;
+padding:15px;
+margin-right:-265px;
+transition: all 0.7s ease-in-out;
+
+}
+aside .right-panel.open {
+	margin-right:0px;
+}
+aside .right-panel .close {
+font-size: 14px;
+cursor: pointer;
+margin-top: 15px;
+margin-right: 15px;
+position: absolute;
+right: 0px;
+top: 0px;
+}
+aside .right-panel h2
+{
+font-size: 16px;
+font-weight: 600;
+}
+.recent-member 
+{
+	padding-top:10px;	
+border-bottom: 1px solid #EEE;
+padding-bottom: 15px;
+margin-bottom: 20px;
+}
+.new-member-list li:first-child {
+    padding-top: 10px;
+
+}
+.recent-member  .member-box {
+	text-align:center;
+}
+.new-member-list
+{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+.new-member-list li
+{
+	padding-top: 15px;
+padding-bottom: 15px;
+border-bottom: 1px solid
+#EEE;
+}
+.member-box
+{
+	position:relative;
+}
+.member-box .pic
+{
+	width:38px;
+	height:38px;
+	border-radius:100%;
+	display:inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+	position:relative;
+}
+.member-box .pic img
+{
+	border-radius:100%;
+}
+.member-box .content
+{
+	display:inline-block;
+}
+.member-box .content .name
+{
+	font-size:14px;
+}
+.member-box .content .chat-text
+{
+	font-size:12px;
+	opacity:0.7;
+}
+.member-box .count-time
+{
+	position:absolute;
+	right:0px;
+	top:3px;
+	text-align:right;
+}
+.member-box .count-time .time
+{
+	font-size:10px;
+	opacity:0.7;	
+}
+.member-box .count
+{
+	float:right;
+}
+.member-box .count span
+{
+width: 14px;
+height: 14px;
+display: block;
+background:
+#CCC;
+    background-color: rgb(204, 204, 204);
+text-align: center;
+font-size: 8px;
+line-height: 15px;
+border-radius: 100%;
+color:
+#FFF;
+margin-top: 7px;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 6. Dashboard
+* ----------------------------------------------------------------------------------------
+*/
+main
+{
+background:#F5F5F5;
+padding-top: 85px;
+padding-bottom: 30px;
+padding-left: 70px;
+padding-right: 15px;
+}
+.title-box
+{
+	margin-bottom:15px;
+}
+.page-title
+{
+font-size: 18px;
+font-weight: 600;
+color:#231F20;
+}
+.title-box .breadcrumb
+{
+	margin:0px;
+	padding:0px;
+	background:none;
+	float:right;
+	font-size:14px;
+	margin-top:3px;
+}
+.title-box .breadcrumb span
+{
+	font-size:12px;
+	opacity:0.5;
+	margin-left:8px;
+	margin-right:8px;
+	position:relative;
+	top:2px;
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 6.1 Project
+* ----------------------------------------------------------------------------------------
+*/
+.small-info-box {
+    background: #FFF;
+    border-radius: 5px;
+    padding: 1.25rem;
+}
+.small-info-box .count {
+    font-size: 24px;
+    font-weight: 700;
+    color: #FFF;
+}
+.small-info-box .name {
+    font-size: 14px;
+    font-weight: 400;
+    color: #FFF;
+    opacity: 0.7;
+}
+.small-info-box i {
+    font-size: 50px;
+    position: absolute;
+    right: 10px;
+    bottom: -5px;
+    color: #FFF;
+    opacity: 0.1;
+}
+main .card .card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #231F20;
+    position: relative;
+}
+main .card .card-title .year-box {
+    float: right;
+}
+main .card .card-title .year-box ul li {
+    float: left;
+}
+main .card .card-title .year-box ul li:first-child a {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+main .card .card-title .year-box ul li a {
+    font-size: 12px;
+    font-weight: 400;
+    color: #231F20;
+    padding: 5px 10px;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+}
+main .card .card-title .year-box ul li:nth-child(2) a {
+    border-right: 0px;
+    border-left: 0px;
+    border-radius: 0px;
+}
+main .card .card-title .year-box ul li:last-child a {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.task-filter .active, .task-filter a:hover {
+    background: #F79E1B;
+    border-color: #F79E1B !important;
+    color: #FFF !important;
+}
+.card-title .badge {
+    font-size: 10px;
+    font-weight: 400;
+    position: relative;
+    left: 11px;
+    top: -1px;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+main .card .card-title .action-btn {
+    float: right;
+    color: #F79E1B;
+    font-size: 12px;
+    margin-top: 5px;
+}
+main .card .card-title .action-btn:hover {
+    color: #231F20;
+}
+.task-box {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #EEE;
+}
+.task-box .check-box
+{
+	vertical-align:top;
+}
+.task-box .check-box .ico-checkbox {
+    margin: 0 0px;
+    margin-right: 5px;
+}
+.task-list .task-title {
+    font-size: 14px;
+    font-weight: 600;
+}
+.task-list .projectname {
+    font-size: 12px;
+    opacity: 0.7;
+}
+.task-list .deadline {
+    float: right;
+}
+.task-list .deadline .name {
+    font-size: 10px;
+    text-align: right;
+    opacity: 0.7;
+}
+.task-list .deadline .date {
+    font-size: 12px;
+}
+.task-list .task-complete .task-title {
+    text-decoration: line-through;
+        text-decoration-color: currentcolor;
+    text-decoration-color: #28a745;
+    animation: strike 2s linear;
+    -webkit-animation: strike 2s linear;
+}
+@-webkit-keyframes strike {
+  from { text-decoration-color: transparent; }
+  to { text-decoration-color: auto; }
+}
+@keyframes strike {
+  from { text-decoration-color: transparent; }
+  to { text-decoration-color: auto; }
+}
+.projectworkload-box {
+    width: 300px;
+    height: 190px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+.project-slider .owl-nav {
+    position: absolute;
+    top: -46px;
+    right: 0px;
+    color: #231F20;
+}
+.projectworkload-widget .dropdown-menu, .recentprojects-widget .dropdown-menu {
+    width: 100px;
+    min-width: 100px;
+}
+.project-slider .owl-nav .owl-prev, .product-slider .owl-nav .owl-prev {
+	border-top: 1px solid #DDD !important;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-left: 1px solid #DDD !important;
+	border-bottom: 1px solid #DDD !important;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+.project-slider .owl-nav .owl-next, .product-slider .owl-nav .owl-next {
+    border-top: 1px solid #DDD !important;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-right: 1px solid #DDD !important;
+    border-left: 1px solid #DDD !important;
+    border-bottom: 1px solid #DDD !important;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.project-slider .owl-nav button span, .product-slider .owl-nav button span {
+    position: relative;
+    top: -3px;
+}
+.project-slider .owl-nav button, .product-slider .owl-nav button {
+    width: 28px;
+    height: 28px;
+    line-height: 28px !important;
+    font-size: 18px !important;
+    margin: 0px !important;
+    outline: none !important;
+}
+.project-slider .owl-nav button:hover, .product-slider .owl-nav button:hover {
+    background: #F79E1B;
+    color: #FFF;
+    background: #F79E1B !important;
+    color: #FFF !important;
+    border-color: #F79E1B !important;
+}
+.project-slider .project-image {
+    width: 160px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+.project-slider .project-tittle {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 600;
+}
+.project-slider .project-meta {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 5px;
+}
+.project-slider .project-meta span {
+    font-weight: 600;
+}
+.project-slider .project-meta .date {
+    opacity: 0.7;
+    font-weight: 400;
+}
+
+.avtar-group ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.avtar-group ul li {
+    display: inline-block;
+    margin-left: -18px;
+}
+.avtar {
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    overflow: hidden;
+    border: 2px solid #FFF;
+    line-height: 27px;
+    text-align: center;
+}
+.status-box .status-title {
+    font-size: 12px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.status-box .progress {
+    height: 4px;
+}
+.meeting-list {
+    margin-top: 30px;
+}
+.meeting-box {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #EEE;
+}
+.meeting-box .date {
+    width: 35px;
+    text-align: center;
+    vertical-align: top;
+    height: 35px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 50%;
+    margin-right: 15px;
+    line-height: 35px;
+    color: #FFF;
+}
+.meeting-box .content {
+    vertical-align: top;
+}
+.meeting-box .date .day {
+    font-size: 12px;
+    font-weight: 600;
+}
+.meeting-box .content .title {
+    font-size: 14px;
+    font-weight: 600;
+}
+.meeting-box .content p {
+    font-size: 12px;
+    opacity: 0.7;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 6.2 E-commerce
+* ----------------------------------------------------------------------------------------
+*/.review-list
+{
+	margin-top:15px;
+}
+.review-list li
+{
+	overflow:hidden;
+	padding-top:15px;
+	padding-bottom:15px;
+	border-bottom:1px solid #DDD;
+	position:relative;
+
+}
+.review-list .user-pic
+{
+
+	width: 45px;
+	height: 45px;
+	border-radius: 100%;
+	overflow: hidden;
+	margin-right:10px;
+	display:inline-block;
+}
+.review-list .date
+{
+font-size: 12px;
+font-weight: 500;
+opacity: 0.9;
+position: absolute;
+top: 18px;
+right: 0px;
+}
+.review-list .info
+{
+	display:inline-block;
+	width:80%;
+}
+.review-list .name
+{
+	font-size:14px;
+	font-weight:700
+}
+.review-list .rating
+{
+	font-size:10px;
+	margin-bottom:5px;
+}
+.review-list .rating i
+{
+	margin-right:2px;
+}
+.review-list .comment
+{
+	font-size:13px;
+	opacity:0.7;
+}
+.topsell-box .content .title {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.topsell-box .content p {
+    font-size: 12px;
+    opacity: 0.7;
+	margin:0px;
+}
+.topsell-box
+{
+	border-bottom: 1px solid #DDD;
+	padding-top: 10px;
+padding-bottom: 5px;
+
+}
+.amezon-logo
+{
+	color:#FF9900;
+}
+.playstation-logo
+{
+	color:#DF0024;
+}
+.op-logo
+{
+	color:#28a745;
+}
+.topsell-box .sellcount
+{
+position: relative;
+top: 10px;
+border: 1px solid #DDD;
+padding: 5px 10px;
+border-radius: 5px;
+font-size: 12px;
+
+}
+.topsell-box .icon
+{
+font-size: 34px;
+display: inline-block;
+margin-right: 10px;
+width: 35px;
+}
+.topsell-box .sellcount span
+{
+	font-weight:700;
+}
+.product-box .image
+{
+	width:210px;
+	margin:auto;
+	margin-top:5px;
+	margin-bottom:10px;
+}
+.product-info .title
+{
+	font-size:16px;
+	font-weight:700;
+	text-align:center;
+}
+.product-info .sellinfo
+{
+	text-align: center;
+
+font-size: 14px
+
+
+margin-top: 5px;
+}
+.product-info .sellinfo span
+{
+	font-weight:700;
+	
+}
+.product-info .sellinfo .views
+{
+opacity: 0.7;
+
+font-weight: 500;
+
+margin-left: 10px;
+}
+.flag-round {
+    width: 22px;
+    margin: auto;
+}
+.product-slider .owl-nav {
+    position: absolute;
+    top: -46px;
+    right: 0px;
+    color: #231F20;
+}
+.product.status-box
+{
+	padding:8px 0px;
+	border:0px;
+	border-radius:5px;
+}
+.hotproducts-box
+{
+	width:265px;
+	height:265px;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	top:-30px;
+}
+#hotproducts .largetext
+{
+	font-size:20px !important;
+	font-weight:700 !important;
+	font-family: "Poppins", sans-serif !important;
+	color: #231F20;
+    transform: translateY(12px) !important;
+	
+}
+#hotproducts .smalltext
+{   
+    font-size:16px !important;
+	font-weight:700 !important;
+	font-family: "Poppins", sans-serif !important;
+	color: #231F20;
+	margin-top:-5px;
+    transform: translateY(0px) !important;
+	opacity:0.5;
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 7. Web apps
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 7.1 Email
+* ----------------------------------------------------------------------------------------
+*/
+i
+{
+	-moz-transition: all 0.2s linear;
+-webkit-transition: all 0.2s linear;
+transition: all 0.3s linear;
+}
+.accordion.custom .card .card-header a.rotate i,
+.head.rotate i
+{
+	-moz-transform: rotate(180deg);
+-webkit-transform: rotate(180deg);
+transform: rotate(180deg);
+-moz-transition: all 0.2s linear;
+-webkit-transition: all 0.2s linear;
+transition: all 0.2s linear;
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 7.1.1 Inbox
+* ----------------------------------------------------------------------------------------
+*/
+.mailbox {
+    background: #FFF;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 2px 2px 15px 0px #EEE;
+}
+.mailbox .header label
+{
+	margin-right:25px;
+	color: rgba(35,32,31,0.7);
+}
+.mailbox .header label.right-line::after
+{
+	right:-14px !important;
+}
+.mailbox .compose-btn i, .mailbox .setting-btn i {
+    margin-left: 5px;
+    font-size: 12px;
+}
+.mailbox .left-panel {
+    width: 20%;
+    float: left;
+}
+.mailbox .compose-btn a, .mailbox .setting-btn a {
+    height: 55px;
+    line-height: 55px;
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+    text-align: center;
+    color: #FFF;
+}
+.menu-list {
+    padding: 20px;
+}
+.menu-list .head {
+    font-size: 14px;
+    color: #231F20;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.menu-list ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    margin-bottom: 15px;
+    margin-left: 10px;
+	list-style: none;
+}
+.menu-list ul li a {
+    display: block;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: rgba(35,32,31,0.7);
+    font-size: 13px;
+}
+.menu-list ul li a i {
+    margin-right: 5px;
+}
+.menu-list ul li a .badge {
+    font-weight: 500;
+    padding: 5px 10px;
+    font-size: 10px;
+}
+.menu-list ul li a .badge {
+    font-weight: 500;
+    padding: 5px 10px;
+    font-size: 10px;
+}
+.mailbox .right-panel {
+    width: 80%;
+    float: left;
+}
+.mailbox .right-panel .header {
+	height: 55px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #EEE;
+}
+.mailbox .right-panel .header .icon-group a {
+    color: rgba(35,32,31,0.7);
+}
+.right-panel .header .icon-group a:hover {
+    color: rgba(35,32,31,1);
+}
+
+.mailbox .right-panel .header .icon-group i {
+    margin-right: 15px;
+    font-size: 13px;
+}
+.mailbox .right-panel .header .text {
+    font-size: 13px;
+}
+.mailbox .right-panel .body {
+    height: 523px;
+    background: #e6e6e6;
+    overflow-y: scroll;
+    padding: 15px;
+}  
+.mailbox .right-panel .footer {
+    line-height: 55px;
+    height: 55px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-top: 1px solid #EEE;
+}
+.mailbox .right-panel .footer .pagination-count {
+    font-size: 13px;
+    color: rgba(35,32,31,0.7);
+}
+.mailbox .right-panel .footer .btn-group {
+    margin-top: 12px;
+}
+.mailbox .right-panel .btn {
+    border: 1px solid #DDD;
+    font-size: 12px;
+    padding: 5px 10px;
+}
+.mailbox .right-panel .btn:hover {
+    color: #FFF;
+    background: #F79E1B;
+    border-color: #F79E1B;
+} 
+.email-box {
+    background: #FFF;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 400;
+}
+.email-box div:first-child {
+    width: 2%;
+}
+.email-box div:nth-child(2) {
+    width: 3%;
+}
+.email-box div:nth-child(3) {
+    width: 15%;
+}
+.email-box div:nth-child(4) {
+    width: 64%;
+}
+.email-box div:nth-child(5) {
+    width: 2%;
+}
+.email-box div:last-child {
+    width: 10%;
+    text-align: right;
+    font-size: 13px;
+}
+.email-box .message i {
+    font-size: 10px;
+    margin-right: 5px;
+    position: relative;
+    top: -2px;
+}
+.email-box .message span {
+    font-weight: 600;
+}
+.email-box.read {
+    opacity: 0.7;
+}
+.mailbox .right-panel .header .check-box {
+    margin-right: 30px;
+} 
+.mailbox .right-panel .header .icon-group {
+    position: relative;
+    margin-right: 15px;
+} 
+.mailbox .right-panel .header .right-line::after {
+    top: 2px;
+    right: -2px;
+}
+.mailbox .right-panel .check-box.right-line::after
+{
+	right:-15px;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 7.1.2 Read
+* ----------------------------------------------------------------------------------------
+*/
+.single-mail {
+    background: #FFF;
+    padding: 30px;
+    margin-bottom: 15px;
+}
+.single-mail .top {
+    padding-bottom: 15px;
+    overflow: hidden;
+    border-bottom: 1px solid #DDD;
+}
+.single-mail .top .subject {
+    font-size: 16px;
+    font-weight: 700;
+}
+.single-mail .middle .mail-info {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #DDD;
+    opacity: 0.7;
+    font-size: 13px;
+    overflow: hidden;
+}
+.single-mail .middle .mail-info span {
+    font-size: 14px;
+    font-weight: 700;
+}
+.single-mail .middle .content {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.single-mail .middle .content .head, .single-mail .middle .content .company-name {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 14px;
+}
+.single-mail .attachment {
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+.single-mail .attachment .box {
+    border-radius: 10px;
+    border: 1px solid #DDD;
+    height: 180px;
+    position: relative;
+    background: #F7F7F7;
+    overflow: hidden;
+}
+.single-mail .attachment .box .overlay {
+    background: #F79E1B;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    overflow: hidden;
+    z-index: 99;
+    opacity: 0;
+    transition: .3s ease;
+    -webkit-transition: .5s ease;
+}
+.single-mail .attachment .box .download {
+    width: 90px;
+    height: 35px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 999;
+    margin: auto;
+    display: none;
+}
+.single-mail .attachment .box .download a {
+    width: 35px;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    color: #FFF;
+    background: rgba(255,255,255,0.2);
+}
+.single-mail .attachment .box .icon {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+}
+.single-mail .attachment .box .icon i {
+    font-size: 50px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+    top: -15px;
+    opacity: 0.9;
+}
+.single-mail .attachment .box .title {
+    position: absolute;
+    bottom: 0px;
+    padding: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    left: 0px;
+    right: 0px;
+}
+.single-mail .attachment .box .title span {
+    position: absolute;
+    right: 15px;
+    opacity: 0.7;
+}
+.single-mail .attachment .box.preview .title {
+    background: rgba(255,255,255,0.9);
+}
+.single-mail .attachment .box:hover .overlay {
+    opacity: 0.95;
+}
+.single-mail .attachment .box:hover .download {
+    display: block;
+}
+.single-mail .attachment .box .download a:hover {
+    background: rgba(255,255,255,1);
+    color: #222;
+}
+.single-mail .bottom {
+    overflow: hidden;
+    padding-top: 15px;
+    border-top: 1px solid #DDD;
+}
+.single-mail .bottom a {
+    border: 1px solid #DDD;
+    padding: 5px 15px;
+    border-radius: 5px;
+    display: block;
+    font-size: 13px;
+}
+.single-mail .bottom a:hover {
+    color: #FFF;
+    background: #F79E1B;
+    border: 1px solid #F79E1B;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 7.1.3 Compose
+* ----------------------------------------------------------------------------------------
+*/
+.email-editor-box {
+    position: fixed;
+    bottom: 0px;
+    right: 30px;
+    background: #FFF;
+    width: 580px;
+    height: 450px;
+    z-index: 9999999999;
+    box-shadow: 0px 1px 15px 0px #E8E8E8;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.email-editor-box .header a {
+    color: #FFF;
+    opacity: 0.8;
+    margin-left: 10px;
+}
+.email-editor-box .header a:hover
+{
+	color:#F79E1B;
+}
+.email-editor-box .header {
+    background: #231F20;
+    padding: 15px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+}
+.email-editor-box .header .name {
+    font-size: 14px;
+    color: #FFF;
+}
+.email-editor-box .body {
+    padding: 15px 20px;
+}
+.email-editor-box .body input {
+    width: 100%;
+    height: 40px;
+    border: 0px;
+    border-bottom: 1px solid #EEE;
+}
+.email-editor-box .body textarea {
+    width: 100%;
+    border: 0px;
+    border-bottom: 0px solid #EEE;
+    height: 300px;
+    padding-top: 20px;
+}
+.email-editor-box .footer {
+    padding: 15px 20px;
+    background: #EEE;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    overflow: hidden;
+}
+.email-editor-box .footer .btn {
+    margin-top: 0px;
+}
+.email-editor-box .footer .attchment {
+    display: inline-block;
+    width: 38px;
+    text-align: center;
+    height: 38px;
+    border-radius: 100%;
+    background: rgb(208, 208, 208);
+    line-height: 38px;
+    margin-left: 10px;
+}
+.email-editor-box .footer .delet-btn {
+    margin-top: 7px;
+    display: block;
+    font-size: 16px;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 7.2 Chat
+* ----------------------------------------------------------------------------------------
+*/
+.chat-container
+{
+	background:#FFF;
+	border-radius:5px;
+	overflow:hidden;
+	box-shadow: 2px 2px 15px 0px #EEE;
+}
+.chat-container .profile
+{
+	overflow:hidden;
+}
+.chat-container .profile .right a
+{
+	position:absolute;
+	right:15px;
+	top:25px;
+	color:#FFF;
+	opacity:0.7;
+}
+.chat-container .profile .right a:hover
+{
+	color:#F79E1B;
+}
+.chat-container .profile .pic
+ {
+	 width: 45px;
+
+height: 45px;
+
+border-radius: 100%;
+
+overflow: hidden;
+
+float: left;
+margin-right:15px;
+ }
+ .chat-member ul li.active,
+ .chat-member ul li:hover
+ {
+	 border-bottom:1px solid #28a745;
+ }
+  .chat-member ul li
+  {
+	  cursor:pointer;
+  }
+ .chat-container .profile .info
+ {
+	 float:left;
+ }
+  .chat-container .profile
+ {
+padding-left: 15px;
+
+padding-top: 15px;
+
+padding-bottom: 15px;
+
+padding-right: 15px;
+border-bottom: 1px solid #DDD;
+background:#343a40;
+height:80px;
+ }
+ .chat-container .profile .info .name
+ {
+	 font-size:16px;
+	 font-weight:700;
+	 color:#FFF;
+ }
+ .chat-container .profile .info .position
+ {
+	 font-size:14px;
+	 color:#FFF;
+	 opacity:0.7;
+ }
+.chat-tab
+{
+background:#343a40;
+height:80px;
+padding-top: 19px;
+padding-bottom: 19px;
+}
+
+ .chat-box .header
+ {
+	 height:80px;
+	 padding-top:20px;
+	 padding-left:20px;
+	 padding-right:20px;
+	 padding-bottom:20px;
+	 border-bottom:1px solid #DDD;
+	 
+ }
+ .chat-box .header .right-icon
+ {
+	 margin-top:12px;
+ }
+ .chat-box .header a
+ {
+	 margin-left:15px;
+ }
+ .chat-box .header .pic
+ {
+	 width:40px;
+	 height:40px;
+	 border-radius:100%;
+	 float:left;
+	 margin-right:15px;
+	 position:relative;
+ }
+  .chat-box .header .pic img {
+    border-radius: 100%;
+}
+  .chat-box .header  .name
+  {
+	  font-size:14px;
+	  font-weight:700;
+  }
+  .chat-box .header  .position
+  {
+	  font-size:13px;
+	  opacity:0.7;
+  }
+  .chat-box .body 
+  {
+	  height:500px;
+	  background:#e6e6e6;
+	  padding:30px;
+	  overflow-y: scroll;
+  }
+    .chat-box .body ul
+	{
+		padding:0px;
+		margin:0px;
+	}
+  .chat-box .body ul li
+  {
+	  list-style:none;
+	  margin-bottom: 30px;
+  }
+  .chat-box .body ul li .pic 
+  {
+	  position: relative;
+
+vertical-align: bottom;
+
+  }
+  .chat-box .body ul li .content
+  {
+	  margin-left:10px;
+	  position:relative;
+  }
+  .chat-box .body ul li.host .content
+  {  
+      margin-left:0px;
+	  margin-right:10px;
+	  
+  }
+  .chat-box .body ul li .pic img
+  {
+	  width:35px;
+	  height:35px;
+	  border-radius:100%;
+  }
+   .chat-box .body ul li .bubble
+   {
+	   padding:15px 20px;
+	   background:#FFF;
+	   border-radius:25px;
+	   border-bottom-left-radius:0px;
+   }
+      .chat-box .body ul li .time
+	  {
+		  font-size:10px;
+		  opacity:0.7;
+		  margin-top:5px;
+		  position:absolute;
+	  }
+	   .chat-box .body ul li.host .bubble
+   {
+	    border-bottom-left-radius:25px;
+	   border-bottom-right-radius:0px;
+	  
+   }
+	   .chat-box .body ul li.host .time
+	   {
+		   right:0px;
+	   }
+  
+  .chat-box .body ul li.host
+  {
+	  text-align:right;
+	 
+  }
+   
+   .chat-box .footer
+   {
+	 height: 80px;
+     border-top: 1px solid #DDD;
+     padding-left: 20px;
+     padding-right: 20px;
+     padding-top: 15px;
+     padding-bottom: 15px;
+   }
+	.chat-box .footer .form-group
+	{
+		margin-bottom:0px;
+	}
+ 
+      .chat-box .footer input[type="text"]
+	  {
+		  height:45px;
+		  border-radius:35px;
+		  font-size:14px;
+		  line-height:45px;
+		  padding-left: 50px;
+		  padding-right:50px;
+		  width:100%;
+	  }
+	  .chat-box .footer form
+	  {
+		  position:relative;
+	  }
+	  .chat-box .smily-icon
+	  {
+		     position: absolute;
+    top: 12px;
+    left: 20px;
+	  }
+	   .chat-box .icon-right-group
+	  {
+		  position:absolute;
+		  right: 20px;
+		  top:12px;
+	  }
+	  .chat-box .footer button
+	  {
+		  background: #F79E1B;
+
+border: 0px;
+
+color: #FFF;
+
+width: 45px;
+
+height: 45px;
+
+border-radius: 100%;
+
+font-size: 16px;
+
+line-height: 45px;
+
+text-align: center;
+	  }
+	   .chat-box .footer button:hover
+	  {
+		  background:#231F20;
+	  }
+.chat-tab ul li
+
+{
+	float:left;
+	width:33.33%;
+	text-align:center;
+	position: relative;
+}
+.chat-tab ul li a
+{
+	color:#FFF;
+	font-size:14px;
+	text-transform:capitalize;
+	opacity:0.5;
+}
+.chat-tab ul li a:hover,
+.chat-tab ul li a.active
+{
+	opacity:1;
+}
+.chat-tab ul li:after
+{
+content: "";
+width: 1px;
+height: 35px;
+background: #FFF;
+opacity: 0.10;
+position: absolute;
+top: 5px;
+right: 0px;
+}
+.chat-tab ul li a span
+{
+	display:block;
+	color:#FFF;
+	text-transform:uppercase;
+	font-size:11px;
+	margin-top:2px;
+}
+.chat-tab ul li a i
+{
+	font-size:14px;
+	color:#FFF;
+	
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 7.3 Calendar
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 7.3.1 Basic
+* ----------------------------------------------------------------------------------------
+*/
+.custom-calendar .fc-button-primary {
+    font-size: 14px;
+    text-transform: capitalize;
+}
+.custom-calendar .fc-event {
+    font-size: 12px !important;
+    color: #FFF !important;
+}
+.custom-calendar .fc-day-header {
+    background: #cfd8dd;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 7.3.2 Event
+* ----------------------------------------------------------------------------------------
+*/
+#external-events h4 {
+    font-size: 18px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #DDD;
+    margin-bottom: 15px;
+}
+#external-events-list {
+    margin-top: 25px;
+}
+.custom-calendar #external-events-list .fc-event {
+    font-size: 12px !important;
+    color: #FFF !important;
+    padding: 5px 10px !important;
+    margin-bottom: 15px;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 8. Components 
+* ----------------------------------------------------------------------------------------
+*/
+.card-title .icon-list li {
+    margin-left: 10px;
+}
+.card-title .icon-list a {
+    font-size: 14px;
+    opacity: 0.7;
+}
+.card-title .icon-list a.active {
+    opacity: 1;
+}
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    height: 300px;
+    overflow: hidden;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100% !important;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.flip-card-back {
+    transform: rotateY(180deg);
+    background: #e6e6e6;
+    z-index: 999;
+}
+.flip-card.flipshow .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-back pre {
+    background: none !important;
+}
+.btn-clipboard {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 8.1 UI kit
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 8.1.1 Badge
+* ----------------------------------------------------------------------------------------
+*/
+.badge-pill, a.badge {
+	padding: 10px 15px;
+	font-size: 14px;
+	font-weight: 700;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 8.1.2 Card
+* ----------------------------------------------------------------------------------------
+*/
+.card-group > .card:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    box-shadow: none;
+}
+.card {
+    border: 0px solid #EEE;
+    box-shadow: 2px 2px 15px 0px #EEE;
+}
+.card-text {
+    opacity: 0.7;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 8.2 Advance UI 
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 8.2.1 Sweet alert
+* ----------------------------------------------------------------------------------------
+*/
+.swal2-container {
+    z-index: 9999;
+}
+.swal2-icon-warning .swal2-actions button {
+    margin-bottom: 30px;
+}
+.swal2-actions .swal2-cancel {
+    margin-right: 15px;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 8.3 Forms 
+* ----------------------------------------------------------------------------------------
+*/
+.form-control {
+    font-size: 14px;
+    padding: 20px 15px;
+}
+.custom-select.form-control, 
+.custom-date.form-control
+{
+    padding: 0px 10px;
+    height: 45px;
+    line-height: 40px;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 8.3.1 Advance 
+* ----------------------------------------------------------------------------------------
+*/
+.cmxform .form-group
+{
+	position:relative;
+}
+.cmxform .error
+{
+	position: absolute;
+	font-size: 12px;
+	margin-top: 5px !important;
+	right: 0px;
+}
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+	height:40px;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+
+    line-height: 40px;
+    padding-left: 15px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 38px;
+    position: absolute;
+    top: 1px;
+    right: 10px;
+    width: 20px;
+}
+.select2-container--default .select2-selection--multiple {
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    cursor: text;
+	height: 40px;
+}
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+     border: 1px solid #ced4da;
+    outline: 0;
+    height: 40px;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #F79E1B;
+    border: 0px solid #aaa;
+    border-radius: 3px;
+    cursor: default;
+    float: left;
+    margin-right: 7px;
+    margin-top: 7px;
+    padding: 3px 7px;
+	font-size:12px;
+	color:#FFF;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+
+    color: #FFF;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 5px;
+
+}
+.twitter-typeahead {
+    max-width: 100%;
+}
+.typeahead
+{
+	background-color: white;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    cursor: text;
+	height: 40px;
+	padding-left:15px;
+	padding-right:15px;
+	width: 100%;
+}
+.tt-menu {
+    width: 100%;
+    margin: 0 0 12px 0;
+	margin-top:-2px;
+    padding: 8px 0;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+}
+.tt-suggestion {
+    padding: 3px 20px;
+    font-size: inherit;
+}
+.dropzone {
+min-height: 200px;
+border: 1px solid #ced4da;
+background: white;
+padding: 20px 20px;
+border-radius: 5px;
+}
+.dropzone .dz-message {
+    text-align: center;
+    margin: 0px;
+    line-height: 150px;
+    font-size: 18px;
+}
+.dropify-wrapper {
+
+   border: 1px solid #ced4da;
+   border-radius:5px;
+}
+.dropify-wrapper .dropify-message span.file-icon::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '\f382';
+    font-size: 24px;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 8.3.2 Wizard 
+* ----------------------------------------------------------------------------------------
+*/
+.step-app > .step-steps > li.active a {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px 25px;
+    font-size: 14px;
+    font-weight: 700;
+}
+.step-app > .step-steps > li > a > .number {
+
+    background: #fff;
+	border-radius: 100%;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0px;
+}
+.step-app > .step-steps {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+}
+.step-app > .step-steps > li > a {
+display: block;
+padding: 20px 25px;
+color: #FFF;
+background-color: #6c757d;
+text-decoration: none;
+border-right: 1px solid #8e8e8e;
+font-weight: 700;
+
+}
+.step-app > .step-content
+{
+	padding:30px;
+}
+.step-app > .step-footer {
+    margin-top: 0px;
+    margin-bottom: 15px;
+    text-align: right;
+	padding: 15px 20px;
+    border-bottom: 1px solid #DDD;
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+	background: #F5F5F5;
+
+}
+.step-app > .step-footer button
+{
+	margin-top:0px;
+}
+.step-app label
+{
+	font-weight:400;
+	font-size:14px;
+}
+.step-app .gl-star-rating-stars > span {
+    width: 25px;
+    height: 25px;
+    background-size: 25px;
+}
+.step-app .gl-star-rating-text {
+	position:relative;
+	top:-5px;
+	left:10px;
+}
+.step-app > .step-steps > li.done a {
+    background-color: #28a745;
+    color: #fff;
+	border-right: 1px solid #CCC;
+}
+.step-app > .step-steps > li > a:hover {
+    background-color: #333;
+}
+.step-app .error
+{
+	color:red;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 8.4 Charts
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 8.4.1 Flot
+* ----------------------------------------------------------------------------------------
+*/
+.flot-chart-example-wrapper .flot-chart-example {
+	width: 100%;
+	position: relative;
+	max-width: none;
+	height: 300px;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 8.5 Tables
+* ----------------------------------------------------------------------------------------
+*/
+.table:not(.table-bordered) thead th {
+    border-top: none;
+    border-bottom-width: 1px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #231F20;
+}
+.table:not(.table-bordered) td {
+    vertical-align: middle;
+    line-height: 1;
+    white-space: nowrap;
+}
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+.table-responsive a {
+    opacity: 0.8;
+}
+.table.table-dark thead tr th {
+	color: #b5b5b5;
+}
+.table-dark th, .table-dark td, .table-dark thead th {
+    border-color: #454d55 !important;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 8.5.1 Data tables
+* ----------------------------------------------------------------------------------------
+*/
+.dt-bootstrap4 .row:first-child
+{
+  padding:20px 25px;
+}
+.dt-bootstrap4 .row:nth-child(2)
+{background: #e6e6e6;
+padding:15px;
+}
+.dt-bootstrap4 .row:last-child
+{
+	padding:20px 25px;
+}
+.dt-bootstrap4 label
+{
+	margin-bottom:0px;
+}
+.dt-bootstrap4 .form-control
+{
+	height:40px;
+}
+.dt-bootstrap4 .custom-select
+{
+	margin-left:10px;
+	margin-right:10px;
+}
+.dt-bootstrap4  .dataTable tr th,
+.dt-bootstrap4  .dataTable tr td
+{
+	background:#FFF;
+	padding:20px 15px !important;
+}
+.table.dataTable thead .sorting_asc::before,
+.table.dataTable thead .sorting_asc::after ,
+.table.dataTable thead .sorting::before,
+.table.dataTable thead .sorting::after,
+.table.dataTable thead .sorting_desc::after,
+.table.dataTable thead .sorting_desc::before
+{
+	position:absolute;
+	top:20px;
+}
+.dt-bootstrap4  .table.dataTable {
+
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 8.6 Icon
+* ----------------------------------------------------------------------------------------
+*/
+.icon-page section {
+    padding: 30px 20px;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 8.6.1 Font awosome
+* ----------------------------------------------------------------------------------------
+*/
+.icon-demo-content i {
+    display: block;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+.icon-demo-content {
+    text-align: center;
+    color: #4d4d4d;
+}
+.icon-demo-content .col-sm-6 {
+    margin-bottom: 30px;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 8.6.2  Flag icon
+* ----------------------------------------------------------------------------------------
+*/
+.flag-icon-list div {
+    cursor: pointer;
+    line-height: 40px;
+    white-space: nowrap;
+    color: #4d4d4d;
+}
+.flag-icon-list i {
+    font-size: 16px;
+    margin: 0 15px 0 10px;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 9. Pages
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 9.1 Special pages 
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 9.1.1 Profile
+* ----------------------------------------------------------------------------------------
+*/
+
+.profile-box
+{
+box-shadow: 2px 2px 15px 0px #EEE;	
+}
+.profile-box .header
+{
+	background:url(../images/profile-bg.jpg);
+	background-attachment:fixed;
+	background-size:100%;
+	position:relative;
+height: 250px;
+
+border-top-left-radius: 5px;
+
+border-top-right-radius: 5px;
+overflow:hidden;
+background-size:cover;
+background-position:center center;
+}
+.profile-box .header .overlay
+{
+	background:#000;
+	position:absolute;
+	width:100%;
+	height:100%;
+	left:0px;
+	bottom:0px;
+	right:0px;
+	top:0px;
+	opacity:0.5;	
+}
+.profile-box .header .edit-btn
+{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+.profile-box .header .edit-btn a
+{
+	color:#FFF;
+}
+.profile-box .header .edit-btn a:hover
+{
+	color:#F79E1B;
+}
+.profile-box .header .follower-box
+{
+	text-align: center;
+color: #FFF;
+position: absolute;
+font-size: 30px;
+font-weight: 900;
+right: 30px;
+bottom: 20px;
+}
+.profile-box .header .follower-box  div
+{
+	display:inline-block;
+	margin-left:15px;
+}
+.profile-box .header .follower-box  div span
+{
+	font-size:14px;
+	color:#FFF;
+	opacity:0.7;
+	font-weight:600;
+}
+.profile-box .body
+{
+	background:#FFF;
+	border-bottom-left-radius:5px;
+	border-top-right-radius:5px;
+
+}
+.profile-box .left-panel, .profile-box .right-panel
+{
+	padding:30px;
+}
+.profile-box .left-panel .widget:last-child,
+.profile-box .right-panel .widget:last-child
+{
+	margin-bottom:0px;
+	border-bottom:0px solid #CCC;
+	padding-bottom:0px;
+}
+.profile-box .body .profile-info-box 
+{
+	text-align:center;
+}
+.profile-box .body .profile-info-box .profile-pic
+{
+	width: 115px;
+
+height: 115px;
+
+border-radius: 100%;
+
+overflow: hidden;
+
+border: 5px solid #CCC;
+
+margin: auto;
+margin-top:-90px;
+}
+.profile-box .body .profile-info-box .name
+{
+font-size: 18px;
+
+font-weight: 600;
+
+margin-top: 10px;
+}
+.profile-box .body .profile-info-box .position
+{
+	font-size:14px;
+	opacity:0.7;
+	margin-top:2px;
+}
+.profile-box .body .profile-info-box ul
+{
+	margin-top:30px;
+	margin-bottom:20px;
+}
+.profile-box .body .profile-info-box ul
+{
+	    margin-top: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #EEE;
+    padding-bottom: 20px;
+	overflow:hidden;
+
+}
+.profile-box .body .profile-info-box ul li
+{
+	float:left;
+	width:33.33%;
+	text-align:center;
+}
+.profile-box .body .profile-info-box ul li .count
+{
+  font-size:18px;
+  font-weight:600;	
+}
+.profile-box .body .profile-info-box ul li .name
+{
+	font-size:14px;
+	font-weight:500;
+	margin-top:0px;
+	opacity:0.7;
+}
+.profile-box .timeline-part
+{
+background: #e6e6e6;
+padding:30px;
+}
+.profile-box .timeline-part #statustype-box
+{
+	height:100px;
+	padding:20px;
+}
+.profile-box .timeline-part .card
+{
+
+	margin-bottom:30px;
+}
+.profile-box .timeline-part .card 
+{
+	padding:30px;
+}
+.profile-box .timeline-part .card:first-child .card-body
+{
+	padding-top:0px;
+	padding-bottom:0px;
+}
+.profile-box .timeline-part .card:first-child button
+{
+	margin-top:10px;
+	float:left;
+	margin-right:15px;
+}
+.profile-box .timeline-part .card:first-child ul
+{
+margin-top: 10px;
+
+position: relative;
+
+top: 12px;
+
+float: left;
+}
+.profile-box .timeline-part .card:first-child ul li
+{
+	margin-left:5px;
+	margin-right:5px;
+	display:inline-block;
+}
+.profile-box .timeline-part .card:first-child ul li a
+{
+	opacity:0.7;
+}
+.profile-box .timeline-part .card:first-child ul li a:hover
+{
+	opacity:1;
+	color:#231F20;
+}
+.profile-box .timeline-part .card:last-child
+{
+	margin-bottom:0px;
+}
+.profile-box .timeline-part .card .card-header
+{
+	margin:0px;
+	padding:0px;
+	background: #FFF;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #EEE;
+	
+}
+.profile-box .timeline-part .card .card-header .more-btn
+{
+	margin-top:10px;
+	display:block;
+}
+.profile-box .timeline-part .card .card-header .profile-thumbnail
+{
+	width:45px;
+	height:45px;
+	border-radius:100%;
+	overflow:hidden;
+	float:left;
+	margin-right:15px;
+}
+.profile-box .timeline-part .card .card-header .name
+{
+	font-size:16px;
+	font-weight:600;
+}
+.profile-box .timeline-part .card .card-header .time
+{
+	font-size:13px;
+	opacity:0.7;
+}
+.profile-box .timeline-part .card .card-body
+{
+	margin:0px;
+	padding:0px;
+	padding-top:30px;
+	padding-bottom:30px;
+}
+.profile-box .timeline-part .card .card-footer
+{
+	margin:0px;
+	padding:0px;
+	background:#FFF;
+	padding-top:15px;
+}
+.profile-box .timeline-part .card .card-footer ul li
+{
+	display:inline-block;
+	margin-right:10px;
+}
+.profile-box .timeline-part .card .card-footer ul li a i
+{
+	margin-right:2px;
+}
+.profile-box .timeline-part .card .card-footer ul li a
+{
+	opacity:0.7;
+	font-size:13px;
+}
+.profile-box .timeline-part .card .card-footer ul li a:hover
+{  
+    opacity:1; 
+	color: #231F20;
+}
+.video .video-box .video-preview {
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.video .video-box .video-preview::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: #000;
+    opacity: 0.7;
+    z-index: 1;
+}
+.video .video-box .video-preview i {
+    position: absolute;
+    z-index: 2;
+    color: #FFF;
+    text-align: center;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 16px;
+    margin: auto;
+    height: 16px;
+}
+.widget {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #EEE;
+}
+.widget p {
+    font-size: 14px;
+    opacity: 0.7;
+}
+.widget ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+.widget.gallery .image {
+    border-radius: 5px;
+    overflow: hidden;
+}
+.widget .head {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.skill-box {
+    margin-bottom: 15px;
+}
+.skill-box .name {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 5px;
+}
+.skill-box .progress {
+    height: 3px;
+    width: 90%;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 9.1.2 Invoice
+* ----------------------------------------------------------------------------------------
+*/
+.invoice-box .logo {
+    width: 60px;
+    margin-bottom: 30px;
+}
+.invoice-box .label {
+    margin-bottom: 5px;
+    opacity: 0.7;
+}
+.invoice-box .big-value
+{
+	font-size:22px;
+	font-weight:700;
+}
+.invoice-box .card-body
+{
+	padding:50px;
+}
+.invoice-box .badge
+{
+	padding: 7px 15px;
+font-weight: 600;
+
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 9.1.3 Faq
+* ----------------------------------------------------------------------------------------
+*/
+.faq-container {
+    padding: 30px;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 9.1.4 Pricing
+* ----------------------------------------------------------------------------------------
+*/
+.price-container {
+    padding: 30px 100px;
+}
+.price-box .head {
+    background: #F79E1B;
+    padding: 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    text-align: center;
+}
+.price-box .head .plan-name {
+    text-align: center;
+    font-size: 16px;
+    color: #FFF;
+    margin-bottom: -5px;
+    font-weight: 500;
+}
+.price-box .head .price {
+    font-size: 50px;
+    color: #FFF;
+    margin-top: 5px;
+    font-weight: 700;
+}
+.price-box .head .per {
+    color: #FFF;
+    opacity: 0.7;
+    font-size: 12px;
+    margin-top: -10px;
+}
+.price-box .body {
+    padding: 30px;
+    border: 1px solid #DDD;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.price-box ul li {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.price-box ul li .fa-check {
+    color: #28a745;
+}
+.price-box ul li i {
+    margin-right: 10px;
+}
+.price-box ul li .fa-times {
+    color: #dc3545;
+}
+.price-box ul li .mute {
+    opacity: 0.7;
+}
+.price-box .body .buy-btn {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.price-box .body .buy-btn a {
+    background: #231F20;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    color: #FFF;
+}
+.price-box .body .buy-btn a:hover {
+    background: #F79E1B;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 9.2 Authentication 
+* ----------------------------------------------------------------------------------------
+*/
+.form-bg-slider .container {
+    height: 100vh;
+}
+.form-bg-slider .container .icon {
+    width: 300px;
+    float: right;
+    margin-right: 26%;
+}
+.form-bg-slider .container .slider-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+    margin-top: 7%;
+}
+.form-bg-slider .container .slider-description {
+    font-size: 16px;
+    line-height: 24px;
+    opacity: 0.5;
+    color: #FFFFFF;
+}
+.form-bg-slider .owl-dots {
+    position: fixed;
+    z-index: 99;
+    bottom: 38%;
+    transform: translate(-50%);
+    left: 50%;
+    margin-left: -528px;
+}
+.form-box {
+    position: fixed;
+    width: 350px;
+    height: 100vh;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 9;
+    background: #FFF;
+    padding: 40px;
+}
+.form-box form {
+    text-align: center;
+}
+.form-box .display-table {
+    height: 100vh;
+    margin-top: -20%;
+	display:table;
+}
+.form-box .display-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+.form-box .logo {
+    width: 70px;
+    margin: auto;
+    margin-bottom: 10%;
+}
+
+.form-box .title {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 600;
+    color: #231F20;
+}
+.form-box .or {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #231F20;
+}
+.form-box ul.social {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.form-box ul.social li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid #CCC;
+    line-height: 40px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.form-box ul.social li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.form-box ul.social li:first-child a {
+    background: #4267B2;
+    border: 0px;
+    color: #FFF;
+}
+.form-box ul.social li:nth-child(2) a {
+    background: #00ACAA;
+    border: 0px;
+    color: #FFF;
+}
+.form-box ul.social li:last-child a {
+    background: #0E76A8;
+    border: 0px;
+    color: #FFF;
+}
+.form-box ul.social li a:hover {
+    opacity: 0.8;
+}
+.form-box input {
+    border: 1px solid #CCC;
+    height: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 25px;
+    font-size: 14px;
+}
+.form-box .forgot a {
+    text-align: center;
+    font-size: 14px;
+    color: #231F20;
+    opacity: 0.8;
+    margin-top: 10px;
+    display: block;
+}
+.form-box .forgot a:hover {
+    color: #EB001B;
+}
+.footer-link {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    font-size: 14px;
+    color: #231F20;
+}
+.footer-link a {
+
+    color: #EB001B;
+    text-decoration: none;
+
+}
+.footer-link a:hover {
+    color: #F79E1B;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 9.3 Error
+* ----------------------------------------------------------------------------------------
+*/
+.error-bg {
+    background: #231F20;
+}
+.error-bg .error-box {
+    width: 800px;
+    height: 500px;
+    background: #FFF;
+    border-radius: 5px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    overflow: hidden;
+    padding: 65px;
+}
+.error-bg .error-box .left-panel, .error-bg .error-box .right-panel {
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+.error-bg .error-box .error-name {
+    font-size: 120px;
+    font-weight: bold;
+}
+.error-bg .error-box .title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.error-bg .error-box p {
+    font-size: 14px;
+    opacity: 0.7;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 10. Footer
+* ----------------------------------------------------------------------------------------
+*/
+footer {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: #FFF;
+    padding-left: 70px;
+    padding-right: 15px;
+    border-top: 1px solid #DDD;
+}
+footer .theme-change a
+{
+    visibility:hidden;
+position: fixed;
+
+z-index: 99999;
+
+padding: 7px 20px;
+
+background: #F79E1B;
+
+right: 30px;
+
+bottom: 50px;
+
+border-radius: 5px;
+color:#FFF;
+}
+footer .theme-change a:hover
+{
+	background: #000;
+	color:#FFF;
+}
+.copyright {
+    font-size: 13px;
+    opacity: 0.7;
+}
+.main-footer-link ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.main-footer-link ul li {
+    display: inline-block;
+    margin-left: 15px;
+}
+.main-footer-link ul li a {
+    font-size: 12px;
+    text-transform: uppercase;
+    opacity: 0.7;
+}

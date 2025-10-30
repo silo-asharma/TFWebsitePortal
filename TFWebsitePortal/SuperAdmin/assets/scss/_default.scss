@@ -1,0 +1,253 @@
+/*
+* ----------------------------------------------------------------------------------------
+* 1. Theme default css
+* ----------------------------------------------------------------------------------------
+*/
+
+body {
+  font-size: 14px;
+  font-family: $font-family;
+  font-weight: 400;
+  font-style: normal;
+  color: $primary;
+}
+
+a {
+  color: $primary;
+  transition: all 0.3s ease-out 0s;
+
+  &:hover, &:active, &:focus {
+    outline: none;
+    text-decoration: none;
+    transition: all 0.3s ease-out 0s;
+    color: #F79E1B;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Poppins", sans-serif;
+}
+
+.btn {
+  &:focus, &.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.25);
+  }
+}
+
+.theme {
+  &.btn {
+    border: 0px;
+    font-size: 14px;
+    border-radius: 25px;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 15px;
+    outline: none;
+    text-decoration: none;
+    color: $white !important;
+  }
+
+  &.btn-primary {
+    background: #F79E1B;
+
+    &:hover, &:focus, &:active {
+      outline: none;
+      color: #fff;
+      background-color: $primary !important;
+      box-shadow: none  !important;
+    }
+  }
+
+  &.btn-secondary {
+    &:hover, &:focus, &:active {
+      outline: none;
+      color: #fff;
+      background-color: $primary !important;
+      box-shadow: none  !important;
+    }
+  }
+}
+
+input {
+  &:hover, &:focus, &:active {
+    outline: none;
+    box-shadow: none  !important;
+  }
+}
+
+.list {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+.font-size-20 {
+  font-size: 20px !important;
+}
+
+.margin-top-30 {
+  margin-top: 30px;
+}
+
+.background1 {
+  background: $primary;
+}
+
+.status {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  border: 1px solid $white;
+  background: $dark;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.modal-backdrop {
+  z-index: 9999;
+}
+
+.modal {
+  z-index: 99999;
+}
+
+.custom-dropdown {
+  a.head {
+    font-size: 12px;
+    font-weight: 400;
+    color: $primary;
+    padding: 5px 15px;
+    border: 1px solid $darkborder;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .dropdown-menu {
+    a {
+      font-size: 12px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    -webkit-animation-name: dropdownAnimation;
+    animation-name: dropdownAnimation;
+    -webkit-animation-duration: .2s;
+    animation-duration: .2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    margin: 0px;
+    margin-top: 0px;
+    padding: 0px;
+    margin-top: 5px;
+  }
+
+  a.head:hover {
+    background: #F79E1B;
+    color: $white;
+    border-color: #F79E1B;
+  }
+}
+
+.accordion.custom {
+  .card {
+    .card-header {
+      border: 1px solid $darkborder;
+      padding: 15px;
+      background: none;
+      margin-bottom: 0px;
+
+      a {
+        font-size: 14px;
+
+        i {
+          position: relative;
+          top: 5px;
+          -moz-transition: all 0.2s linear;
+          -webkit-transition: all 0.2s linear;
+          transition: all 0.2s linear;
+        }
+      }
+    }
+
+    box-shadow: none;
+    border-radius: 0px;
+    margin-bottom: 15px;
+  }
+
+  .card-body {
+    border-left: 1px solid $darkborder;
+    border-right: 1px solid $darkborder;
+    border-bottom: 1px solid $darkborder;
+    opacity: 0.7;
+  }
+}
+
+.theme-checkbox {
+  position: relative;
+
+  input[type="checkbox"] {
+    opacity: 0;
+    margin-right: 10px;
+  }
+
+  &::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+    border: 2px solid #e6e6e6;
+    top: 2px;
+    left: 0;
+    border-radius: 5px;
+    position: absolute;
+  }
+
+  &.tick::after {
+    top: 1px;
+    left: -1px;
+    width: 20px;
+    height: 20px;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: "\f00c";
+    font-size: 10px;
+    text-align: center;
+    color: #28a745;
+    background-color: transparent;
+    line-height: 20px;
+
+    display: none;
+    border-radius: 5px;
+    position: absolute;
+    display: block;
+  }
+}
+
+.border-bottom-with-margin {
+  border-bottom: 1px solid $darkborder;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.owl-theme .owl-dots .owl-dot {
+  span {
+    width: 15px;
+    height: 5px;
+    margin: 5px;
+    background: #fff;
+    display: block;
+    -webkit-backface-visibility: visible;
+    transition: opacity 200ms ease;
+    border-radius: 30px;
+    opacity: 0.2;
+  }
+
+  &.active span, &:hover span {
+    background: #F79E1B;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,572 @@
+/*
+* ----------------------------------------------------------------------------------------
+* 8. Components 
+* ----------------------------------------------------------------------------------------
+*/
+
+.card-title .icon-list {
+  li {
+    margin-left: 10px;
+  }
+
+  a {
+    font-size: 14px;
+    opacity: 0.7;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-front {
+  position: absolute;
+  width: 100% !important;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  position: absolute;
+  width: 100% !important;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  background: #e6e6e6;
+  z-index: 999;
+}
+
+.flip-card.flipshow .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-back pre {
+  background: none !important;
+}
+
+.btn-clipboard {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 8.1 UI kit
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 8.1.1 Badge
+* ----------------------------------------------------------------------------------------
+*/
+
+.badge-pill, a.badge {
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 8.1.2 Card
+* ----------------------------------------------------------------------------------------
+*/
+
+.card-group > .card:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  box-shadow: none;
+}
+
+.card {
+  border: 0px solid #EEE;
+  box-shadow: 2px 2px 15px 0px #EEE;
+}
+
+.card-text {
+  opacity: 0.7;
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 8.2 Advance UI 
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 8.2.1 Sweet alert
+* ----------------------------------------------------------------------------------------
+*/
+
+.swal2-container {
+  z-index: 9999;
+}
+
+.swal2-icon-warning .swal2-actions button {
+  margin-bottom: 30px;
+}
+
+.swal2-actions .swal2-cancel {
+  margin-right: 15px;
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 8.3 Forms 
+* ----------------------------------------------------------------------------------------
+*/
+
+.form-control {
+  font-size: 14px;
+  padding: 20px 15px;
+}
+
+.custom-select.form-control, .custom-date.form-control {
+  padding: 0px 10px;
+  height: 45px;
+  line-height: 40px;
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 8.3.1 Advance 
+* ----------------------------------------------------------------------------------------
+*/
+
+.cmxform {
+  .form-group {
+    position: relative;
+  }
+
+  .error {
+    position: absolute;
+    font-size: 12px;
+    margin-top: 5px !important;
+    right: 0px;
+  }
+}
+
+.select2-container--default {
+  .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    height: 40px;
+
+    .select2-selection__rendered {
+      line-height: 40px;
+      padding-left: 15px;
+    }
+
+    .select2-selection__arrow {
+      height: 38px;
+      position: absolute;
+      top: 1px;
+      right: 10px;
+      width: 20px;
+    }
+  }
+
+  .select2-selection--multiple {
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    cursor: text;
+    height: 40px;
+  }
+
+  &.select2-container--focus .select2-selection--multiple {
+    border: 1px solid #ced4da;
+    outline: 0;
+    height: 40px;
+  }
+
+  .select2-selection--multiple {
+    .select2-selection__choice {
+      background-color: #F79E1B;
+      border: 0px solid #aaa;
+      border-radius: 3px;
+      cursor: default;
+      float: left;
+      margin-right: 7px;
+      margin-top: 7px;
+      padding: 3px 7px;
+      font-size: 12px;
+      color: $white;
+    }
+
+    .select2-selection__choice__remove {
+      color: $white;
+      cursor: pointer;
+      display: inline-block;
+      font-weight: bold;
+      margin-right: 5px;
+    }
+  }
+}
+
+.twitter-typeahead {
+  max-width: 100%;
+}
+
+.typeahead {
+  background-color: white;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  cursor: text;
+  height: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+}
+
+.tt-menu {
+  width: 100%;
+  margin: 0 0 12px 0;
+  margin-top: -2px;
+  padding: 8px 0;
+  background-color: $white;
+  border: 1px solid #ced4da;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.tt-suggestion {
+  padding: 3px 20px;
+  font-size: inherit;
+}
+
+.dropzone {
+  min-height: 200px;
+  border: 1px solid #ced4da;
+  background: white;
+  padding: 20px 20px;
+  border-radius: 5px;
+
+  .dz-message {
+    text-align: center;
+    margin: 0px;
+    line-height: 150px;
+    font-size: 18px;
+  }
+}
+
+.dropify-wrapper {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+
+  .dropify-message span.file-icon::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '\f382';
+    font-size: 24px;
+  }
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 8.3.2 Wizard 
+* ----------------------------------------------------------------------------------------
+*/
+
+.step-app {
+  > {
+    .step-steps {
+      > li {
+        &.active a {
+          background-color: #007bff;
+          color: #fff;
+          padding: 20px 25px;
+          font-size: 14px;
+          font-weight: 700;
+        }
+
+        > a {
+          > .number {
+            background: #fff;
+            border-radius: 100%;
+            font-size: 12px;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            padding: 0px;
+          }
+
+          display: block;
+          padding: 20px 25px;
+          color: $white;
+          background-color: #6c757d;
+          text-decoration: none;
+          border-right: 1px solid #8e8e8e;
+          font-weight: 700;
+        }
+      }
+
+      margin: 0;
+      padding: 0;
+      display: flex;
+      border-radius: 5px 5px 0 0;
+      overflow: hidden;
+    }
+
+    .step-content {
+      padding: 30px;
+    }
+
+    .step-footer {
+      margin-top: 0px;
+      margin-bottom: 15px;
+      text-align: right;
+      padding: 15px 20px;
+      border-bottom: 1px solid $darkborder;
+      border-left: 1px solid $darkborder;
+      border-right: 1px solid $darkborder;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      background: #F5F5F5;
+
+      button {
+        margin-top: 0px;
+      }
+    }
+  }
+
+  label {
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .gl-star-rating-stars > span {
+    width: 25px;
+    height: 25px;
+    background-size: 25px;
+  }
+
+  .gl-star-rating-text {
+    position: relative;
+    top: -5px;
+    left: 10px;
+  }
+
+  > .step-steps > li {
+    &.done a {
+      background-color: #28a745;
+      color: #fff;
+      border-right: 1px solid #CCC;
+    }
+
+    > a:hover {
+      background-color: #333;
+    }
+  }
+
+  .error {
+    color: red;
+  }
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 8.4 Charts
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 8.4.1 Flot
+* ----------------------------------------------------------------------------------------
+*/
+
+.flot-chart-example-wrapper .flot-chart-example {
+  width: 100%;
+  position: relative;
+  max-width: none;
+  height: 300px;
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 8.5 Tables
+* ----------------------------------------------------------------------------------------
+*/
+
+.table {
+  &:not(.table-bordered) {
+    thead th {
+      border-top: none;
+      border-bottom-width: 1px;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 13px;
+      color: $primary;
+    }
+
+    td {
+      vertical-align: middle;
+      line-height: 1;
+      white-space: nowrap;
+    }
+  }
+
+  td, th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+  }
+}
+
+.table-responsive a {
+  opacity: 0.8;
+}
+
+.table.table-dark thead tr th {
+  color: #b5b5b5;
+}
+
+.table-dark {
+  th, td, thead th {
+    border-color: #454d55 !important;
+  }
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 8.5.1 Data tables
+* ----------------------------------------------------------------------------------------
+*/
+
+.dt-bootstrap4 {
+  .row {
+    &:first-child {
+      padding: 20px 25px;
+    }
+
+    &:nth-child(2) {
+      background: #e6e6e6;
+      padding: 15px;
+    }
+
+    &:last-child {
+      padding: 20px 25px;
+    }
+  }
+
+  label {
+    margin-bottom: 0px;
+  }
+
+  .form-control {
+    height: 40px;
+  }
+
+  .custom-select {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .dataTable tr {
+    th, td {
+      background: $white;
+      padding: 20px 15px !important;
+    }
+  }
+}
+
+.table.dataTable thead {
+  .sorting_asc {
+    &::before, &::after {
+      position: absolute;
+      top: 20px;
+    }
+  }
+
+  .sorting {
+    &::before, &::after {
+      position: absolute;
+      top: 20px;
+    }
+  }
+
+  .sorting_desc {
+    &::after, &::before {
+      position: absolute;
+      top: 20px;
+    }
+  }
+}
+
+.dt-bootstrap4 .table.dataTable {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 8.6 Icon
+* ----------------------------------------------------------------------------------------
+*/
+
+.icon-page section {
+  padding: 30px 20px;
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 8.6.1 Font awosome
+* ----------------------------------------------------------------------------------------
+*/
+
+.icon-demo-content {
+  i {
+    display: block;
+    font-size: 28px;
+    margin-bottom: 5px;
+  }
+
+  text-align: center;
+  color: #4d4d4d;
+
+  .col-sm-6 {
+    margin-bottom: 30px;
+  }
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 8.6.2  Flag icon
+* ----------------------------------------------------------------------------------------
+*/
+
+.flag-icon-list {
+  div {
+    cursor: pointer;
+    line-height: 40px;
+    white-space: nowrap;
+    color: #4d4d4d;
+  }
+
+  i {
+    font-size: 16px;
+    margin: 0 15px 0 10px;
+  }
+}

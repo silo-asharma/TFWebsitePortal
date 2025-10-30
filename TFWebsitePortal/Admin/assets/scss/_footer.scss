@@ -1,0 +1,52 @@
+/*
+* ----------------------------------------------------------------------------------------
+* 10. Footer
+* ----------------------------------------------------------------------------------------
+*/
+
+footer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: $white;
+  padding-left: 70px;
+  padding-right: 15px;
+  border-top: 1px solid $darkborder;
+
+  .theme-change a {
+    position: fixed;
+    z-index: 99999;
+    padding: 7px 20px;
+    background: #F79E1B;
+    right: 30px;
+    bottom: 50px;
+    border-radius: 5px;
+    color: $white;
+
+    &:hover {
+      background: $dark;
+      color: $white;
+    }
+  }
+}
+
+.copyright {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.main-footer-link ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+
+  li {
+    display: inline-block;
+    margin-left: 15px;
+
+    a {
+      font-size: 12px;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+  }
+}

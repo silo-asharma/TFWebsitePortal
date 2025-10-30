@@ -1,0 +1,1222 @@
+﻿var app = angular.module('myApp', ['ui.bootstrap', 'ng-fusioncharts']);
+//var app = angular.module('myApp', ['ui.bootstrap', 'ng-fusioncharts']).service('reportService', reportService);
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+
+
+var mode = getParameterByName('mode');
+var from = getParameterByName('from');
+var to = getParameterByName('to');
+var year = getParameterByName('year');
+var opt = getParameterByName('opt');
+var product = getParameterByName('product');
+var mproduct = getParameterByName('mproduct');
+var chapter = getParameterByName('chapter');
+var hscode = getParameterByName('hscode');
+var mhscode = getParameterByName('mhscode');
+var importer = getParameterByName('importer');
+var exporter = getParameterByName('exporter');
+var country = getParameterByName('country');
+var port = getParameterByName('port');
+var unit = getParameterByName('unit');
+
+
+
+app.filter('capitalizeWord', function () {
+    return function (text) {
+        return (!!text) ? text.charAt(0).toUpperCase() + text.substr(1).toLowerCase() : '';
+    }
+});
+
+app.controller('datacommonctrl', function ($scope, $http) {
+    $scope.maxSize = 5;     // Limit number for pagination display number.  
+    $scope.totalCount = 0;  // Total number of items in all pages. initialize as a zero  
+    $scope.pageIndex = 1;   // Current page number. First page is 1.-->  
+    $scope.pageSizeSelected = 25; // Maximum number of items per page.  
+    $scope.mode = mode;
+    $scope.from = from;
+    $scope.to = to;
+    $scope.year = year;
+    $scope.opt = opt;
+    $scope.product = product.split(' ').join('_').trim();
+    $scope.mproduct = mproduct.split(' ').join('_').trim();
+    $scope.chapter = chapter;
+    $scope.hscode = hscode;
+    $scope.mhscode = mhscode.split(' ').join('_').trim();
+    $scope.importer = importer.split(' ').join('_').trim();
+    $scope.exporter = exporter.split(' ').join('_').trim();
+    $scope.port = port;
+    $scope.country = country;
+    $scope.unit = unit;
+
+
+    $scope.getEmployeeList = function () {
+    
+        $("#processing").show();
+
+
+
+        $http.get("http://localhost:54863/Search/GetShipment?type=json&pageIndex=" + $scope.pageIndex + "&pageSize=" + $scope.pageSizeSelected + "&mode=" + $scope.mode + "&from=" + $scope.from + "&to=" + $scope.to + "&year=" + $scope.year + "&opt=" + $scope.opt + "&product=" + $scope.product + "&mproduct=" + $scope.mproduct + "&chapter=" + $scope.chapter + "&hscode=" + $scope.hscode + "&mhscode=" + $scope.mhscode + "&importer=" + $scope.importer + "&exporter=" + $scope.exporter + "&port=" + $scope.port + "&country=" + $scope.country + "&unit=" + $scope.unit).then(
+
+
+
+            function (response) {
+
+
+                $scope.totalCount = response.data.totalCount;
+                $scope.employees = response.data.Exports;
+                $scope.imports = response.data.Imports;
+                $("#processing").hide();
+            },
+            function (err) {
+                var error = err;
+            });
+
+
+    }
+
+    //-----Data Binding----------------
+
+    //Loading employees list on first time  
+    $scope.getEmployeeList();
+
+    //This method is calling from pagination number  
+    $scope.pageChanged = function () {
+
+        $scope.getEmployeeList();
+    };
+
+    //This method is calling from dropDown  
+    $scope.changePageSize = function () {
+        $scope.pageIndex = 25;
+        $scope.getEmployeeList();
+    };
+
+  
+    
+
+
+ 
+    //---total---shipppment---end
+    
+    $scope.getDashboardGraph = function () {
+        debugger;
+        //alert("in DashBoard");
+        $scope.maxSize = 5;     // Limit number for pagination display number.  
+        $scope.totalCount = 0;  // Total number of items in all pages. initialize as a zero  
+        $scope.pageIndex = 1;   // Current page number. First page is 1.-->  
+        $scope.pageSizeSelected = 25; // Maximum number of items per page.  
+        $scope.mode = mode;
+        $scope.from = from;
+        $scope.to = to;
+        $scope.year = year;
+        $scope.opt = opt;
+        $scope.product = product.split(' ').join('_').trim();
+        $scope.mproduct = mproduct.split(' ').join('_').trim();
+        $scope.chapter = chapter;
+        $scope.hscode = hscode;
+        $scope.mhscode = mhscode.split(' ').join('_');
+        $scope.importer = importer.split(' ').join('_').trim();
+        $scope.exporter = exporter.split(' ').join('_').trim();
+        $scope.port = port;
+        $scope.country = country;
+        $scope.unit = unit;
+
+        $scope.Name = [];
+        $scope.Total = [];
+        var countrymaster = {};
+        var countryseries = [];
+        var postmaster = {};
+        var portseries = [];
+        var unitmaster = {};
+        var uintseries = [];
+        var importermaster = {};
+        var importerseries = [];
+        var exportermaster = {};
+        var exporterseries = [];
+        var hscodeMaster = {};
+        var hscodeSeries = [];
+       
+   
+            $http.get("http://localhost:54863/Search/GetDashboardlist?type=json&pageIndex=" + $scope.pageIndex + "&pageSize=" + $scope.pageSizeSelected + "&mode=" + $scope.mode + "&from=" + $scope.from + "&to=" + $scope.to + "&year=" + $scope.year + "&opt=" + $scope.opt + "&product=" + $scope.product + "&mproduct=" + $scope.mproduct + "&chapter=" + $scope.chapter + "&hscode=" + $scope.hscode + "&mhscode=" + $scope.mhscode + "&importer=" + $scope.importer + "&exporter=" + $scope.exporter + "&port=" + $scope.port + "&country=" + $scope.country + "&unit=" + $scope.unit).then(
+
+
+                function (response) {
+                   // debugger;
+
+
+                    $scope.Importers = response.data.CountryTotals;
+                    var importerchart = response.data.CountryTotals;
+
+                    if (importerchart != null) {
+
+
+
+                        var i;
+                        for (i = 0; i < importerchart.length; i++) {
+
+
+                            if (typeof countrymaster[importerchart[i].name] === 'undefined') {
+                                countrymaster[importerchart[i].name] = [];
+                            }
+
+
+                            countrymaster[importerchart[i].name].push(importerchart[i].total);
+
+                            if ((i + 1) == importerchart.length) {
+                                Object.keys(countrymaster).forEach(function (key) {
+                                    var countrymaster1 = {
+                                        label: key,
+                                        value: countrymaster[key]
+                                    };
+                                    countryseries.push(countrymaster1);
+                                });
+                            }
+                        }
+
+                    }
+                    //----Port Chart--
+                    $scope.portt = response.data.PortTotals;
+                    var pchart = response.data.PortTotals;
+                    if (pchart != null) {
+                        var j;
+                        for (j = 0; j < pchart.length; j++) {
+
+
+                            if (typeof postmaster[pchart[j].name] === 'undefined') {
+                                postmaster[pchart[j].name] = [];
+                            }
+
+
+                            postmaster[pchart[j].name].push(pchart[j].total);
+
+                            if ((j + 1) == pchart.length) {
+                                Object.keys(postmaster).forEach(function (key) {
+                                    var postmaster1 = {
+                                        label: key,
+                                        value: postmaster[key]
+                                    };
+                                    portseries.push(postmaster1);
+                                });
+                            }
+                        }
+                    }
+                    //----------Unit Chart------
+                    $scope.unt = response.data.UnitTotals;
+                    var uchart = response.data.UnitTotals;
+                    if (uchart != null) {
+
+                        var k;
+                        for (k = 0; k < uchart.length; k++) {
+
+
+                            if (typeof unitmaster[uchart[k].name] === 'undefined') {
+                                unitmaster[uchart[k].name] = [];
+                            }
+
+
+                            unitmaster[uchart[k].name].push(uchart[k].total);
+
+                            if ((k + 1) == uchart.length) {
+                                Object.keys(unitmaster).forEach(function (key) {
+                                    var unitmaster1 = {
+                                        label: key,
+                                        value: unitmaster[key]
+                                    };
+                                    uintseries.push(unitmaster1);
+                                });
+                            }
+                        }
+                    }
+
+                    //----------Importer Chart------
+                    $scope.uimp = response.data.Importers;
+
+                    var ichart = response.data.Importers;
+                    if (ichart != null) {
+                        var m;
+                        for (m = 0; m < ichart.length; m++) {
+
+
+                            if (typeof importermaster[ichart[m].name] === 'undefined') {
+                                importermaster[ichart[m].name] = [];
+                            }
+
+
+                            importermaster[ichart[m].name].push(ichart[m].total);
+
+                            if ((m + 1) == ichart.length) {
+                                Object.keys(importermaster).forEach(function (key) {
+                                    var importermaster1 = {
+                                        label: key,
+                                        value: importermaster[key]
+                                    };
+                                    importerseries.push(importermaster1);
+                                });
+                            }
+                        }
+                    }
+
+                    //----------Exporter Chart------
+                    $scope.uexp = response.data.Consinees;
+                    var echart = response.data.Consinees;
+                    if (echart != null) {
+                        var n;
+                        for (n = 0; n < echart.length; n++) {
+
+
+                            if (typeof exportermaster[echart[n].name] === 'undefined') {
+                                exportermaster[echart[n].name] = [];
+                            }
+
+
+                            exportermaster[echart[n].name].push(echart[n].total);
+
+                            if ((n + 1) == echart.length) {
+                                Object.keys(exportermaster).forEach(function (key) {
+                                    var exportermaster1 = {
+                                        label: key,
+                                        value: exportermaster[key]
+                                    };
+                                    exporterseries.push(exportermaster1);
+                                });
+                            }
+                        }
+                    }
+                    //----------Hscode Chart------
+                    $scope.uhs = response.data.MonthNameTotals;
+                    var hschart = response.data.MonthNameTotals;
+                    if (hschart != null) {
+                        var p;
+                        for (p = 0; p < hschart.length; p++) {
+
+
+                            if (typeof hscodeMaster[hschart[p].name] === 'undefined') {
+                                hscodeMaster[hschart[p].name] = [];
+                            }
+
+
+                            hscodeMaster[hschart[p].name].push(hschart[p].total);
+
+                            if ((p + 1) == hschart.length) {
+                                Object.keys(hscodeMaster).forEach(function (key) {
+                                    var hscodeMaster1 = {
+                                        label: key,
+                                        value: hscodeMaster[key]
+                                    };
+                                    hscodeSeries.push(hscodeMaster1);
+                                });
+                            }
+                        }
+                    }
+
+                },
+
+                function (err) {
+                    var error = err;
+                });
+
+
+        }
+
+        //Loading employees list on first time
+        $scope.getDashboardGraph();
+        const dataSource = {
+            chart: {
+
+
+                "theme": "fusion",
+                "caption": "Country of Origin",
+                "subcaption": "Top Country of Origin",
+
+                "captionFontColor": "#000",
+                "subcaptionFontSize": "13",
+                "captionHorizontalPadding": "25px",
+
+                "subcaptionPadding": "10",
+                "subcaptionFontColor": "#993300",
+                "subcaptionFontBold": "0",
+
+                "legendItemFontSize": "13",
+                "legendposition": "right",
+
+                "legendCaptionAlignment": "right",
+                "legendItemHoverFontColor": "#000",
+                "legendCaptionFontColor": "1",
+                "legendIconAlpha": "80",
+                "usedataplotcolorforlabels": "1",
+                "disableSmartLabels": "1",
+                "smartLineColor": "#000",
+                "showLabels": "0",
+                "showValues": "0",
+                "slicingDistance": "10",
+                "toolTipBgColor": "#000",
+                "toolTipColor": "#fff",
+                "toolTipPadding": "10",
+                "plotToolText": "Country: $label <br> Value in (USD): $dataValue <br> $displayValue",
+                "showToolTipShadow": "1",
+                "toolTipBorderColor": "#000",
+                "tooltipborderradius": "5",
+
+                "plotHoverEffect": "1",
+
+
+
+
+
+
+
+
+            },
+
+
+            "data": countryseries
+        };
+
+        $scope.myDataSource = dataSource
+
+        const countrydataSource = {
+            chart: {
+
+
+                "theme": "fusion",
+                "caption": "Ports",
+                "subcaption": "Total Value In USD",
+                "showlegend": "1",
+
+                "legendItemFontSize": "13",
+                "legendposition": "right",
+
+                "legendCaptionAlignment": "right",
+                "legendItemHoverFontColor": "#000",
+                "legendCaptionFontColor": "1",
+                "legendIconAlpha": "80",
+                "usedataplotcolorforlabels": "1",
+                "disableSmartLabels": "1",
+                "smartLineColor": "#000",
+                "showLabels": "0",
+                "showValues": "0",
+                "slicingDistance": "10",
+                "toolTipBgColor": "#000",
+                "toolTipColor": "#fff",
+                "toolTipPadding": "10",
+                "plotToolText": "Ports: $label <br>  Value in (USD): $dataValue <br> $displayValue",
+                "showToolTipShadow": "1",
+                "toolTipBorderColor": "#000",
+                "tooltipborderradius": "5",
+
+                "plotHoverEffect": "1",
+
+
+
+            },
+
+
+            "data": portseries
+        };
+
+        $scope.myCountrySource = countrydataSource
+
+
+        const UnitdataSource = {
+            chart: {
+
+
+                "theme": "fusion",
+                "caption": "Units",
+                "subcaption": " Sum of Qty ",
+                "showlegend": "1",
+
+                "legendItemFontSize": "13",
+                "legendposition": "right",
+
+                "legendCaptionAlignment": "right",
+                "legendItemHoverFontColor": "#000",
+                "legendCaptionFontColor": "1",
+                "legendIconAlpha": "80",
+                "usedataplotcolorforlabels": "1",
+                "disableSmartLabels": "1",
+                "smartLineColor": "#000",
+                "showLabels": "0",
+                "showValues": "0",
+                "slicingDistance": "10",
+                "toolTipBgColor": "#000",
+                "toolTipColor": "#fff",
+                "toolTipPadding": "10",
+                "showToolTipShadow": "1",
+                "plotToolText": "Units: $label <br>  sum of Qty.: $dataValue <br> $displayValue",
+                "toolTipBorderColor": "#000",
+                "tooltipborderradius": "5",
+
+                "plotHoverEffect": "1",
+
+
+
+            },
+
+
+            "data": uintseries
+        };
+
+        $scope.myUnitdataSource = UnitdataSource
+
+
+        const ImporterdataSource = {
+
+
+            chart: {
+
+
+                "theme": "fusion",
+                "caption": "Importers",
+                "subcaption": " Total value In USD ",
+
+                "legendItemFontSize": "13",
+                "legendposition": "right",
+
+                "legendCaptionAlignment": "right",
+                "legendItemHoverFontColor": "#000",
+                "legendCaptionFontColor": "1",
+                "legendIconAlpha": "80",
+                "usedataplotcolorforlabels": "1",
+                "disableSmartLabels": "1",
+                "smartLineColor": "#000",
+                "showLabels": "0",
+                "showValues": "0",
+                "slicingDistance": "10",
+                "toolTipBgColor": "#000",
+                "toolTipColor": "#fff",
+                "toolTipPadding": "10",
+                "plotToolText": "Importers: $label <br>  Value in (USD): $dataValue <br> $displayValue",
+                "showToolTipShadow": "1",
+                "toolTipBorderColor": "#000",
+                "tooltipborderradius": "5",
+
+                "plotHoverEffect": "1",
+
+
+
+            },
+
+
+            "data": importerseries
+        };
+
+        $scope.myImporterdataSource = ImporterdataSource
+
+        const ExporterdataSource = {
+            chart: {
+
+
+                "theme": "fusion",
+                "caption": "Exporter",
+                "subcaption": " Total value In USD ",
+                "legendItemFontSize": "13",
+                "legendposition": "right",
+
+                "legendCaptionAlignment": "right",
+                "legendItemHoverFontColor": "#000",
+                "legendCaptionFontColor": "1",
+                "legendIconAlpha": "80",
+                "usedataplotcolorforlabels": "1",
+                "disableSmartLabels": "1",
+                "smartLineColor": "#000",
+                "showLabels": "0",
+                "showValues": "0",
+                "slicingDistance": "10",
+                "toolTipBgColor": "#000",
+                "toolTipColor": "#fff",
+                "toolTipPadding": "10",
+                "plotToolText": "Exporter: $label <br>  Value in (USD): $dataValue <br> $displayValue",
+                "showToolTipShadow": "1",
+                "toolTipBorderColor": "#000",
+                "tooltipborderradius": "5",
+
+                "plotHoverEffect": "1",
+
+
+            },
+
+
+            "data": exporterseries
+        };
+
+        $scope.myExporterdataSource = ExporterdataSource
+
+
+        const HsCodedataSource = {
+            chart: {
+
+
+                "theme": "fusion",
+                "caption": "Month",
+                "subcaption": " Total Value In USD ",
+                "legendCaptionFontSize": "6",
+                "legendposition": "right",
+
+                "legendItemFontSize": "13",
+                "legendposition": "right",
+
+                "legendCaptionAlignment": "right",
+                "legendItemHoverFontColor": "#000",
+                "legendCaptionFontColor": "1",
+                "legendIconAlpha": "80",
+                "usedataplotcolorforlabels": "1",
+                "disableSmartLabels": "1",
+                "smartLineColor": "#000",
+                "showLabels": "0",
+                "showValues": "0",
+                "slicingDistance": "10",
+                "toolTipBgColor": "#000",
+                "toolTipColor": "#fff",
+                "toolTipPadding": "10",
+                "plotToolText": "Month: $label <br>  Value in (USD): $dataValue <br> $displayValue",
+                "showToolTipShadow": "1",
+                "toolTipBorderColor": "#000",
+                "tooltipborderradius": "5",
+
+                "plotHoverEffect": "1",
+            },
+
+
+            "data": hscodeSeries
+        };
+
+        $scope.myHsCodedataSource = HsCodedataSource
+    }
+
+
+
+
+
+    // Filter
+
+    $scope.getfilter = function () {
+
+        $scope.maxSize = 5;     // Limit number for pagination display number.  
+        $scope.totalCount = 0;  // Total number of items in all pages. initialize as a zero  
+        $scope.pageIndex = 1;   // Current page number. First page is 1.-->  
+        $scope.pageSizeSelected = 25; // Maximum number of items per page.  
+        $scope.mode = mode;
+        $scope.from = from;
+        $scope.to = to;
+        $scope.year = year;
+        $scope.opt = opt;
+        $scope.product = product.split(' ').join('_').trim();
+        $scope.mproduct = mproduct.split(' ').join('_').trim();
+        $scope.chapter = chapter;
+        $scope.hscode = hscode;
+        $scope.mhscode = mhscode.split(' ').join('_').trim();
+        $scope.importer = importer.split(' ').join('_').trim();
+        $scope.exporter = exporter.split(' ').join('_').trim();
+        $scope.port = port;
+        $scope.country = country;
+        $scope.unit = unit;
+
+
+        $("#processing1").show();
+
+
+        $http.get("http://localhost:54863/Search/filterdata?type=json&pageIndex=" + $scope.pageIndex + "&pageSize=" + $scope.pageSizeSelected + "&mode=" + $scope.mode + "&from=" + $scope.from + "&to=" + $scope.to + "&year=" + $scope.year + "&opt=" + $scope.opt + "&product=" + $scope.product + "&mproduct=" + $scope.mproduct + "&chapter=" + $scope.chapter + "&hscode=" + $scope.hscode + "&mhscode=" + $scope.mhscode + "&importer=" + $scope.importer + "&exporter=" + $scope.exporter + "&port=" + $scope.port + "&country=" + $scope.country + "&unit=" + $scope.unit).then(
+
+            //$http.get("http://indiaexportimportdata.in/api/filter?type=json&pageIndex=" + $scope.pageIndex + "&pageSize=" + $scope.pageSizeSelected + "&mode=" + $scope.mode + "&from=" + $scope.from + "&to=" + $scope.to + "&year=" + $scope.year + "&product=" + $scope.product + "&mproduct=" + $scope.mproduct + "&chapter=" + $scope.chapter + "&hscode=" + $scope.hscode + "&mhscode=" + $scope.mhscode + "&importer=" + $scope.importer + "&exporter=" + $scope.exporter + "&port=" + $scope.port + "&country=" + $scope.country + "&unit=" + $scope.unit).then(
+
+
+            function (response) {
+
+
+
+                $scope.hscodesu = response.data.HsCodes;
+                $scope.portes = response.data.Ports;
+                $scope.countr = response.data.Countries;
+                $scope.uni = response.data.Units;
+
+                $("#processing1").hide();
+
+            },
+            function (err) {
+                var error = err;
+            });
+
+
+    }
+
+
+    $scope.getfilter();
+
+
+
+    //importanalysis
+
+    $scope.getImportanalysis = function () {
+        $scope.maxSize = 5;     // Limit number for pagination display number.  
+        $scope.totalCount = 0;  // Total number of items in all pages. initialize as a zero  
+        $scope.pageIndex = 1;   // Current page number. First page is 1.-->  
+        $scope.pageSizeSelected = 25; // Maximum number of items per page.  
+        $scope.mode = mode;
+        $scope.from = from;
+        $scope.to = to;
+        $scope.year = year;
+        $scope.opt = opt;
+        $scope.product = product.split(' ').join('_').trim();
+        $scope.mproduct = mproduct.split(' ').join('_').trim();
+        $scope.chapter = chapter;
+        $scope.hscode = hscode;
+        $scope.mhscode = mhscode.split(' ').join('_');
+        $scope.importer = importer.split(' ').join('_').trim();
+        $scope.exporter = exporter.split(' ').join('_').trim();
+        $scope.port = port;
+        $scope.country = country;
+        $scope.unit = unit;
+
+        $scope.Name = [];
+        $scope.Total = [];
+        $scope.unitpie = [];
+        $scope.countrytpie = [];
+        $scope.portpie = [];
+        $scope.monthtpie = [];
+
+        var importermaster = {};
+        var importerseries = [];
+
+        var imppieMaster = {};
+        var imppieSeries = [];
+        var countryimppieMaster = {};
+        var countryimppieSeries = [];
+        var portimppieMaster = {};
+        var portimppieSeries = [];
+        var monthimppieMaster = {};
+        var monthimppieSeries = [];
+
+
+
+
+
+
+
+        $http.get("http://localhost:54863/Search/GetDashboardlist?type=json&pageIndex=" + $scope.pageIndex + "&pageSize=" + $scope.pageSizeSelected + "&mode=" + $scope.mode + "&from=" + $scope.from + "&to=" + $scope.to + "&year=" + $scope.year + "&opt=" + $scope.opt + "&product=" + $scope.product + "&mproduct=" + $scope.mproduct + "&chapter=" + $scope.chapter + "&hscode=" + $scope.hscode + "&mhscode=" + $scope.mhscode + "&importer=" + $scope.importer + "&exporter=" + $scope.exporter + "&port=" + $scope.port + "&country=" + $scope.country + "&unit=" + $scope.unit).then(
+
+
+
+
+            //$http.get("http://indiaexportimportdata.in/api/GetDashBoard?type=json&pageIndex=" + $scope.pageIndex + "&pageSize=" + $scope.pageSizeSelected + "&mode=" + $scope.mode + "&from=" + $scope.from + "&to=" + $scope.to + "&year=" + $scope.year + "&product=" + $scope.product + "&mproduct=" + $scope.mproduct + "&chapter=" + $scope.chapter + "&hscode=" + $scope.hscode + "&mhscode=" + $scope.mhscode + "&importer=" + $scope.importer + "&exporter=" + $scope.exporter + "&port=" + $scope.port + "&country=" + $scope.country + "&unit=" + $scope.unit).then(
+
+
+            function (response) {
+
+
+                $scope.importers = response.data.Importers;
+                var ichart = response.data.Importers;
+
+                if (ichart != null) {
+
+                    var m;
+                    for (m = 0; m < ichart.length; m++) {
+
+
+                        if (typeof importermaster[ichart[m].name] === 'undefined') {
+                            importermaster[ichart[m].name] = [];
+                        }
+
+
+                        importermaster[ichart[m].name].push(ichart[m].total);
+
+                        if ((m + 1) == ichart.length) {
+                            Object.keys(importermaster).forEach(function (key) {
+                                var importermaster1 = {
+                                    label: key,
+                                    value: importermaster[key]
+                                };
+                                importerseries.push(importermaster1);
+                            });
+                        }
+                    }
+                }
+                //import---------------------column
+
+                $scope.unitpie = response.data.UnitTotals;
+
+                var pichart = response.data.UnitTotals;
+                if (pichart != null) {
+                    var s;
+                    for (s = 0; s < pichart.length; s++) {
+
+
+                        if (typeof imppieMaster[pichart[s].name] === 'undefined') {
+                            imppieMaster[pichart[s].name] = [];
+                        }
+
+
+                        imppieMaster[pichart[s].name].push(pichart[s].total);
+
+                        if ((s + 1) == pichart.length) {
+                            Object.keys(imppieMaster).forEach(function (key) {
+                                var imppieMaster1 = {
+                                    label: key,
+                                    value: imppieMaster[key]
+                                };
+                                imppieSeries.push(imppieMaster1);
+                            });
+                        }
+                    }
+                }
+                //country-------------------------
+
+                $scope.countrytpie = response.data.CountryTotals;
+
+                var picounchart = response.data.CountryTotals;
+                if (picounchart != null) {
+                    var e;
+                    for (e = 0; e < picounchart.length; e++) {
+
+
+                        if (typeof countryimppieMaster[picounchart[e].name] === 'undefined') {
+                            countryimppieMaster[picounchart[e].name] = [];
+                        }
+
+
+                        countryimppieMaster[picounchart[e].name].push(picounchart[e].total);
+
+                        if ((e + 1) == picounchart.length) {
+                            Object.keys(countryimppieMaster).forEach(function (key) {
+                                var countryimppieMaster1 = {
+                                    label: key,
+                                    value: countryimppieMaster[key]
+                                };
+                                countryimppieSeries.push(countryimppieMaster1);
+                            });
+                        }
+                    }
+                }
+                //portwise--------------------------------
+
+                $scope.portpie = response.data.PortTotals;
+
+                var portounchart = response.data.PortTotals;
+                if (portounchart != null) {
+                    var e;
+                    for (e = 0; e < portounchart.length; e++) {
+
+
+                        if (typeof portimppieMaster[portounchart[e].name] === 'undefined') {
+                            portimppieMaster[portounchart[e].name] = [];
+                        }
+
+
+                        portimppieMaster[portounchart[e].name].push(portounchart[e].total);
+
+                        if ((e + 1) == portounchart.length) {
+                            Object.keys(portimppieMaster).forEach(function (key) {
+                                var portimppieMaster1 = {
+                                    label: key,
+                                    value: portimppieMaster[key]
+                                };
+                                portimppieSeries.push(portimppieMaster1);
+                            });
+                        }
+                    }
+                }
+                //month---------------wise---
+
+                $scope.monthtpie = response.data.MonthNameTotals;
+
+                var monthounchart = response.data.MonthNameTotals;
+                if (monthounchart != null) {
+                    var e;
+                    for (e = 0; e < monthounchart.length; e++) {
+
+
+                        if (typeof monthimppieMaster[monthounchart[e].name] === 'undefined') {
+                            monthimppieMaster[monthounchart[e].name] = [];
+                        }
+
+
+                        monthimppieMaster[monthounchart[e].name].push(monthounchart[e].total);
+
+                        if ((e + 1) == monthounchart.length) {
+                            Object.keys(monthimppieMaster).forEach(function (key) {
+                                var monthimppieMaster1 = {
+                                    label: key,
+                                    value: monthimppieMaster[key]
+                                };
+                                monthimppieSeries.push(monthimppieMaster1);
+                            });
+                        }
+                    }
+                }
+                //----------Exporter Chart------
+
+
+            },
+
+            function (err) {
+                var error = err;
+            });
+
+
+
+        $scope.getImportanalysis();
+        //Loading employees list on first time
+        const myeImporterdataSource = {
+            chart: {
+
+
+                "theme": "fusion",
+                "caption": "Unit",
+                "subcaption": " Sum of Qty. ",
+                "legendItemFontSize": "13",
+                "legendposition": "right",
+
+                "legendCaptionAlignment": "right",
+                "legendItemHoverFontColor": "#000",
+                "legendCaptionFontColor": "1",
+                "legendIconAlpha": "80",
+                "usedataplotcolorforlabels": "1",
+                "disableSmartLabels": "1",
+                "smartLineColor": "#000",
+                "showLabels": "0",
+                "showValues": "0",
+                "slicingDistance": "10",
+                "toolTipBgColor": "#000",
+                "toolTipColor": "#fff",
+                "plotToolText": "Unit: $label <br> Sum of Qty: $dataValue <br> $displayValue",
+                "toolTipPadding": "10",
+                "showToolTipShadow": "1",
+                "toolTipBorderColor": "#000",
+                "tooltipborderradius": "5",
+
+                "plotHoverEffect": "1",
+
+
+            },
+
+
+            "data": imppieSeries
+        };
+
+        $scope.myPieImporterdataSource = myeImporterdataSource
+
+
+        //Loading employees list on first time
+
+        const SingleImporterdataSource = {
+            chart: {
+
+
+                "theme": "fusion",
+                "caption": "Importers",
+                "subcaption": " Total value In USD ",
+                "formatnumberscale": "0",
+                "maxLabelWidthPercent": "5",
+                "valueBorderPadding": "5",
+                "labelBinSize": "10",
+                "maxBarHeight": "40", "width": "100%",
+                "height": "100%",
+                "showpercentvalues": "1",
+                "showpercentintooltip": "0",
+                "enableslicing": "0",
+                "yAxisMaxValue": "-5500000",
+                "yAxisMinValue": "700000", "showLabels": "0",
+                "legendscrollbgcolor": "#ffffff",
+                "bgcolor": "#ffffff", "palettecolors": "5d62b5,29c3be,f2726f",
+                "width": "100%",
+                "height": "100%",
+                "toolTipBgColor": "#000",
+                "toolTipColor": "#fff",
+                "toolTipPadding": "10",
+                "plotToolText": "Importers: $label <br>  Value in (USD): $dataValue <br> $displayValue",
+                "showToolTipShadow": "1",
+                "toolTipBorderColor": "#000",
+                "tooltipborderradius": "5",
+
+
+            },
+
+
+            "data": importerseries
+        };
+
+        $scope.mySingleImporterdataSource = SingleImporterdataSource
+
+        //country----------------------------
+
+        const CountryImporterdataSource = {
+            chart: {
+
+
+                "theme": "fusion",
+                "caption": "Country ",
+                "subcaption": " Total value In USD ",
+                "legendItemFontSize": "13",
+                "legendposition": "right",
+
+                "legendCaptionAlignment": "right",
+                "legendItemHoverFontColor": "#000",
+                "legendCaptionFontColor": "1",
+                "legendIconAlpha": "80",
+                "usedataplotcolorforlabels": "1",
+                "disableSmartLabels": "1",
+                "smartLineColor": "#000",
+                "showLabels": "0",
+                "showValues": "0",
+                "slicingDistance": "10",
+                "toolTipBgColor": "#000",
+                "toolTipColor": "#fff",
+                "toolTipPadding": "10",
+                "showToolTipShadow": "1",
+                "plotToolText": "Country: $label <br>  Value in (USD): $dataValue <br> $displayValue",
+                "toolTipBorderColor": "#000",
+                "tooltipborderradius": "5",
+
+                "plotHoverEffect": "1",
+
+
+
+            },
+
+
+            "data": countryimppieSeries
+        };
+
+        $scope.myCountryImporterdataSource = CountryImporterdataSource
+
+        //Month--------------------------
+        const monthImporterdataSource = {
+            chart: {
+
+
+                "theme": "fusion",
+                "caption": "Month",
+                "subcaption": " Total value In USD ",
+                "legendItemFontSize": "13",
+                "legendposition": "right",
+
+                "legendCaptionAlignment": "right",
+                "legendItemHoverFontColor": "#000",
+                "legendCaptionFontColor": "1",
+                "legendIconAlpha": "80",
+                "usedataplotcolorforlabels": "1",
+                "disableSmartLabels": "1",
+                "smartLineColor": "#000",
+                "showLabels": "0",
+                "showValues": "0",
+                "slicingDistance": "10",
+                "toolTipBgColor": "#000",
+                "toolTipColor": "#fff",
+                "toolTipPadding": "10",
+                "plotToolText": "Month: $label <br>  Value in (USD): $dataValue <br> $displayValue",
+                "showToolTipShadow": "1",
+                "toolTipBorderColor": "#000",
+                "tooltipborderradius": "5",
+
+                "plotHoverEffect": "1",
+
+
+
+            },
+
+
+            "data": monthimppieSeries
+        };
+
+        $scope.mymonthImporterdataSource = monthImporterdataSource
+
+        //port-----------------------
+        const PortImporterdataSource = {
+            chart: {
+
+
+                "theme": "fusion",
+                "caption": "Port",
+                "subcaption": " Total value In USD ",
+                "legendItemFontSize": "13",
+                "legendposition": "right",
+
+                "legendCaptionAlignment": "right",
+                "legendItemHoverFontColor": "#000",
+                "legendCaptionFontColor": "1",
+                "legendIconAlpha": "80",
+                "usedataplotcolorforlabels": "1",
+                "disableSmartLabels": "1",
+                "smartLineColor": "#000",
+                "showLabels": "0",
+                "showValues": "0",
+                "slicingDistance": "10",
+                "toolTipBgColor": "#000",
+                "toolTipColor": "#fff",
+                "toolTipPadding": "10",
+                "plotToolText": "Port: $label <br>  Value in (USD): $dataValue <br> $displayValue",
+                "showToolTipShadow": "1",
+                "toolTipBorderColor": "#000",
+                "tooltipborderradius": "5",
+
+                "plotHoverEffect": "1",
+
+
+
+            },
+
+
+            "data": portimppieSeries
+        };
+
+        $scope.myportImporterdataSource = PortImporterdataSource
+
+
+
+    }
+
+
+
+
+    $scope.filterdata = function (countryname,total) {
+      
+
+
+
+         var mode = getParameterByName('mode');
+        var from = getParameterByName('from');
+        var to = getParameterByName('to');
+        var year = getParameterByName('year');
+        var opt = getParameterByName('opt');
+        var product = getParameterByName('product');
+        var mproduct = getParameterByName('mproduct');
+        var chapter = getParameterByName('chapter');
+        var hscode = getParameterByName('hscode');
+        var mhscode = getParameterByName('mhscode');
+        var importer = getParameterByName('importer');
+        var exporter = getParameterByName('exporter');
+        var port = getParameterByName('port');
+        var unit = getParameterByName('unit');
+
+        $scope.f.mode = mode;
+        $scope.f.from = from;
+        $scope.f.to = to;       
+        $scope.f.year = year;
+        $scope.f.opt = opt;
+        $scope.f.product = product;
+        $scope.f.mproduct = mproduct;
+        $scope.f.chapter = chapter;
+        $scope.f.hscode = hscode;
+        $scope.f.mhscode = mhscode;
+        $scope.f.importer = importer;
+        $scope.f.exporter = exporter;
+        $scope.f.country = countryname;
+        $scope.f.port = port;
+        $scope.f.unit = unit;
+
+        //alert("hello dd");
+        //$("#processing").show();
+
+        $http.get('http://localhost:54863/Search/filterdata', $scope.f).then(function (res) {
+            $scope.alluserMemberList = res.data.employeeList; 
+        });
+    };
+
+        //$http.get("http://localhost:54863/Search/filterdata?type=json&pageIndex=" + $scope.pageIndex + "&pageSize=" + $scope.pageSizeSelected + "&mode=" + $scope.mode + "&from=" + $scope.from + "&to=" + $scope.to + "&year=" + $scope.year + "&opt=" + $scope.opt + "&product=" + $scope.product + "&mproduct=" + $scope.mproduct + "&chapter=" + $scope.chapter + "&hscode=" + $scope.hscode + "&mhscode=" + $scope.mhscode + "&importer=" + $scope.importer + "&exporter=" + $scope.exporter + "&port=" + $scope.port + "&country=" + $scope.country + "&unit=" + $scope.unit).then(
+
+
+
+        //    function (response) {
+
+
+        //        $scope.totalCount = response.data.totalCount;
+        //        $scope.employees = response.data.Exports;
+        //        $scope.imports = response.data.Imports;
+        //        $("#processing").hide();
+        //    },
+        //    function (err) {
+        //        var error = err;
+        //    });
+
+
+
+
+
+
+
+
+
+    ////total------shipment------------------
+
+    //$scope.getTotalShippment = function () {
+
+    //    $scope.maxSize = 5;     // Limit number for pagination display number.  
+    //    $scope.totalCount = 0;  // Total number of items in all pages. initialize as a zero  
+    //    $scope.pageIndex = 1;   // Current page number. First page is 1.-->  
+    //    $scope.pageSizeSelected = 25; // Maximum number of items per page.  
+    //    $scope.mode = mode;
+    //    $scope.from = from;
+    //    $scope.to = to;
+    //    $scope.year = year;
+    //    $scope.opt = opt;
+    //    $scope.product = product.split(' ').join('_').trim();
+    //    $scope.mproduct = mproduct.split(' ').join('_').trim();
+    //    $scope.chapter = chapter;
+    //    $scope.hscode = hscode;
+    //    $scope.mhscode = mhscode.split(' ').join('_').trim();
+    //    $scope.importer = importer.split(' ').join('_').trim();
+    //    $scope.exporter = exporter.split(' ').join('_').trim();
+    //    $scope.port = port;
+    //    $scope.country = country;
+    //    $scope.unit = unit;
+
+
+      
+
+
+    //    $http.get("http://localhost:54863/Search/totalshippment?type=json&pageIndex=" + $scope.pageIndex + "&pageSize=" + $scope.pageSizeSelected + "&mode=" + $scope.mode + "&from=" + $scope.from + "&to=" + $scope.to + "&year=" + $scope.year + "&opt=" + $scope.opt + "&product=" + $scope.product + "&mproduct=" + $scope.mproduct + "&chapter=" + $scope.chapter + "&hscode=" + $scope.hscode + "&mhscode=" + $scope.mhscode + "&importer=" + $scope.importer + "&exporter=" + $scope.exporter + "&port=" + $scope.port + "&country=" + $scope.country + "&unit=" + $scope.unit).then(
+
+    //        //$http.get("http://indiaexportimportdata.in/api/filter?type=json&pageIndex=" + $scope.pageIndex + "&pageSize=" + $scope.pageSizeSelected + "&mode=" + $scope.mode + "&from=" + $scope.from + "&to=" + $scope.to + "&year=" + $scope.year + "&product=" + $scope.product + "&mproduct=" + $scope.mproduct + "&chapter=" + $scope.chapter + "&hscode=" + $scope.hscode + "&mhscode=" + $scope.mhscode + "&importer=" + $scope.importer + "&exporter=" + $scope.exporter + "&port=" + $scope.port + "&country=" + $scope.country + "&unit=" + $scope.unit).then(
+
+
+    //        function (response) {
+
+
+    //            $scope.totalCount = response.data.totalCount;
+    //            //$scope.hscodesu = response.data.HsCodes;
+    //            //$scope.portes = response.data.Ports;
+    //            //$scope.countr = response.data.Countries;
+    //            //$scope.uni = response.data.Units;
+
+               
+
+    //        },
+    //        function (err) {
+    //            var error = err;
+    //        });
+
+
+    //}
+
+
+    //$scope.getTotalShippment();
+
+
+});
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

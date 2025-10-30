@@ -1,0 +1,2842 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css");
+/*-------------------------------------------------------------------------------------------
+  CSS definations for Extuent
+-------------------------------------------------------------------------------------------*/
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-box-sizing:border-box;
+       -moz-box-sizing:border-box;
+        -ms-box-sizing:border-box;
+         -o-box-sizing:border-box;
+            box-sizing:border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    /*list-style: none;*/
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+a,
+a:hover,
+a:focus {
+    outline:none;
+    text-decoration:none;
+}
+
+/* Common Tages */
+:root {
+    --default-family: 'franklin_gothic_bookregular', serif;
+    --heading-family: 'franklin_gothic_demiregular';
+    --regular: 400;
+    --medium: 500;
+    --semi-bold: 600;
+    --bold: 700;
+    --italic: italic;
+    --primary-color: #fe634e;
+    --secondary-color: #F4E5E1;
+    --neutral-dark: #B38B80;
+    --neutral-light: #E3DEDC;
+    --white: #fff;
+    --black: #000;
+}
+
+/* form-control */
+.form-group {
+    margin-bottom: 20px;
+}
+.form-control {
+    padding: 15px 30px;
+    font-size: 24px;
+    line-height: normal;
+}
+.btn {
+    background-image: linear-gradient(#cf5402, #fb6502);
+    border: 5px solid #fb6502;
+    border-bottom: 5px solid #cf5402;
+    display: inline-flex;
+    padding: 14px 60px;
+    font-size: 36px;
+    color: #fff;
+    line-height: normal;
+    border-radius: 20px;
+}
+.btn:hover {
+    background-image: linear-gradient(#fb6502, #cf5402);
+    color: #fff;
+}
+input[type="file"]::file-selector-button {
+    background: var(--primary-color) !important;
+    color: var(--white) !important;
+}
+.text-center {
+    text-align: center;
+}
+
+/*-------------------------------------------------------------------------------------------*/
+/* SITE STRUCTURE & APPEARANCE */
+/*-------------------------------------------------------------------------------------------*/
+body {
+    background: #f7f7f7;
+    font-family: var(--default-family);
+    font-size: 30px;
+    color: #565657;
+}
+
+/* header */
+.header {
+    background: var(--white);
+    padding: 30px 0;
+    box-shadow: rgba(135, 134, 134, 0.18) 0px 6px 8px;
+}
+
+/* logo */
+.logo {
+    display: flex;
+}
+.logo a {
+    display: inline-flex;
+}
+.logo img {
+    width: auto;
+    height: 43px;
+}
+.candidateBackButton {
+    float: right;
+    font-size: 16px;
+    color: #000;
+    background: url(../images/icon_back.png) no-repeat left center;
+    border: none;
+    background-size: auto 100%;
+    padding-left: 22px;
+}
+
+.welcome-box .imgb {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.welcome-box .imgb img {
+    width: 90%;
+    height: auto;
+}
+.welcome-box .txtb {
+    font-size: 16px;
+}
+.welcome-box .txtb h3 {
+    font-size: 22px;
+    font-weight: 700;
+}
+.welcome-box .txtb h4 {
+    font-size: 18px;
+    font-weight: 600;
+}
+.welcome-box .txtb p {
+    line-height: 28px;
+    margin-bottom: 10px;
+}
+.welcome-box .bg-txt {
+    background: #eee;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+.candidate-bar-profile {
+    align-items: center !important;
+}
+.candidate-bar-profile h3 {
+    margin: 0;
+}
+  .interview-screen h3 {
+    font-size: 16px;
+    
+}
+/* navigation */
+.navigation {
+    float: right;
+    font-size: 26px;
+}
+.navigation ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.navigation li {
+    border-left: 1px solid #565657;
+    float: left;
+    padding-left: 12px;
+    margin-left: 13px;
+}
+.navigation li:first-child {
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+.navigation li a {
+    color: #565657;
+}
+.navigation li a:hover {
+    color: #f06000;
+}
+
+/* main-container */
+.main-container {
+    min-height: calc(100vh - 106px);
+    padding: 50px 0;
+}
+.interview-video-profile {
+    background-image: url(https://extuent.ai/bg/bg18_logo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 95%;
+    height: 367px;
+    border-radius: 12px;
+    border-color: #FF7416;
+    margin-bottom: 0px;
+}
+/* single-interview */
+.single-interview {
+    max-width: 1260px;
+    margin: 0 auto;
+}
+.single-interview h3 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+.single-interview .imgb {
+    height: calc(100vh - 300px);
+    margin-bottom: 30px;
+    text-align: center;
+}
+.single-interview .imgb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.question-txt p {
+    line-height: normal;
+}
+/* steps */
+.steps {
+    padding-bottom: 30px;
+    text-align: center;
+}
+.steps ul {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+}
+.steps li {
+    position: relative;
+    z-index: 1;
+    padding-right: 130px;
+    display: flex;
+    flex-direction: column;
+    place-content: center space-between;
+    align-items: center;
+}
+.steps li:last-child {
+    padding-right: 0;
+}
+.steps li a {
+    display: block;
+    margin-bottom: 20px;
+    color: #b8b8b8;
+}
+.steps li::after {
+    background: #b8b8b8;
+    display: inline-flex;
+    width: 30px;
+    height: 30px;
+    content: '';
+    border-radius: 100%;
+}
+.steps li::before {
+    background: #b8b8b8;
+    display: inline-flex;
+    width: 100%;
+    height: 2px;
+    content: '';
+    position: absolute;
+    left: 30px;
+    bottom: 14px;
+}
+.steps li:last-child::before {
+    display: none;
+}
+.steps li.active::after,
+.steps li.active::before {
+    background: #df6a14;
+}
+.steps li.current::after {
+    background: #999;
+}
+
+/* single-interview-box */
+.single-interview-box {
+    text-align: center;
+}
+.single-interview-box-in {
+    display: inline-block;
+        width: 70%;
+}
+.question-txt {
+    text-align: left;
+}
+
+/* retake */
+.retake,
+#reTakeBtn {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 60px;
+    color: #8f8e8e;
+}
+.retake img,
+#reTakeBtn img,
+.action-bar .link img,
+.action-bar #btnpreview img {
+    width: auto;
+    height: 50px;
+    margin-right: 16px;
+}
+.retake:hover,
+#reTakeBtn:hover {
+    color: #f06000;
+}
+.action-bar .links {
+    display: flex;
+    align-items: center;
+}
+.action-bar .link,
+.action-bar #btnpreview {
+    display: inline-flex;
+    align-items: center;
+    color: #8f8e8e;
+}
+.link:hover,
+#btnpreview:hover {
+    color: #f06000;
+}
+
+/* start-recording */
+.start-recording {
+    background-image: linear-gradient(#cf5402, #fb6502);
+    border: 5px solid #fb6502;
+    border-bottom: 5px solid #cf5402;
+    display: inline-flex;
+    white-space: nowrap;
+    padding: 20px 60px;
+    font-size: 36px;
+    color: #fff;
+    line-height: normal;
+    border-radius: 20px;
+}
+.start-recording:hover {
+    background-image: linear-gradient(#fb6502, #cf5402);
+    color: #fff;
+}
+.action-bar .retake,
+.action-bar .link,
+.action-bar .next,
+.action-bar #btnpreview,
+.action-bar #reTakeBtn,
+.action-bar #btnNext {
+    background: none;
+    padding: 0;
+    font-weight:normal;
+}
+/* next */
+.next,
+#btnNext {
+    display: inline-flex;
+    align-items: center;
+    color: #8f8e8e;
+}
+.next img,
+#btnNext img {
+    width: auto;
+    height: 50px;
+    margin-left: 16px;
+}
+.next:hover,
+#btnNext:hover {
+    color: #f06000;
+}
+
+/* help-txtb */
+.help-txtb {
+    padding-top: 50px;
+    text-align: center;
+}
+.help-txtb span {
+    display: inline-block;
+    padding: 0 25px;
+}
+.help-txtb a {
+    color: #f06000;
+}
+
+/* footer */
+.footer {
+    background: var(--white);
+    padding: 30px 0;
+    box-shadow: rgba(135, 134, 134, 0.18) 0px -6px 8px;
+}
+
+/* footer-links */
+.footer-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.footer-links li {
+    float: left;
+    margin-right: 40px;
+}
+.footer-links li:last-child {
+    margin-right: 0;
+}
+.footer-links li a {
+    font-size: 26px;
+    color: #565657;
+}
+.footer-links li a:hover {
+    color: #f06000;
+}
+
+/* footer-logo */
+.footer-logo {
+    float: right;
+}
+.footer-logo p {
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+.footer-logo .imgb img {
+    width: auto;
+    height: 43px;
+}
+
+/* page-heading */
+.page-heading {
+    padding-bottom: 15px;
+}
+.page-heading h1 {
+    margin: 0;
+    font-size: 48px;
+    color: var(--black);
+}
+
+/* candidate-profiles */
+.candidate-profiles .column {
+    background: var(--white);
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgb(135 134 134 / 18%) 0px 6px 8px;
+}
+.candidate-profiles .imgb img {
+    width: 100%;
+    height: 146px;
+}
+.candidate-profiles .info {
+    padding: 20px 0 30px 0;
+    font-size: 24px;
+}
+.candidate-profiles .info h4 {
+    margin: 0;
+    font-size: 26px;
+    line-height: normal;
+}
+.candidate-profiles .info .designation,
+.candidate-profiles .info .status,
+.candidate-profiles .info p span {
+    display: block;
+}
+.candidate-profiles .info p {
+    margin-bottom: 5px;
+    line-height: normal;
+}
+.candidate-profiles .info a {
+    color: #1d77b6;
+}
+.candidate-profiles .info a:hover {
+    color: var(--primary-color);
+}
+.candidate-profiles .info .status .pending {
+    color: var(--primary-color);
+}
+.candidate-profiles .profile-progress {
+    display: flex;
+    place-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+.candidate-profiles .profile-progress p {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    margin: 0;
+    font-size: 34px;
+    color: #535454;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+}
+.candidate-profiles .icon-list {
+    display: flex;
+    padding-bottom: 20px;
+}
+.candidate-profiles .icon-list .icon {
+    margin-left: 15px;
+}
+.candidate-profiles .icon-list .icon:first-child {
+    margin-left: 0;
+}
+.candidate-profiles .icon-list .icon img {
+    width: auto;
+    height: 30px;
+}
+.candidate-profiles .btn-outline {
+    border: 1px solid #fe634e;
+    padding: 12px 30px;
+    display: inline-flex;
+    font-size: 26px;
+    color: var(--primary-color);
+    border-radius: 30px;
+}
+.candidate-profiles .btn-outline:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+.candidate-profiles .txtn p {
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size:14px;
+}
+.candidate-profiles .txtn h4 {
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+.candidate-profiles .txtn span {
+     color:black;
+     font-size:12px;
+}
+/* pagination */
+.page-pagination {
+    display: flex;
+    place-content: center;
+}
+.pagination .page-link {
+    display: flex;
+    place-content: center;
+    align-items: center;
+    min-width: 50px;
+    min-height: 50px;
+    padding: 5px 15px;
+    text-align: center;
+    color: #b1b1b1;
+    line-height: 38px;
+}
+.pagination .page-link img {
+    width: auto;
+    height: 20px;
+}
+.pagination .active .page-link {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* job-listing */
+.job-listing .column {
+    background: var(--white);
+    margin-bottom: 40px;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    box-shadow: rgb(135 134 134 / 18%) 0px 6px 8px;
+}
+.job-listing .title {
+    padding-bottom: 5px;
+    color: var(--primary-color);
+}
+.job-listing .title p {
+    margin-bottom: 0;
+}
+.job-listing .title a {
+    color: var(--primary-color);
+}
+.job-listing .view-details-link {
+    display: flex;
+    align-items: center;
+}
+.job-listing .view-details-link img {
+    width: auto;
+    height: 24px;
+    margin-left: 5px;
+}
+.job-listing h4 {
+    margin: 0;
+    font-size: 26px;
+    color: var(--black);
+}
+.job-listing .loc {
+    margin-bottom: 15px;
+    display: block;
+    font-size: 16px;
+    color: #7d7d7f;
+}
+.job-text-min {
+
+    min-height:165px;
+}
+.job-listing .dec {
+    color: #848080;
+    line-height: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    
+}
+.job-listing .time {
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    color: #4d4d4e;
+}
+.job-listing .time img {
+    width: auto;
+    height: 24px;
+    margin-right: 5px;
+}
+.job-listing .btn-col {
+    display: flex;
+    align-items: center;
+}
+.job-listing .share-link {
+    display: inline-flex;
+    place-content: center;
+    align-items: center;
+}
+.job-listing .share-link img {
+    width: auto;
+    height: 30px;
+}
+.job-listing .btn-outline {
+    border: 2px solid #404040;
+    padding: 10px 20px;
+    margin-left: 20px;
+    color: var(--black);
+    line-height: normal;
+    border-radius: 10px;
+}
+.job-listing .btn-outline:hover {
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* interview-screen */
+.candidate-bar {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    padding-bottom: 2px;
+}
+.candidate-bar .imgb {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    margin-right: 15px;
+}
+.candidate-bar .imgb img {
+    width: 100%;
+    height: auto;
+    border-radius: 100%;
+}
+.candidate-bar h3 {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+}
+.candidate-bar h3 .icon {
+    margin-left: 15px;
+}
+.candidate-bar h3 .icon img {
+    width: auto;
+    height: 16px;
+}
+.candidate-bar p {
+    margin: 0;
+}
+.candidate-bar p span {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 15px;
+}
+.candidate-bar p span:first-child {
+    margin-left: 0;
+}
+.candidate-bar p span img {
+    width: auto;
+    height: 18px;
+    margin-right: 5px;
+}
+.interview-screen h3 {
+    font-size: 30px;
+    color: #747475;
+    align-items:  flex-start;
+}
+.interview-video {
+    margin-bottom: 15px;
+}
+.interview-video img {
+    width: 100%;
+    height: auto;
+}
+.interview-pagination {
+    padding-bottom: 15px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    place-content: center;
+}
+.interview-pagination ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+.interview-pagination li {
+    padding: 0 2px;
+}
+.interview-pagination li a {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    place-content: center;
+    color: var(--black);
+    border-radius: 100%;
+}
+.interview-pagination li.active a {
+    background: var(--black);
+    color: var(--white);
+}
+.experience-info {
+    background: #fff;
+    margin-bottom: 30px;
+    padding: 20px;
+    font-size: 24px;
+    color: #5c5b5b;
+    border-radius: 15px;
+    box-shadow: rgba(185, 184, 184, 0.19) 0px 0px 5px;
+}
+.experience-info h4 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+.experience-info p {
+    line-height: normal;
+}
+.experience-info .links {
+    padding-top: 15px;
+}
+.experience-info .link {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 20px;
+    color: #545353;
+}
+.experience-info .link img {
+    width: auto;
+    height: 32px;
+    margin-right: 10px;
+}
+.experience-info .link:first-child {
+    margin-left: 0;
+}
+.button-bar {
+    display: flex;
+    place-content: center space-between;
+    align-items: center;
+    padding-bottom: 30px;
+    font-size: 30px;
+}
+.button-bar .link {
+    display: flex;
+    align-items: center;
+    color: #797777;
+}
+.button-bar .link img {
+    width: auto;
+    height: 38px;
+    margin-right: 10px;
+}
+.button-bar .link-next img {
+    margin: 0 0 0 10px;
+}
+.candidate-interview-text {
+    font-size: 24px;
+}
+.candidate-interview-text .txt {
+    padding-bottom: 2px;
+}
+.candidate-interview-text h5 {
+    margin: 0;
+    font-size: 24px;
+    color: var(--black);
+    font-weight: bold !important;
+}
+.candidate-interview-text p {
+    line-height: normal;
+    margin: 0;
+}
+.candidate-rating {
+    padding: 5px 0 20px 0;
+    font-size: 24px;
+}
+.candidate-rating .rat {
+    display: flex;
+    margin: 8px 0;
+    place-content: center space-between;
+    align-items: center;
+}
+.candidate-rating .rat p {
+    margin: 0;
+}
+.candidate-rating .star {
+    display: flex;
+    align-items: center;
+}
+.candidate-rating .star img {
+    width: auto;
+    height: 38px;
+}
+.comments {
+    padding-bottom: 20px;
+}
+.comments textarea {
+    border: 1px solid #c3bfbf;
+    background: #f7f7f7;
+    width: 100%;
+    min-height: 86px;
+    padding: 10px;
+    margin-bottom: 5px;
+    resize: none;
+}
+.comments .links {
+    display: flex;
+    place-content: center space-between;
+    align-items: center;
+}
+.comments .links a {
+    color: #868887;
+}
+.comments .links a:hover {
+    color: var(--primary-color);
+}
+.candidate-action-bar {
+    font-size: 28px;
+}
+.candidate-action-bar ul {
+    display: flex;
+    place-content: center space-between;
+    padding: 0;
+    margin: 0;
+}
+.candidate-action-bar li {
+    padding: 0 7px;
+    text-align: center;
+}
+.candidate-action-bar .icon {
+    background: #ccc;
+    outline: 10px auto var(--white);
+    outline-offset: -5px;
+    width: 84px;
+    height: 84px;
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    place-content: center;
+    border-radius: 100%;
+}
+.candidate-action-bar .icon img {
+    width: 100%;
+    height: auto;
+}
+.candidate-action-bar p {
+    margin-bottom: 0;
+}
+.candidate-action-bar .pass .icon {
+    background: #24cb62;
+}
+.candidate-action-bar .pass p {
+    color: #24cb62;
+}
+.candidate-action-bar .hold .icon {
+    background: #e7cb53;
+}
+.candidate-action-bar .hold p {
+    color: #e7cb53;
+}
+.candidate-action-bar .reject .icon {
+    background: #dc6465;
+}
+.candidate-action-bar .reject p {
+    color: #dc6465;
+}
+.candidate-action-bar .hired .icon {
+    background: #c364da;
+}
+.candidate-action-bar .hired p {
+    color: #c364da;
+}
+
+.documents .accordion-button:focus {
+    box-shadow: none;
+}
+
+/* signup */
+.signup {
+    background: var(--white);
+    margin: 30px 0;
+    box-shadow: rgba(185, 184, 184, 0.20) 0px 0px 20px;
+}
+.login-text {
+    background: url(../images/bg_login.jpg) no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    place-content: center;
+    align-items: center;
+}
+.login-text .txtb {
+    text-align: center;
+}
+.login-text h2 {
+    font-size: 65px;
+    color: var(--black);
+}
+.login-text p {
+    font-size: 35px;
+    color: #777676;
+}
+.login-text .btn {
+    margin-top: 40px;
+}
+.signup .form-box {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 70px 0;
+    text-align: center;
+}
+.signup .form-box .logo {
+    display: inline-flex;
+    margin: 0 auto 20px auto;
+}
+.signup .form-box .logo img {
+    height: 48px;
+}
+.signup .form-box h1 {
+    margin: 0;
+    font-size: 72px;
+    color: var(--black);
+    line-height: normal;
+}
+.signup .form-box h2 {
+    margin-bottom: 30px;
+    font-size: 48px;
+    color: var(--black);
+    line-height: normal;
+}
+.signup .form-box h2 span {
+    border-bottom: 2px solid #ff6700;
+    padding-bottom: 4px;
+    position: relative;
+    z-index: 1;
+}
+.signup .form-box h2 span::after {
+    background: #ff6700;
+    width: 60px;
+    height: 8px;
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -4px;
+}
+.social-link {
+    padding-bottom: 25px;
+    display: flex;
+    place-content: center;
+}
+.social-link a {
+    background: var(--white);
+    display: flex;
+    width: 60px;
+    height: 60px;
+    margin: 0 15px;
+    border-radius: 100%;
+    box-shadow: rgba(212, 210, 210, 0.85) 0px 0px 3px;
+}
+.social-link a img {
+    width: 100%;
+    height: auto;
+}
+.signup .form-box .btn {
+    min-width: calc(100% - 80px);
+    place-content: center;
+    margin-top: 15px;
+}
+.signup .form-box label {
+    font-size: 26px;
+}
+
+/* candidate-registration */
+.candidate-registration {
+    background: var(--white);
+    margin: 30px 0;
+    box-shadow: rgba(185, 184, 184, 0.20) 0px 0px 20px;
+}
+.candidate-registration .caption {
+    background: url(../images/img_captionNew.jpeg) no-repeat center center;
+    background-size: cover;
+    height: 100%;
+    padding: 40px;
+    text-align: center;
+}
+.candidate-registration .caption h1 {
+    display: inline-block;
+    text-align: left;
+    font-size: 60px;
+    color: var(--white);
+    line-height: normal;
+    text-shadow: rgba(0, 0, 0, 1) 0px 0px 10px;
+}
+.candidate-registration .caption h1 span {
+    display: block;
+}
+.candidate-registration .form-box {
+    padding: 80px;
+}
+.candidate-registration label {
+    display: inline-block;
+    cursor: pointer;
+}
+.candidate-registration .profile-picture {
+    text-align: center;
+    margin-top: 90px;
+    padding-right: 30px;
+}
+.candidate-registration .upload-profile-picture-input {
+    display: none;
+}
+.candidate-registration .profile-picture .imgb {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+}
+.candidate-registration .profile-picture .imgb img {
+    width: 200px;
+    height: 200px;
+}
+.candidate-registration h3 {
+    margin: 40px 0 60px 0;
+    font-size: 36px;
+    color: var(--black);
+}
+.candidate-registration .top-gap {
+    padding-top: 30px;
+}
+.candidate-registration label {
+    display: block;
+    color: var(--black);
+    padding-bottom: 6px;
+}
+.candidate-registration label small {
+    display: block;
+    padding-top: 4px;
+}
+.candidate-registration .form-action {
+    display: flex;
+    place-content: flex-end;
+}
+.candidate-registration .form-action .btn {
+    border: none;
+    border-radius: 5px;
+    padding: 8px 30px;
+    background: var(--primary-color);
+    color: var(--white);
+}
+.candidate-registration .form-action .btn-prev {
+    background: #e8e8e8;
+    color: #777;
+    margin-right: 15px;
+}
+.candidate-registration .form-steps p {
+    margin-bottom: 8px;
+}
+.candidate-registration .form-steps .step {
+    background: #f0f0f0;
+    width: 100%;
+    height: 10px;
+    border-radius: 30px;
+    display: flex;
+    overflow: hidden;
+}
+.candidate-registration .form-steps .step-active {
+    background: var(--primary-color);
+}
+.professional-experience .row {
+    margin-left: -7px;
+    margin-right: -7px;
+}
+.professional-experience .col,
+.professional-experience .col-sm {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+.professional-experience .form-group {
+    margin-bottom: 14px;
+}
+.professional-experience .col-relative {
+    position: relative;
+    z-index: 1;
+}
+.professional-experience .add-more {
+    display: inline-flex;
+    white-space: nowrap;
+    color: #7a7979;
+    transform: translateY(-50%);
+    margin-top: -7px;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    z-index: 2;
+}
+.professional-experience {
+    padding: 10px 0;
+}
+.form-step-width {
+    width: 80%;
+    margin: 0 auto;
+}
+.confirmations-message {
+    border-bottom: 1px solid #ededed;
+    margin-bottom: 20px;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    place-content: center;
+}
+.candidate-registration .confirmations-message h3 {
+    margin: 80px 0;
+}
+.confirmations-message .accept-message {
+    background: #f9f9f9;
+    width: 100%;
+    display: block;
+    align-items: center;
+    padding: 10px 15px;
+}
+.confirmations-message .accept-message a {
+    display: inline-block;
+    color: var(--primary-color);
+}
+.confirmations-message .accept-message input {
+    margin-right: 10px;
+}
+.ms-choice {
+    border: none !important;
+}
+.ms-choice>span {
+    top: 6px !important;
+}
+.ms-choice>span.placeholder {
+    color: #000 !important;
+    background: none;
+}
+.icon-caret {
+    display: none;
+}
+.candidate-registration .form-step {
+    display: none;
+}
+.candidate-registration .form-step.active {
+    display: block;
+}
+
+/* job-description */
+.job-description {
+    padding: 60px 80px;
+    font-size: 24px;
+}
+.job-description h3 {
+    display: flex;
+    margin: 0 0 5px 0;
+    align-items: center;
+    font-size: 42px;
+    color: var(--black);
+    line-height: normal;
+}
+.job-description h3 .share-link {
+    display: inline-flex;
+    margin-left: 10px;
+}
+.job-description h3 .share-link img {
+    width: auto;
+    height: 32px;
+}
+.job-description .tags {
+    padding-bottom: 15px;
+}
+.job-description .tags span {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 20px;
+}
+.job-description .tags span:first-child {
+    margin-left: 0;
+}
+.job-description .tags span img {
+    width: auto;
+    height: 24px;
+    margin-right: 5px;
+}
+.job-description .txtb {
+    max-height: calc(100vh - 280px);
+    margin-bottom: 30px;
+    overflow: auto;
+}
+.marker {
+    background-color:#FFFF00; 
+
+}
+.job-description h4 {
+    margin: 5px 0;
+    font-size: 36px;
+    color: var(--black);
+    line-height: normal;
+}
+.job-description h5 {
+    margin: 5px 0;
+    font-size: 28px;
+    color: var(--black);
+    line-height: normal;
+}
+.job-description p {
+    margin-bottom: 20px;
+    line-height: normal;
+}
+.modal-backdrop {
+    background: var(--white);
+}
+
+/* candidate-column */
+.candidate-column {
+    background: var(--white);
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgb(135 134 134 / 18%) 0px 6px 8px;
+}
+.candidate-column .imgb {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+    place-content: center;
+}
+.candidate-column .imgb img {
+    width: auto;
+    height: 100%;
+}
+.candidate-column h4 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--black);
+    font-weight: bold;
+}
+.candidate-column p {
+    margin: 10px 0;
+}
+.candidate-profiles .icon-list {
+    padding: 10px 0 15px 0;
+}
+.candidate-profiles .icon-list .icon input[type='checkbox'] {
+    width: 24px;
+    height: 24px;
+}
+.candidate-profiles .btn-outline {
+    padding: 10px 20px;
+    font-size: 16px !important;
+    margin-right: 10px;
+}
+.candidate-profiles .txt {
+    padding-top: 10px;
+}
+.candidate-profiles .progress-status {
+    display: block;
+    padding-top: 6px;
+    text-align: center;
+}
+/*/////////////////////////////////
+  Font Family CSS
+/////////////////////////////////*/
+@font-face {
+    font-family: 'franklin_gothic_bookregular';
+    src: url('../fonts/franklin_gothic_book_regular-webfont.woff2') format('woff2'),
+         url('../fonts/franklin_gothic_book_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'franklin_gothic_demiregular';
+    src: url('../fonts/franklin_gothic_demi_regular-webfont.woff2') format('woff2'),
+         url('../fonts/franklin_gothic_demi_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.single-interview h3,
+.start-recording,
+.candidate-profiles .info .designation,
+.experience-info h4,
+.candidate-bar h3,
+.interview-screen h3,
+.login-text h2,
+.candidate-registration .caption h1 {
+    font-family: var(--heading-family);
+}
+
+.menu-link {
+    display: none;
+}
+#data {
+    height: 0px;
+}
+
+.candidate-list6 {
+    text-align: center;
+    min-height: 340px;
+}
+.candidate-list6 .col-auto {
+    width: 100%;
+}
+.candidate-list6 .imgb {
+    margin: 0 auto 15px auto;
+}
+.candidate-list6 .profile-progress {
+    margin-bottom: 15px;
+}
+.candidate-list6 .btn-outline {
+    margin-right: 0;
+}
+
+/*/////////////////////////////////
+  Responsive CSS
+/////////////////////////////////*/
+@media (min-width: 280px) and (max-width: 767px) {
+
+body {
+    font-size: 14px;
+}
+.interview-video-profile {
+   
+    width: 100%;
+    height: 256px;
+   
+}
+.content-body1 {
+    margin-top: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.single-interview-box-in {
+    display: block;
+    width: auto;
+}
+center .col-lg-10 {
+    padding: 0;
+}
+canvas#canvas {
+    width: 100% !important;
+    max-height: calc(100vh - 300px) !important;
+}
+center .col-lg-10 table tr {
+    display: flex;
+    flex-direction: column;
+}
+center .col-lg-10 table td:nth-child(2) {
+    width: auto;
+    float: left;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+center .col-lg-10 table td:nth-child(3) {
+    width: 100% !important;
+    padding-top: 10px;
+}
+center .col-lg-10 table td:nth-child(4) {
+    position: absolute;
+    right: 0;
+}
+#previewVideo + div {
+    width: 100% !important;
+}
+#previewVideo video,
+#previewVideo canvas {
+    width: 100% !important;
+}
+#stop {
+    left: 50% !important;
+    top: 10px !important;
+    transform: translateX(-50%);
+}
+
+/* header */
+.header {
+    padding: 15px 0;
+    position: relative;
+    z-index: 5;
+}
+
+/* logo */
+.logo img {
+    height: 24px;
+}
+
+/* menu */
+.menu-link {
+    display: flex;
+    float: right;
+    cursor: pointer;
+}
+
+/* navigation */
+.navigation {
+    background: #fff;
+    width: 100%;
+    font-size: 16px;
+    box-shadow: rgb(135 134 134 / 28%) 0px 0px 4px;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 2;
+    display: none;
+}
+.navigation ul {
+    flex-direction: column;
+}
+.navigation li {
+    border-left: none;
+    border-top: 1px solid #b8b8b8;
+    padding: 0;
+    margin: 0;
+    float: none;
+}
+.navigation li:first-child {
+    border: none;
+}
+.navigation li a {
+    display: block;
+    padding: 10px 12px;
+}
+
+/* main-container */
+.main-container {
+    padding: 30px 0;
+}
+
+/* single-interview */
+.single-interview h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+/* steps */
+.steps li {
+    padding-right: 20px;
+}
+.steps li a {
+    margin-bottom: 5px;
+}
+.steps li::after {
+    width: 15px;
+    height: 15px;
+}
+.steps li::before {
+    height: 1px;
+    left: 15px;
+    bottom: 7px;
+}
+
+/* question-txt */
+.question-txt .text-end {
+    text-align: center!important;
+}
+.question-txt p {
+    margin-bottom: 10px;
+}
+.single-interview .imgb {
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* action-bar */
+.action-bar {
+    position: relative;
+    z-index: 1;
+    font-size: 12px;
+}
+.action-bar .row {
+    flex-wrap: initial;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+.action-bar .col {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.retake,
+#reTakeBtn {
+    margin-right: 5px;
+}
+.retake img,
+#reTakeBtn img,
+.action-bar .link img,
+.action-bar #btnpreview img,
+.next img,
+#btnNext img {
+    height: 16px;
+    margin-right: 2px;
+}
+/* .next {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+} */
+.next img,
+#btnNext img {
+    margin: 0 0 0 2px;
+}
+.start-recording {
+    padding: 5px 8px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+/* help-txtb */
+.help-txtb {
+    padding-top: 30px;
+}
+
+/* footer */
+.footer {
+    padding: 20px 0;
+}
+.footer-links ul {
+    flex-direction: column;
+}
+.footer-links li {
+    float: none;
+    margin: 0;
+    line-height: 24px;
+}
+.footer-links li a {
+    font-size: 14px;
+}
+.footer-logo .imgb img {
+    height: 23px;
+}
+.footer .align-items-center {
+    align-items: end!important;
+}
+
+/* interview-screen */
+.interview-screen {
+    padding-bottom: 30px;
+}
+.candidate-rating,
+.candidate-interview-text,
+.candidate-interview-text h5,
+.candidate-action-bar,
+.experience-info,
+.candidate-bar,
+.candidate-bar h3,
+.interview-pagination {
+    font-size: 14px;
+}
+.button-bar,
+.experience-info h4,
+.interview-screen h3 {
+    font-size: 15px;
+}
+.button-bar .link img {
+    height: 24px;
+}
+.candidate-rating .rat {
+    margin: 5px 0;
+}
+.candidate-rating .star img,
+.experience-info .link img {
+    height: 24px;
+}
+.candidate-bar p span img {
+    height: 12px;
+}
+.interview-pagination li a {
+    width: 24px;
+    height: 24px;
+}
+.experience-info .link img {
+    margin-right: 5px;
+}
+.experience-info .link {
+    margin: 0;
+}
+.experience-info .link:last-child {
+    margin-top: 10px;
+}
+.candidate-action-bar .icon {
+    width: 60px;
+    height: 60px;
+}
+.candidate-bar p span {
+    margin: 0;
+}
+.candidate-bar p span:last-child {
+    margin-top: 5px;
+}
+.candidate-bar {
+    align-items: start;
+}
+.candidate-bar .imgb {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+.documents iframe {
+    height: 300px;
+}
+
+/* page-heading */
+.page-heading {
+    padding-bottom: 15px;
+}
+.page-heading h1 {
+    font-size: 22px;
+}
+
+/* job-listing */
+.job-listing .column {
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+.job-listing h4 {
+    font-size: 16px;
+}
+.job-listing .loc {
+    font-size: 12px;
+}
+.job-listing .btn-col {
+    place-content: center space-between;
+    padding-top: 10px;
+}
+.job-listing .view-details-link {
+    margin-top: 10px;
+}
+
+.pagination .page-link {
+    min-width: 30px;
+    min-height: 30px;
+    padding: 5px 10px;
+    line-height: 28px;
+}
+.interview-pagination li {
+    padding: 0 2px;
+    margin: 0 !important;
+}
+/* candidate-profiles */
+.candidate-profiles .info {
+    font-size: 14px;
+}
+.candidate-profiles .info h4,
+.candidate-profiles .btn-outline,
+.candidate-profiles .profile-progress p {
+    font-size: 18px;
+}
+.candidate-profiles .icon-list .icon {
+    margin-left: 10px;
+}
+.candidate-profiles .icon-list .icon img {
+    height: 24px;
+}
+.candidate-profiles .profile-progress canvas {
+    height: 72px !important;
+    width: 72px !important;
+}
+
+/* signup */
+.signup {
+    margin: 0;
+}
+.login-text {
+    min-height: 400px;
+}
+.login-text h2 {
+    font-size: 35px;
+}
+.login-text p {
+    font-size: 20px;
+}
+.signup .form-box {
+    padding: 30px 15px;
+}
+.signup .form-box .logo img {
+    height: 28px;
+}
+.signup .form-box h1 {
+    font-size: 32px;
+}
+.signup .form-box h2 {
+    font-size: 24px;
+}
+.social-link a {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+}
+.signup .form-box label {
+    font-size: 14px;
+}
+.form-control {
+    padding: 9px 15px;
+    font-size: 16px;
+}
+.btn {
+    padding: 8px 60px;
+    font-size: 22px;
+}
+
+/* candidate-registration */
+.candidate-registration .caption {
+    padding: 15px;
+    min-height: 300px;
+    display: flex;
+    place-content: center;
+    align-items: center;
+}
+.candidate-registration .caption h1 {
+    font-size: 30px;
+}
+.candidate-registration .form-box {
+    padding: 30px 15px;
+}
+.candidate-registration .top-gap {
+    padding-top: 0;
+}
+.candidate-registration .form-action {
+    place-content: center;
+}
+.candidate-registration .profile-picture {
+    margin: 0 0 30px 0;
+    padding: 0;
+}
+.candidate-registration label {
+    display: inline-block;
+}
+.candidate-registration h3 {
+    margin: 20px 0;
+    font-size: 26px;
+}
+
+/* job-description */
+.job-description {
+    padding: 15px 20px;
+    font-size: 14px;
+}
+.job-description h3 {
+    font-size: 20px;
+}
+.job-description h3 .share-link img {
+    height: 24px;
+}
+.job-description .tags span img {
+    height: 20px;
+}
+.job-description h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.job-description h5 {
+    font-size: 16px;
+}
+.job-description .btn {
+    padding: 8px 30px;
+    font-size: 20px;
+}
+.job-description li:before{
+    content: "";
+    display: list-item;
+    position: absolute;
+}
+.form-step-width {
+    width: 100%;
+    margin: 0 auto;
+}
+.professional-experience .add-more {
+    position: static;
+}
+
+
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+ 
+body {
+    font-size: 14px;
+}
+
+/* header */
+.header {
+    padding: 15px 0;
+}
+.logo img {
+    height: 33px;
+}
+
+.navigation {
+    font-size: 16px;
+}
+
+.single-interview h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.steps {
+    padding-bottom: 15px;
+}
+.steps li {
+    position: relative;
+    z-index: 1;
+    padding-right: 60px;
+    display: flex;
+    flex-direction: column;
+    place-content: center space-between;
+    align-items: center;
+}
+.steps li a {
+    margin-bottom: 3px;
+}
+.steps li::after {
+    width: 15px;
+    height: 15px;
+}
+.steps li::before {
+    left: 15px;
+    bottom: 7px;
+}
+.question-txt p {
+    margin-bottom: 8px;
+}
+.single-interview .imgb {
+    height: calc(100vh - 273px);
+    margin-bottom: 10px;
+}
+.start-recording {
+    padding: 8px 22px;
+    font-size: 16px;
+}
+.retake,
+#reTakeBtn {
+    margin-right: 15px;
+}
+.retake img,
+#reTakeBtn img,
+.action-bar .link img,
+.action-bar #btnpreview img,
+.next img,
+#btnNext img {
+    height: 20px;
+    margin-right: 6px;
+}
+.next img,
+#btnNext img {
+    margin: 0 0 0 6px;
+}
+
+/* footer */
+.footer {
+    padding: 20px 0;
+}
+.footer-links li {
+    margin-right: 15px;
+}
+.footer-links li a {
+    font-size: 14px;
+}
+.footer-logo p {
+    margin-bottom: 2px;
+    font-size: 12px;
+}
+.footer-logo .imgb img {
+    height: 23px;
+}
+
+/* interview-screen */
+.interview-screen {
+    padding-bottom: 30px;
+}
+.candidate-rating,
+.candidate-interview-text,
+.candidate-interview-text h5,
+.candidate-action-bar,
+.experience-info,
+.candidate-bar,
+.candidate-bar h3,
+.interview-pagination {
+    font-size: 14px;
+}
+.button-bar,
+.experience-info h4,
+.interview-screen h3 {
+    font-size: 15px;
+}
+.button-bar .link img {
+    height: 24px;
+}
+.candidate-rating .rat {
+    margin: 5px 0;
+}
+.candidate-rating .star img,
+.experience-info .link img {
+    height: 24px;
+}
+.candidate-bar p span img {
+    height: 12px;
+}
+.experience-info p {
+    line-height: normal;
+    margin-bottom: 10px;
+}
+.candidate-bar .imgb {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.main-container {
+    padding: 30px 0;
+}
+/* page-heading */
+.page-heading {
+    padding-bottom: 15px;
+}
+.page-heading h1 {
+    font-size: 28px;
+}
+
+/* job-listing */
+.job-listing .column {
+    font-size: 14px;
+}
+.job-listing h4,
+.job-listing .btn-outline {
+    font-size: 16px;
+}
+.job-listing .loc {
+    font-size: 12px;
+}
+.job-listing .btn-col {
+    place-content: center space-between;
+}
+.job-listing .btn-outline {
+    padding: 8px 15px;
+    margin-left: 10px;
+}
+.job-listing .time img {
+    height: 22px;
+    margin-right: 2px;
+}
+.job-listing .share-link img {
+    height: 24px;
+}
+.pagination .page-link {
+    min-width: 40px;
+    min-height: 40px;
+    padding: 5px 10px;
+    line-height: 28px;
+}
+
+/* candidate-profiles */
+.candidate-profiles .info {
+    font-size: 14px;
+}
+.candidate-profiles .info h4,
+.candidate-profiles .btn-outline,
+.candidate-profiles .profile-progress p {
+    font-size: 18px;
+}
+.candidate-profiles .icon-list .icon {
+    margin-left: 10px;
+}
+.candidate-profiles .icon-list .icon img {
+    height: 24px;
+}
+.candidate-profiles .profile-progress canvas {
+    height: 72px !important;
+    width: 72px !important;
+}
+
+/* signup */
+.signup {
+    margin: 0;
+}
+.login-text {
+    min-height: 400px;
+}
+.login-text h2 {
+    font-size: 35px;
+}
+.login-text p {
+    font-size: 20px;
+}
+.signup .form-box {
+    padding: 40px 15px;
+}
+.signup .form-box .logo img {
+    height: 28px;
+}
+.signup .form-box h1 {
+    font-size: 32px;
+}
+.signup .form-box h2 {
+    font-size: 24px;
+}
+.social-link a {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+}
+.signup .form-box label {
+    font-size: 14px;
+}
+.form-control {
+    padding: 9px 15px;
+    font-size: 16px;
+}
+.btn {
+    padding: 8px 60px;
+    font-size: 22px;
+}
+
+/* candidate-registration */
+.candidate-registration .caption {
+    min-height: 300px;
+    display: flex;
+    place-content: center;
+    align-items: center;
+}
+.candidate-registration .caption h1 {
+    font-size: 30px;
+}
+.candidate-registration .form-box {
+    padding: 40px 30px;
+}
+.candidate-registration .top-gap {
+    padding-top: 0;
+}
+.candidate-registration .profile-picture {
+    margin: 0 0 30px 0;
+    padding: 0;
+}
+.candidate-registration label {
+    display: inline-block;
+}
+.candidate-registration h3 {
+    margin: 20px 0;
+    height: calc();
+    font-size: 26px;
+}
+
+/* job-description */
+.job-description {
+    padding: 30px 40px;
+    font-size: 14px;
+}
+.job-description h3 {
+    font-size: 24px;
+}
+.job-description h3 .share-link img {
+    height: 24px;
+}
+.job-description .tags span img {
+    height: 20px;
+}
+.job-description h4 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.job-description h5 {
+    font-size: 16px;
+}
+.job-description .btn {
+    padding: 8px 30px;
+    font-size: 20px;
+}
+
+
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+
+body,
+.navigation {
+    font-size: 14px;
+}
+
+.header {
+    padding: 15px 0;
+}
+.logo img {
+    height: 33px;
+}
+.main-container {
+    padding: 30px 0;
+}
+.single-interview {
+    max-width: 790px;
+}
+.single-interview h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.steps {
+    padding-bottom: 10px;
+}
+.steps li {
+    padding-right: 60px;
+}
+.steps li a {
+    margin-bottom: 5px;
+}
+.steps li::after {
+    width: 15px;
+    height: 15px;
+}
+.steps li::before {
+    left: 15px;
+    bottom: 7px;
+}
+.single-interview .imgb {
+    height: calc(100vh - 170px);
+    margin-bottom: 10px;
+}
+.start-recording {
+    padding: 8px 20px;
+    font-size: 16px;
+}
+.question-txt p {
+    margin-bottom: 5px;
+}
+.retake,
+#reTakeBtn {
+    margin-right: 40px;
+}
+.retake img,
+#reTakeBtn img,
+.action-bar .link img,
+.action-bar #btnpreview img,
+.next img,
+#btnNext img {
+    height: 24px;
+    margin-right: 5px;
+}
+.next img,
+#btnNext img {
+    margin: 0 0 0 5px;
+}
+
+/* footer */
+.footer {
+    padding: 20px 0;
+}
+.footer-links li {
+    margin-right: 15px;
+}
+.footer-links li a {
+    font-size: 16px;
+}
+.footer-logo p {
+    margin-bottom: 2px;
+    font-size: 14px;
+}
+.footer-logo .imgb img {
+    height: 33px;
+}
+
+/* interview-screen */
+.interview-screen {
+    padding-bottom: 30px;
+}
+.candidate-rating,
+.candidate-interview-text,
+.candidate-interview-text h5,
+.candidate-action-bar,
+.experience-info,
+.candidate-bar,
+.candidate-bar h3,
+.interview-pagination {
+    font-size: 14px;
+}
+.button-bar,
+.experience-info h4,
+.interview-screen h3 {
+    font-size: 17px;
+}
+.button-bar .link img {
+    height: 24px;
+}
+.candidate-rating .rat {
+    margin: 5px 0;
+}
+.candidate-rating .star img,
+.experience-info .link img {
+    height: 24px;
+}
+.candidate-bar p span img {
+    height: 12px;
+}
+.experience-info p {
+    line-height: normal;
+    margin-bottom: 10px;
+}
+.candidate-bar .imgb {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+/* page-heading */
+.page-heading h1 {
+    font-size: 32px;
+}
+
+/* job-listing */
+.job-listing .column {
+    font-size: 14px;
+}
+.job-listing h4,
+.job-listing .btn-outline {
+    font-size: 16px;
+}
+.job-listing .loc {
+    font-size: 12px;
+}
+.job-listing .btn-col {
+    place-content: center space-between;
+}
+.job-listing .btn-outline {
+    padding: 8px 15px;
+    margin-left: 10px;
+}
+.job-listing .time img {
+    height: 22px;
+    margin-right: 2px;
+}
+.job-listing .share-link img {
+    height: 24px;
+}
+.pagination .page-link {
+    min-width: 40px;
+    min-height: 40px;
+    padding: 5px 10px;
+    line-height: 28px;
+}
+
+/* candidate-profiles */
+.candidate-profiles .info {
+    font-size: 16px;
+}
+.candidate-profiles .info h4,
+.candidate-profiles .btn-outline,
+.candidate-profiles .profile-progress p {
+    font-size: 16px;
+}
+.candidate-profiles .profile-progress canvas {
+    height: 60px !important;
+    width: 60px !important;
+}
+.candidate-profiles .icon-list .icon img {
+    height: 24px;
+}
+
+/* signup */
+.signup {
+    margin: 0;
+}
+.login-text {
+    min-height: 400px;
+}
+.login-text h2 {
+    font-size: 35px;
+}
+.login-text p {
+    font-size: 20px;
+}
+.signup .form-box {
+    max-width: 430px;
+    padding: 40px 15px;
+}
+.signup .form-box .logo img {
+    height: 28px;
+}
+.signup .form-box h1 {
+    font-size: 32px;
+}
+.signup .form-box h2 {
+    font-size: 24px;
+}
+.social-link a {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+}
+.signup .form-box label {
+    font-size: 14px;
+}
+.form-control {
+    padding: 9px 15px;
+    font-size: 16px;
+}
+.btn {
+    padding: 8px 60px;
+    font-size: 22px;
+}
+
+/* candidate-registration */
+.candidate-registration .caption {
+    min-height: 300px;
+    display: flex;
+    place-content: center;
+    align-items: center;
+}
+.candidate-registration .caption h1 {
+    font-size: 30px;
+}
+.candidate-registration .form-box {
+    padding: 40px 30px 40px 0;
+}
+.candidate-registration .top-gap {
+    padding-top: 0;
+}
+.candidate-registration .profile-picture {
+    margin: 0 0 30px 0;
+    padding: 0;
+}
+.candidate-registration label {
+    display: inline-block;
+}
+.candidate-registration h3 {
+    margin: 20px 0;
+    font-size: 26px;
+}
+
+/* job-description */
+.job-description {
+    padding: 40px;
+    font-size: 16px;
+}
+.job-description h3 {
+    font-size: 32px;
+}
+.job-description h3 .share-link img {
+    height: 24px;
+}
+.job-description .tags span img {
+    height: 20px;
+}
+.job-description h4 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+.job-description h5 {
+    font-size: 18px;
+}
+.job-description p {
+    margin-bottom: 15px;
+}
+.job-description .btn {
+    padding: 8px 30px;
+    font-size: 20px;
+}
+
+        
+}
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+    
+body,
+.navigation,
+.footer-links li a {
+    font-size: 16px;
+}
+
+/* header */
+.header,
+.footer {
+    padding: 15px 0;
+}
+.logo img {
+    width: auto;
+    height: 32px;
+}
+
+/* main-container */
+.main-container {
+    padding: 30px 0;
+}
+
+/* single-interview */
+.single-interview {
+    max-width: 990px;
+    margin-top: -10px;
+}
+.single-interview h3 {
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+.question-txt p {
+    margin-bottom: 5px;
+}
+/* steps */
+.steps {
+    padding-bottom: 10px;
+}
+.steps li {
+    padding-right: 70px;
+}
+.steps li a {
+    margin-bottom: 3px;
+}
+.steps li::after {
+    width: 15px;
+    height: 15px;
+}
+.steps li::before {
+    height: 1px;
+    left: 15px;
+    bottom: 7px;
+}
+.single-interview .imgb {
+    height: calc(100vh - 175px);
+    margin-bottom: 15px;
+}
+.retake img,
+#reTakeBtn img,
+.action-bar .link img,
+.action-bar #btnpreview img,
+.next img,
+#btnNext img {
+    height: 24px;
+    margin-right: 8px;
+}
+.next img,
+#btnNext img {
+    margin: 0 0 0 8px;
+}
+.start-recording {
+    padding: 10px 30px;
+    font-size: 20px;
+}
+
+/* help-txtb */
+.help-txtb {
+    padding-top: 40px;
+}
+.help-txtb span {
+    padding: 0 10px;
+}
+
+/* footer */
+.footer-logo p {
+    font-size: 12px;
+}
+.footer-logo .imgb img {
+    width: auto;
+    height: 22px;
+}
+
+/* interview-screen */
+.interview-screen {
+    padding-bottom: 30px;
+}
+.candidate-rating,
+.candidate-interview-text,
+.candidate-interview-text h5,
+.candidate-action-bar,
+.experience-info,
+.candidate-bar,
+.candidate-bar h3,
+.interview-pagination {
+    font-size: 16px;
+}
+.button-bar,
+.experience-info h4,
+.interview-screen h3 {
+    font-size: 20px;
+}
+.button-bar .link img {
+    height: 24px;
+}
+.candidate-rating .rat {
+    margin: 5px 0;
+}
+.candidate-rating .star img,
+.experience-info .link img {
+    height: 24px;
+}
+.candidate-bar p span img {
+    height: 12px;
+}
+.experience-info p {
+    line-height: normal;
+    margin-bottom: 10px;
+}
+.candidate-bar .imgb {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+/* page-heading */
+.page-heading h1 {
+    font-size: 38px;
+}
+
+/* job-listing */
+.job-listing .column {
+    font-size: 16px;
+}
+.job-listing h4 {
+    font-size: 18px;
+}
+.job-listing .loc,
+.job-listing .btn-outline {
+    font-size: 14px;
+}
+
+/* candidate-profiles */
+.candidate-profiles .info h4,
+.candidate-profiles .btn-outline,
+.candidate-profiles .profile-progress p {
+    font-size: 18px;
+}
+.candidate-profiles .info {
+    font-size: 16px;
+}
+.candidate-profiles .icon-list {
+    padding-bottom: 15px;
+}
+.candidate-profiles .icon-list .icon img {
+    height: 24px;
+}
+.candidate-profiles .profile-progress canvas {
+    height: 75px !important;
+    width: 75px !important;
+}
+
+/* signup */
+.signup {
+    margin: 0;
+}
+.login-text {
+    min-height: 400px;
+}
+.login-text h2 {
+    font-size: 35px;
+}
+.login-text p {
+    font-size: 20px;
+}
+.signup .form-box {
+    max-width: 530px;
+    padding: 40px 15px;
+}
+.signup .form-box .logo img {
+    height: 28px;
+}
+.signup .form-box h1 {
+    font-size: 32px;
+}
+.signup .form-box h2 {
+    font-size: 24px;
+}
+.social-link a {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+}
+.signup .form-box label {
+    font-size: 14px;
+}
+.form-control {
+    padding: 9px 15px;
+    font-size: 16px;
+}
+.btn {
+    padding: 8px 60px;
+    font-size: 22px;
+}
+
+/* candidate-registration */
+.candidate-registration .caption h1 {
+    font-size: 40px;
+}
+.candidate-registration .form-box {
+    padding: 40px 60px 40px 30px;
+}
+.candidate-registration .top-gap {
+    padding-top: 15px;
+}
+.candidate-registration .profile-picture {
+    margin-top: 30px;
+}
+.candidate-registration label {
+    display: inline-block;
+}
+.candidate-registration h3 {
+    margin: 30px 0;
+    font-size: 32px;
+}
+
+/* job-description */
+.job-description {
+    padding: 40px;
+    font-size: 16px;
+}
+.job-description h3 {
+    font-size: 32px;
+}
+.job-description h3 .share-link img {
+    height: 24px;
+}
+.job-description .tags span img {
+    height: 20px;
+}
+.job-description h4 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+.job-description h5 {
+    font-size: 18px;
+}
+.modal-xl {
+    --bs-modal-width: 850px;
+}
+
+
+}
+
+@media (min-width: 1920px) and (max-width: 2400px) {
+
+body {
+    font-size: 24px;
+}
+.container {
+    max-width: 1700px;
+}
+/* header */
+.header {
+    padding: 20px 0;
+}
+
+/* main-container */
+.main-container {
+    padding: 30px 0;
+}
+
+/* single-interview */
+.single-interview {
+    max-width: 1140px;
+}
+.single-interview h3 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+.single-interview .imgb {
+    margin-bottom: 20px;
+}
+.question-txt p {
+    margin-bottom: 6px;
+}
+/* steps */
+.steps li a {
+    margin-bottom: 5px;
+}
+.retake,
+#reTakeBtn {
+    margin-right: 30px;
+}
+.retake img,
+#reTakeBtn img,
+.action-bar .link img,
+.action-bar #btnpreview img,
+.next img,
+#btnNext img {
+    height: 40px;
+    margin-right: 10px;
+}
+.next img,
+#btnNext img {
+    margin-left: 10px;
+}
+.start-recording {
+    padding: 15px 40px;
+    font-size: 24px;
+}
+
+
+}
+
+@media (min-width: 2401px) and (max-width: 6400px) {
+
+    body {
+        font-size: 3.2em;
+    }
+    .container {
+        max-width:2000px !important;
+        
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    /* header */
+    .header {
+        padding: 20px 0;
+        height: auto !important;
+    }
+    
+    /* main-container */
+    .main-container {
+        padding: 150px 0;
+    }
+   
+    .interview-video-profile {
+        height: 550px;
+           width: 90%;
+    }
+    .candidate-list6 .imgb {
+        margin: 0 auto 5px auto;
+        width: 150px;
+        height: 150px;
+    }
+    .candidate-column {
+        padding:40px;
+    }
+    .candidate-profiles .txtn p {
+    margin: 20px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size:25px;
+}
+    .candidate-profiles .btn-outline {
+    padding: 10px 60px;
+    font-size: 35px !important;
+    margin-right: 0px
+}
+
+.candidate-profiles .txtn h4 {
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+     font-size:40px;
+}
+
+.candidate-profiles .txtn span {
+     color:black;
+     font-size:24px;
+}
+
+    .questionhead {
+        font-size:35px;
+        margin-bottom:20px;
+    }
+    .interview-screen h3 {
+    font-size: 40px;
+    color: #747475;
+}
+    .candidate-interview-text .txt {
+    padding-bottom: 2px;
+    font-size:35px;
+}
+    .candidate-rating .rat p {
+    margin: 0;
+    font-size:35px;
+}
+    .pagination.pagination-xs .page-item .page-link {
+
+        padding: 45px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 40px;
+    }
+    .pagination.pagination-xs .page-item.page-indicator .page-link {
+    font-size: 40px;
+}
+    .candidate-interview-text h5 {
+
+    font-size: 38px;
+   
+   
+}
+    .candidateBackButton {
+    float: right;
+    font-size: 45px;
+    color: #000;
+    background: url(../images/icon_back.png) no-repeat left center;
+    border: none;
+    background-size: auto 100%;
+    padding-left: 65px;
+}
+}

@@ -1,0 +1,80 @@
+.ico-radio {
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	cursor: pointer;
+	background-position: 0 -16px;
+vertical-align: -4px;
+margin: 0 5px;
+border-radius: 100%;
+border: 2px solid #e6e6e6;
+margin-right:10px;
+}
+.ico-radio.sed {
+	background-position: 0 0;
+	position:relative;
+}
+.ico-radio.sed:after
+{
+	content:'';
+	width:8px;
+	height:8px;
+	left:0px;
+	right:0px;
+	top:0px;
+	bottom:0px;
+	margin:auto;
+	background: #28a745;
+	position:absolute;
+	border-radius:100%;
+	-webkit-border-radius:100%;
+	
+	
+}
+.ico-radio.disabled {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	cursor: default;
+	border: 2px solid #f2f2f2;
+}
+.ico-checkbox {
+	width: 18px !important;
+	height: 18px !important;
+	background-color: transparent;
+    border: 2px solid #e6e6e6;
+    border-radius:5px;
+	display: inline-block;
+	cursor: pointer;
+	background-position: 0 -18px;
+	vertical-align: -4px;
+	margin:0px;
+	margin-right: 10px;
+}
+.ico-checkbox.sed {
+	background-position: 0 0;
+	position: relative;
+}
+.ico-checkbox.sed::after {
+	top: 0px;
+	left: 0px;
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	content: "\f00c";
+	font-size: 10px;
+	text-align: center;
+	color: #28a745;
+	background-color: transparent;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	margin: auto;
+	height: 15px;
+	width: 12px;
+}
+
+.ico-checkbox.disabled {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	cursor: default;
+	border: 2px solid #fbf2f2;
+}

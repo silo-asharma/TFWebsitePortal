@@ -1,0 +1,930 @@
+/* Normal desktop :992px. */
+
+@media (min-width: 992px) and (max-width: 1200px) {
+	.price-container {
+	padding-top:30px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+}
+/* Inbox css */
+.email-box div:last-child {
+    width: 100%;
+    text-align: left;
+    font-size: 13px;
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+/* Login page  */	
+.form-bg-slider .container .icon {
+    width: 250px;
+    float: none;
+    margin-right: 0px;
+}
+.form-bg-slider .container .slider-title {
+    margin-top: 2%;
+}
+.form-bg-slider .container .slider-description {
+    width: 50%;
+}
+.form-bg-slider .owl-dots {
+    bottom: 13%;
+    margin-left: -433px;
+}
+.margin-top-30
+{
+	margin-top:0px;
+}
+.small-info-box {
+	margin-bottom:30px;
+}
+.card {
+	margin-bottom:30px;
+}
+.small-info-box i {
+    font-size: 40px;
+    bottom: 28px;
+}
+/* Profile */
+.profile-box .body .profile-info-box .profile-pic {
+    width: 100px;
+    height: 100px;
+    margin-top: -70px;
+}
+.profile-box .left-panel, .profile-box .right-panel {
+    padding: 15px;
+}
+
+}
+
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+	.price-container {
+	padding-top:30px;
+	padding-bottom:0px;
+	padding-left:22%;
+	padding-right:22%;
+}
+.chat-container .day-time
+{
+	margin-bottom:15px;
+}
+.chat-box .body ul li .bubble {
+    padding: 10px 15px;
+    font-size: 12px;
+}
+
+
+/* Inbox css */
+.mailbox .left-panel {
+    width: 30%;
+    float: left;
+}
+.mailbox .right-panel {
+    width: 70%;
+    float: left;
+}
+.right-panel .header .float-right {
+    display: none;
+}
+.email-box div:first-child {
+    width: 10%;
+}
+.email-box div:nth-child(2) {
+    width: 10%;
+}
+.email-box div:nth-child(3) {
+    width: 70%;
+}
+.email-box div:nth-child(4) {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.email-box div:nth-child(5) {
+    width: 10%;
+}
+.email-box div:last-child {
+    width: 87%;
+    text-align: right;
+    font-size: 13px;
+}
+.single-mail .attachment .col-lg-4 .box
+{
+	margin-bottom:30px;
+}
+.single-mail .attachment .col-lg-4:last-child .box
+{
+	margin-bottom:0px;
+}
+	/* Component css  */	
+.list-group
+{
+	margin-bottom:30px;
+}
+
+	/* Login page  */	
+.form-bg-slider .container .icon {
+    width: 250px;
+    float: none;
+    margin-right: 0px;
+}
+.form-bg-slider .container .slider-title {
+    margin-top: 2%;
+	font-size:22px;
+}
+.form-bg-slider .container .slider-description {
+    width: 50%;
+}
+.form-bg-slider .owl-dots {
+    bottom: 10%;
+    margin-left: -314px;
+}
+.margin-top-30
+{
+	margin-top:0px;
+}
+.small-info-box {
+	margin-bottom:30px;
+}
+.card {
+	margin-bottom:30px;
+}
+.error-bg .error-box {
+
+    width: 700px;
+    height: 425px;
+    padding: 45px;
+
+}
+.error-bg .error-box .error-name {
+
+    font-size: 100px;
+
+}
+/* Profile */
+.profile-box {
+    padding-bottom: 15px;
+}
+.profile-box .header .follower-box {
+    right: 0px;
+    bottom: 80px;
+	left:0px;
+}
+div.dataTables_wrapper div.dataTables_filter input {
+    margin-left: .5em;
+    display: inline-block;
+    width: auto;
+    max-width: 220px;
+}
+.main-footer-link ul li a {
+    font-size: 11px;
+}
+.copyright {
+    font-size: 12px;
+}
+}
+
+/*  Small mobile :320px. */
+@media (min-width: 320px) and (max-width: 575px) {
+	header .search input {
+	display:none;
+}
+.review-list .user-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    overflow: hidden;
+    float: none;
+    margin-right: 0%;
+    margin: auto;
+    margin-bottom: 10px;
+	display:block;
+}
+.topsell-box .icon {
+    font-size: 20px;
+    width: 15px;
+    vertical-align: top;
+}
+.topsell-box .content p {
+    font-size: 10px;
+}
+.topsell-box .sellcount {
+    top: 3px;
+    font-size: 10px;
+}
+.topsell-box .content .title {
+    font-size: 12px;
+}
+.review-list .date {
+    top: 73px;
+}
+.review-list .info {
+    float: none;
+    width: 100%;
+}
+.hotproducts-box {
+    width: 100%;
+    height: 100%;
+}
+.review-list .comment {
+    text-align: center;
+	margin-top:15px;
+	margin-bottom:5px;
+}
+.chat-container .pr-0
+{
+	padding-right:15px !important; 
+}
+.chat-container .pl-0
+{
+	padding-left:15px !important; 
+}
+.chat-box .body {
+    padding: 10px;
+	
+}
+.chat-box .icon-right-group {
+	display:none;
+}
+.chat-container .profile .right a {
+    position: absolute;
+    right: 30px;
+    top: 25px;
+    color: #FFF;
+    opacity: 0.7;
+}
+.chat-container .chat-member
+{
+	height:150px !important;
+	overflow-y:scroll;
+}
+.chat-container .day-time
+{
+	margin-bottom:15px;
+}
+.chat-box .body ul li .bubble {
+    padding: 10px 15px;
+    font-size: 10px;
+}
+.chat-box .body ul li .pic img {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+}
+.chat-box .body ul li .content {
+    margin-left: 5px;
+    width: 65%;
+}
+.chat-box .body ul li.host .content {
+
+    margin-right: 5px;
+}
+.chat-box .footer input[type="text"] {
+    font-size: 12px;
+    padding-left: 40px;
+    padding-right: 0px;
+}
+.chat-box .header .right-icon {
+    margin-top: 8px;
+}
+.fc-toolbar
+{
+	display:block !important;
+	text-align:center;
+}
+.fc-toolbar h2 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+	font-size: 24px;
+}
+.custom-calendar .fc-day-header {
+    font-size: 10px;
+}
+.custom-calendar .fc-button-primary {
+    font-size: 11px;
+    text-transform: capitalize;
+}
+.faq-container {
+    padding: 0px;
+}
+.price-container {
+	padding-top:30px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+}
+.price-container .price-box
+{
+	margin-bottom:30px;
+}
+.price-container .col-md-4:last-child .price-box
+{
+	margin-bottom:0px;
+}
+header .search {
+    margin-left: 10px;
+}
+header .language-dropdown span {
+	display:none;
+}
+
+header .icon-group a.head {
+    margin-right: 10px;
+    cursor: pointer;
+}
+header .right-panel ul li::after {
+    right: -3px;
+}
+header .right-panel {
+    float: right;
+    padding-right: 15px;
+}
+header .right-panel ul li {
+    display: inline-block;
+    margin-left: 10px;
+    position:static;
+}
+
+header .search i {
+    opacity: 1;
+    font-size: 14px;
+	cursor: pointer;
+}
+header .search i:hover
+{
+color: #F79E1B;
+}
+header .dropdown-menu {
+	width:265px;
+}
+#fullscreen
+{
+	display:none;
+}
+.language-dropdown .head .icon {
+    margin-right: 0px;
+	top:0px;
+}
+.page-title {
+
+    text-align: center;
+}
+.title-box .breadcrumb {
+    float: none;
+    text-align: center;
+    display: block;
+    margin-top: 5px;
+}
+	.form-bg-slider
+	{
+		display:none !important;
+	}
+	.login
+	{
+		background:#231F20;
+	}
+	.form-box {
+    position: relative;
+	width:auto;
+    height: 650px;
+    padding: 20px;
+	margin-left:5%;
+	margin-right:5%;
+	margin-top:5%;
+	margin-bottom:5%;
+	border-radius:5px;
+
+}
+.form-box .display-table {
+    height: auto;
+    margin-top: 10% !important;
+    width: 90%;
+    margin: auto;
+        margin-top: auto;
+}
+.container-fluid
+{
+	padding-left:0px;
+	padding-right:0px;
+}
+.copyright {
+    font-size: 12px;
+    text-align: center;
+}
+main {
+    padding-top: 70px;
+	padding-bottom: 15px;
+}
+.margin-top-30
+{
+	margin-top:0px;
+}
+.small-info-box {
+    margin-bottom: 20px;
+}
+main .card .card-title {
+    font-size: 13px;
+}
+main .content-box .row .card
+{
+	margin-bottom:20px !important;
+}
+main .content-box .row div:last-child .card
+{
+	margin-bottom:0px !important;
+}
+main .card .card-title .action-btn {
+    font-size: 10px;
+}
+.card {
+    margin-bottom: 20px;
+    height: auto !important;
+}
+main .card:last-child
+{
+	    margin-bottom: 0px;
+}
+main .card .card-title .year-box {
+    float: none;
+	margin-top:20px;
+	margin-bottom:-20px;
+}
+.meeting-list {
+    text-align: center;
+}
+.meeting-box .date {
+    display: block !important;
+    margin: auto;
+	margin-bottom:5px;
+}
+.small-info-box i {
+    font-size: 45px;
+    right: 13px;
+    bottom: 15px;
+}
+.projectworkload-box {
+    width: 100%;
+}
+.task-list .deadline {
+    float: none;
+	text-align:right;
+}
+.task-list .task-title {
+    font-size: 12px;
+
+}
+.task-list .deadline .date {
+    font-size: 11px;
+}
+.custom-dropdown a.head {
+    font-size: 11px;
+padding: 5px 10px;
+}
+.error-bg .error-box {
+	width: 90%;
+	padding: 40px;
+	height: 630px;
+
+}
+.error-bg .error-box .icon {
+	width:215px;
+	margin:auto;
+    margin-top:30px;
+}
+.error-bg .error-box .left-panel, .error-bg .error-box .right-panel {
+
+    width: 100%;
+    float: none;
+    text-align: center;
+
+}
+.error-bg .error-box .error-name {
+
+    font-size: 80px;
+    font-weight: bold;
+
+}
+/* Inbox css  */
+.mailbox .left-panel,
+.mailbox .right-panel
+{
+    width: 100%;
+    float: none;
+}
+.mobile-show
+{
+	display:inline-block;
+}
+.mailbox .left-panel ul
+{
+	display:none;
+}
+.mailbox .right-panel .header {
+	height:auto;
+	padding-left:15px;
+	padding-right:15px;
+	text-align:center;
+}
+.mailbox .right-panel .header .check-box {
+    margin-right: 0px;
+	width:100%;
+}
+.email-con-box
+{
+	padding-bottom:15px;
+}
+.right-panel .header .check-box::before {
+    right: 80px;
+    margin: auto;
+
+}
+.mailbox .header label {
+    margin-right: 0px;
+    color: rgba(35,32,31,0.7);
+    width: 100%;
+}
+.mailbox .header label.right-line::after {
+	display:none;
+}
+.mailbox .right-panel .header .right-line::after {
+    top: 2px;
+    right: -10px;
+}
+.mailbox .right-panel .header .icon-group i {
+    margin-right: 10px;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+.right-panel .header .icon-group {
+	margin-right:10px;
+	margin-top:15px;
+	margin-bottom:15px;
+}
+.right-panel .header .float-right
+{
+	display:none;
+}
+.email-box div:first-child {
+    width: 10%;
+}
+.email-box div:nth-child(2) {
+    width: 10%;
+}
+.email-box div:nth-child(3) {
+    width: 70%;
+}
+.email-box div:nth-child(4) {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.email-box div:nth-child(5) {
+    width: 10%;
+}
+.email-box div:last-child {
+    width: 87%;
+    text-align: right;
+    font-size: 13px;
+}
+.single-mail {
+    background: #FFF;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+.single-mail .attachment {
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+.single-mail .attachment .box
+{
+	margin-bottom:30px;
+}
+.single-mail .attachment .com-sm-4:last-child .box
+{
+	margin-bottom:0px;
+}
+/* Component css  */	
+.list-group
+{
+	margin-bottom:30px;
+}
+.badge-pill, a.badge {
+
+    margin-bottom: 20px;
+}
+.main-footer-link
+{
+	text-align:center;
+	margin-top:10px;
+}
+.email-editor-box {
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+	left:0px;
+	z-index:9999999999;
+}
+/* Profile css  */
+.profile-box .header .follower-box {
+    right: 0px;
+    bottom: 80px;
+	left:0px;
+}
+.profile-box .body .profile-info-box .profile-pic {
+    width: 80px;
+    height: 80px;
+    margin-top: -70px;
+}
+.profile-box .timeline-part {
+    padding: 15px 10px;
+}
+.invoice-box .card-body {
+    padding: 30px;
+}
+.invoice-box .badge {
+    padding: 7px 15px;
+    font-weight: 600;
+	margin-bottom:20px;
+}
+.invoice-box .table-responsive
+{
+	margin-top:20px;
+}
+#dataexample_filter input
+{
+	display:block !important;
+	width:100%;
+	margin:0px;
+}
+#dataexample1_filter input
+{
+	display:block !important;
+	width:100%;
+	margin:0px;
+}
+.dt-bootstrap4 .row:first-child {
+    padding:20px;
+}
+div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:last-child {
+    padding-right: 0px;
+	padding-left:0px
+}
+.dt-bootstrap4 .page-link {
+    font-size: 10px;
+}
+.dt-bootstrap4
+{
+	overflow:hidden;
+}
+div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:first-child {
+    padding-left: 0px;
+	padding-right:0px
+}
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: 0px;
+    font-size:11px;
+	margin-bottom:10px;
+}
+.dt-bootstrap4 .row:last-child {
+    padding: 20px 10px;
+}
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+
+    margin: 2px 0;
+    white-space: nowrap;
+    justify-content: flex-end;
+    display: inline-flex;
+
+}
+.dt-bootstrap4 .row:nth-child(2) {
+	overflow-x:scroll;
+}
+}
+
+/* Large Mobile :576px. */
+
+
+
+@media (min-width: 576px) and (max-width: 767px) {
+header .search {
+    width: 195px;
+    position: relative;
+}
+header .search input {
+    display: inline-block;
+    width: 195px;
+    padding-left: 20px;
+}
+.language-dropdown span
+{
+	display:none;
+}
+header .search i {
+    opacity: 0.6;
+    font-size: 13px;
+    position: absolute;
+    top: 6px;
+}
+.chat-container .pr-0 {
+    padding-right: 15px !important;
+}
+.chat-container .pl-0 {
+    padding-left: 15px !important;
+}
+.chat-container .profile .right a {
+    right: 30px;
+    top: 25px;
+}
+.chat-container .chat-member {
+    height: 150px !important;
+    overflow-y: scroll;
+}
+.form-box .display-table {
+
+    width: 320px;
+}
+main
+{
+	padding-bottom:0px;
+}
+.margin-top-30
+{
+	margin-top:0px;
+}
+.small-info-box {
+	margin-bottom:30px;
+}
+.card {
+	margin-bottom:30px;
+}
+.page-title {
+    text-align: left;
+}
+.title-box .breadcrumb {
+    float: right;
+    text-align: right;
+    display: flex;
+    margin-top: 0px;
+}
+.error-bg .error-box {
+	width: 350px;
+	padding: 40px;
+	height: 630px;
+
+}
+.error-bg .error-box .icon {
+	width:215px;
+	margin:auto;
+    margin-top:30px;
+}
+.email-con-box .right-panel .header .icon-group.hide-group {
+	display:none !important;
+}
+.error-bg .error-box .left-panel, .error-bg .error-box .right-panel {
+
+    width: 100%;
+    float: none;
+    text-align: center;
+
+}
+.error-bg .error-box .error-name {
+
+    font-size: 80px;
+    font-weight: bold;
+
+}
+/* Inbox css */
+.mailbox .left-panel {
+    width: 35%;
+    float: left;
+}
+.mailbox .right-panel {
+    width: 65%;
+    float: left;
+}
+.right-panel .header .float-right {
+    display: none;
+}
+.email-box div:first-child {
+    width: 10%;
+}
+.email-box div:nth-child(2) {
+    width: 10%;
+}
+.email-box div:nth-child(3) {
+    width: 70%;
+}
+.email-box div:nth-child(4) {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.email-box div:nth-child(5) {
+    width: 10%;
+}
+.email-box div:last-child {
+    width: 87%;
+    text-align: right;
+    font-size: 13px;
+}
+
+.email-con-box .right-panel .header .check-box {
+    margin-right: 10px;
+}
+.email-con-box .right-panel .header .icon-group {
+    position: relative;
+    margin-right: 5px;
+}
+.email-con-box .right-panel .header .icon-group.right-line::after {
+    top: 2px;
+    right: -5px;
+}
+.email-con-box .right-panel .header .icon-group i {
+    margin-right:5px;
+	margin-left:5px
+}
+.email-con-box .right-panel .header  div:nth-last-child(2)
+{
+	margin-right:0px;
+}
+.single-mail .attachment .col-lg-4 .box
+{
+	margin-bottom:30px;
+}
+.single-mail .attachment .col-lg-4:last-child .box
+{
+	margin-bottom:0px;
+}
+.email-editor-box {
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+	left:0px;
+}
+.custom-calendar .fc-button-primary {
+    font-size: 11px;
+    text-transform: capitalize;
+}
+.fc-toolbar {
+    display: block !important;
+    text-align: center;
+}
+.fc-toolbar h2 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+/* Component css  */	
+.list-group
+{
+	margin-bottom:30px;
+}
+.badge-pill, a.badge {
+
+    margin-bottom: 20px;
+}
+.copyright {
+	text-align:center;
+	margin-bottom:10px;
+}
+.main-footer-link
+{
+	text-align:center;
+}
+/* Profile */
+.profile-box {
+    padding-bottom: 15px;
+}
+.profile-box .header .follower-box {
+    right: 0px;
+    bottom: 80px;
+	left:0px;
+}
+#dataexample_length
+{
+	margin-bottom:15px;
+}
+}
+#dataexample1_length
+{
+	margin-bottom:15px;
+}
+.dt-bootstrap4
+{
+	overflow:hidden;
+}
+.dt-bootstrap4 .row:nth-child(2) {
+	overflow-x:scroll;
+}
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+
+    display: inline-flex;
+}
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: 0px;
+	margin-bottom:10px;
+}
+}
